@@ -25,3 +25,57 @@
   text-decoration: none;
   color: rgb(150, 152, 154);
 }
+
+.navbar-toggler-icon {
+  background-image: url("../../assets/nav_toggle.jpg") !important;
+  width: 51px !important;
+  height: 50px !important;
+}
+
+.navbar-toggler {
+  border-color: white !important;
+}
+
+.rotate-nav {
+  -webkit-animation-name: rotateToggleBtnAnimation;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: rotateToggleBtnAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes rotateToggleBtnAnimation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(90deg);
+  }
+}
+
+.rotate-nav-opp {
+  -webkit-animation-name: rotateToggleBtnAnimationOpp;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: forwards;
+  animation-name: rotateToggleBtnAnimationOpp;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes rotateToggleBtnAnimationOpp {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(-90deg);
+  }
+}

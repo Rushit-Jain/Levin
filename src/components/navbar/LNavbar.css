@@ -1,0 +1,27 @@
+.LNavbar {
+  background-color: white; /*DARK-GREY --> 150, 152, 154*/ /*RED --> 237, 50, 55*/
+  text-decoration: none;
+}
+
+.logo {
+  height: 100px;
+  width: 102px;
+}
+
+.logo-box {
+  margin: 5px !important;
+  width: 10%;
+}
+
+.links {
+  color: rgb(237, 50, 55);
+  margin: 0px 10px;
+  padding: 0px 5px;
+  font-size: 20px;
+  font-family: "El Messiri", sans-serif;
+}
+
+.links:hover {
+  text-decoration: none;
+  color: rgb(150, 152, 154);
+}

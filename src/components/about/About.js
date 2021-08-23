@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import CircuitCell from "./CircuitCell";
 import CircuitSwitch from "./CircuitSwitch";
 
 const About = (props) => {
@@ -23,8 +24,11 @@ const About = (props) => {
             Jain and Anish Jain. [PHOTOS OF LIGHT HOUSE (SHADOW DESIGN)]
           </p>
         </Col>
-        <Col xs={0} lg={1} className="d-none d-lg-block">
+        <Col lg={1} className="d-none d-lg-block">
           <CircuitSwitch />
+        </Col>
+        <Col xs={12} className="d-block d-lg-none">
+          <CircuitCell />
         </Col>
         <Col xs={12} lg={4}>
           <h2>OPERATION AT LEVIN</h2>
@@ -41,8 +45,11 @@ const About = (props) => {
             MACHINES]
           </p>
         </Col>
-        <Col xs={0} lg={1} className="d-none d-lg-block">
+        <Col lg={1} className="d-none d-lg-block">
           <CircuitSwitch />
+        </Col>
+        <Col xs={12} className="d-block d-lg-none">
+          <CircuitCell />
         </Col>
         <Col xs={12} lg={3}>
           <h2>LEVIN, TODAY</h2>

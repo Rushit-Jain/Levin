@@ -10,14 +10,15 @@
 .contactbox_row2 {
   border-radius: 10px;
   background-color: white;
-  margin: 15px;
   padding: 15px;
+  margin: 15px !important;
 }
 
 .contactInfoColumn {
   border-radius: 15px;
   background-color: lightcoral;
-  /* margin: 10px; */
+  margin-bottom: 15px;
+  padding: 20px;
 }
 
 .contactInfoColumnItems {
@@ -25,7 +26,28 @@
   margin-bottom: 20px;
 }
 
+.contactInfoColumnIcons {
+  margin: 5px;
+  margin-bottom: 20px;
+  align-items: flex-end;
+}
+
 .icons {
   display: flex;
   justify-content: space-around;
 }
+
+.contactFormRow{
+  padding: 5px;
+  margin-bottom: 10px !important;
+}
+
+.contactPhoneInput{
+  height: 56px !important; 
+  width:inherit !important;
+}
+
+/* .form-control{
+  height: 56px !important; 
+  width:inherit !important;
+} */

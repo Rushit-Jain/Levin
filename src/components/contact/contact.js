@@ -6,13 +6,13 @@ import EmailRoundedIcon from "@material-ui/icons/EmailRounded";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import TwitterIcon from "@material-ui/icons/Twitter";
-import RoomIcon from '@material-ui/icons/Room';
+import RoomIcon from "@material-ui/icons/Room";
 import TextField from "@material-ui/core/TextField";
 // import Icon from '@material-ui/core/Icon';
 // import Button from '@material-ui/core/Button';
 
-import PhoneInput from 'react-phone-input-2';
-import 'react-phone-input-2/lib/style.css';
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 import "./Contact.css";
 
@@ -32,63 +32,73 @@ class Contact extends Component {
         </Row>
         {/* Below is the code for the actual form  */}
         <Row className="contactbox_row2">
-            {/* ROW 2 column 1 */}
-            <Col className="contactInfoColumn" md={{ span: 5 }} xs={12}>
-                <Row className="contactInfoColumnItems">
-                    <Col>
-                        <Row>
-                            <Col style={{"text-align" : "center"}}>
-                                <h4>Contact Information</h4>
-                            </Col>
-                        </Row><br/>
-                        <Row>
-                            <Col  style={{"text-align" : "center"}}>
-                                <h6>Fill up the details to reach out to us!</h6>
-                            </Col>
-                        </Row>
-                    </Col>
+          {/* ROW 2 column 1 */}
+          <Col className="contactInfoColumn" md={{ span: 5 }} xs={12}>
+            <Row className="contactInfoColumnItems">
+              <Col>
+                <Row>
+                  <Col style={{ "text-align": "center" }}>
+                    <h4>Contact Information</h4>
+                  </Col>
                 </Row>
+                <br />
+                <Row>
+                  <Col style={{ "text-align": "center" }}>
+                    <h6>Fill up the details to reach out to us!</h6>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
 
-                <Row className="contactInfoColumnItems">
-                    <Col>
-                        <a href="tel:+91 9920338899" style={{ color: "white" }}>
-                            <CallRoundedIcon style={{ color: "white" }} />
-                            &nbsp;&nbsp;+91 9920338899
-                        </a>
-                    </Col>
-                </Row>
+            <Row className="contactInfoColumnItems">
+              <Col>
+                <CallRoundedIcon style={{ color: "white" }} />
+                &nbsp;&nbsp;
+                <a href="tel:+91 9920338899" style={{ color: "white" }}>
+                  +91 9920338899
+                </a>
+              </Col>
+            </Row>
 
-                <Row className="contactInfoColumnItems">
-                    <Col>
-                        <a href="mailto:levin@gmail.com" style={{ color: "white" }}>
-                            <EmailRoundedIcon style={{ color: "white" }} />
-                            &nbsp;&nbsp;levinswitches@gmail.com
-                        </a>
-                    </Col>
-                </Row>
+            <Row className="contactInfoColumnItems">
+              <Col>
+                <EmailRoundedIcon style={{ color: "white" }} />
+                &nbsp;&nbsp;
+                <a href="mailto:levin@gmail.com" style={{ color: "white" }}>
+                  levinswitches@gmail.com
+                </a>
+              </Col>
+            </Row>
 
-                <Row className="contactInfoColumnItems">
-                    <Col>
-                        <a style={{ color: "white" }}>
-                            <RoomIcon style={{ color: "white" }} />
-                            &nbsp;&nbsp;Ritzy Industries, Gala No. 6&amp;7, Raj Prabha Mohan Industrial Estate, Naikpada, Valiv, Vasai East, Thane, Maharashtra - 401208
-                        </a>
-                    </Col>
-                </Row>
-                <br/>
-                <br/>
-                <Row className="contactInfoColumnIcons">
-                    <Col className="icons">
-                        <a>
-                            <FacebookIcon style={{ color: "white", "font-size":"40pt" }} />
-                        </a>
-                        <a>
-                            <InstagramIcon style={{ color: "white", "font-size":"40pt" }} />
-                        </a>
-                    </Col>
-                </Row>
-            </Col>
-            {/* ROW 2 COL 2 */}
+            <Row className="contactInfoColumnItems">
+              <Col>
+                <RoomIcon style={{ color: "white" }} />
+                &nbsp;&nbsp;
+                <a style={{ color: "white" }}>
+                  Ritzy Industries, Gala No. 6&amp;7, Raj Prabha Mohan
+                  Industrial Estate, Naikpada, Valiv, Vasai East, Thane,
+                  Maharashtra - 401208
+                </a>
+              </Col>
+            </Row>
+            <br />
+            <br />
+            <Row className="contactInfoColumnIcons">
+              <Col className="icons">
+                <a href="https://www.facebook.com/levinswitches">
+                  <FacebookIcon
+                    style={{ color: "white", "font-size": "40pt" }}
+                  />
+                </a>
+                <a href="https://www.instagram.com/levinswitches_india/">
+                  <InstagramIcon
+                    style={{ color: "white", "font-size": "40pt" }}
+                  />
+                </a>
+              </Col>
+            </Row>
+          </Col>
+          {/* ROW 2 COL 2 */}
           <Col className="contactInputColumn">
             <form noValidate autoComplete="off">
               <Row className="contactFormRow">
@@ -100,13 +110,13 @@ class Contact extends Component {
                     fullWidth
                   />
                 </Col>
-                    <Col >
-                        <PhoneInput
-                            country={'us'}
-                            inputClass="contactPhoneInput"
-                            // value={this.state.phone}
-                            onChange={phone => console.log(phone)}
-                            />
+                <Col>
+                  <PhoneInput
+                    country={"us"}
+                    inputClass="contactPhoneInput"
+                    // value={this.state.phone}
+                    onChange={(phone) => console.log(phone)}
+                  />
                 </Col>
               </Row>
               <Row className="contactFormRow">
@@ -145,7 +155,7 @@ class Contact extends Component {
 
               <Row className="contactFormRow">
                 <Col>
-                    <Button variant="outline-success">Send</Button>
+                  <Button variant="outline-success">Send</Button>
                 </Col>
               </Row>
             </form>

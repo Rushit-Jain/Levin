@@ -1,0 +1,17 @@
+.contactbox{
+    background-color:rgb(236, 236, 236);
+    padding: 15px;
+}
+
+.contactbox_row1{
+    text-align: center;
+}
+
+.contactbox_row2{
+    border-radius: 10px;
+    background-color: white;
+    margin: 15px;
+}
+.contactInfoCol{
+
+}

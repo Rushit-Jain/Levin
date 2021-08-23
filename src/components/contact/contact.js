@@ -52,8 +52,8 @@ class Contact extends Component {
                 <Row className="contactInfoColumnItems">
                     <Col>
                         <a href="tel:+91 9920338899" style={{ color: "white" }}>
-                            <CallRoundedIcon style={{ color: "lightgreen" }} />
-                            +91 9920338899
+                            <CallRoundedIcon style={{ color: "white" }} />
+                            &nbsp;&nbsp;+91 9920338899
                         </a>
                     </Col>
                 </Row>
@@ -62,7 +62,7 @@ class Contact extends Component {
                     <Col>
                         <a href="mailto:levin@gmail.com" style={{ color: "white" }}>
                             <EmailRoundedIcon style={{ color: "white" }} />
-                            levinswitches@gmail.com
+                            &nbsp;&nbsp;levinswitches@gmail.com
                         </a>
                     </Col>
                 </Row>
@@ -71,7 +71,7 @@ class Contact extends Component {
                     <Col>
                         <a style={{ color: "white" }}>
                             <RoomIcon style={{ color: "white" }} />
-                            Ritzy Industries, Gala No. 6&amp;7, Raj Prabha Mohan Industrial Estate, Naikpada, Valiv, Vasai East, Thane, Maharashtra - 401208
+                            &nbsp;&nbsp;Ritzy Industries, Gala No. 6&amp;7, Raj Prabha Mohan Industrial Estate, Naikpada, Valiv, Vasai East, Thane, Maharashtra - 401208
                         </a>
                     </Col>
                 </Row>
@@ -80,13 +80,10 @@ class Contact extends Component {
                 <Row className="contactInfoColumnIcons">
                     <Col className="icons">
                         <a>
-                            <FacebookIcon style={{ color: "white" }} />
+                            <FacebookIcon style={{ color: "white", "font-size":"40pt" }} />
                         </a>
                         <a>
-                            <InstagramIcon style={{ color: "white" }} />
-                        </a>
-                        <a>
-                            <TwitterIcon style={{ color: "white" }} />
+                            <InstagramIcon style={{ color: "white", "font-size":"40pt" }} />
                         </a>
                     </Col>
                 </Row>
@@ -103,16 +100,13 @@ class Contact extends Component {
                     fullWidth
                   />
                 </Col>
-                <Col>
                     <Col >
-                        {/* <PhoneInput
+                        <PhoneInput
                             country={'us'}
-                            className="contactPhoneInput"
+                            inputClass="contactPhoneInput"
                             // value={this.state.phone}
                             onChange={phone => console.log(phone)}
-                            /> */}
-                    </Col>
-                
+                            />
                 </Col>
               </Row>
               <Row className="contactFormRow">

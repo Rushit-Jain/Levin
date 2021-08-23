@@ -18,7 +18,7 @@
   border-radius: 15px;
   background-color: lightcoral;
   margin-bottom: 15px;
-
+  padding: 20px;
 }
 
 .contactInfoColumnItems {
@@ -42,7 +42,12 @@
   margin-bottom: 10px !important;
 }
 
-/* .contactPhoneInput{
+.contactPhoneInput{
+  height: 56px !important; 
+  width:inherit !important;
+}
+
+/* .form-control{
   height: 56px !important; 
   width:inherit !important;
 } */

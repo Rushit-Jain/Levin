@@ -2,16 +2,19 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import CircuitCell from "./CircuitCell";
 import CircuitSwitch from "./CircuitSwitch";
+import "./About.css";
 
 const About = (props) => {
   return (
-    <Container>
+    <Container className="about-container">
       <Row style={{ marginBottom: "50px" }}>
-        <h1 style={{ margin: "auto" }}>About Us</h1>
+        <h1 className="about-heading" style={{ margin: "auto" }}>
+          About Us
+        </h1>
       </Row>
       <Row>
         <Col xs={12} lg={3}>
-          <h2>HISTORY</h2>
+          <h2 className="about-subheading">HISTORY</h2>
           <p>
             The journey began at ['Light House PROPER NAME'] in [YEAR] as a
             [wholesale/retail] [lighting/switch] selling shop in Madras (now
@@ -31,7 +34,7 @@ const About = (props) => {
           <CircuitCell />
         </Col>
         <Col xs={12} lg={4}>
-          <h2>OPERATION AT LEVIN</h2>
+          <h2 className="about-subheading">OPERATION AT LEVIN</h2>
           <p>
             Established by Shri Jayantilal Jain in [YEAR] in Thane's Vasai,
             Ritzy Industries became the first manufacturing unit for Levin.
@@ -52,7 +55,7 @@ const About = (props) => {
           <CircuitCell />
         </Col>
         <Col xs={12} lg={3}>
-          <h2>LEVIN, TODAY</h2>
+          <h2 className="about-subheading">QUALITY ASSURANCE</h2>
           <p>
             Today, Levin sells its products to almost all the major Indian
             cities. All the products manufactured under Levin are produced at

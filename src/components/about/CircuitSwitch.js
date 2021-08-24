@@ -22,7 +22,7 @@ const CircuitSwitch = (props) => {
         r="1.5%"
         stroke="red"
         stroke-width="1"
-        fill="white"
+        fill="transparent"
       />
       <line
         x1="50%"
@@ -37,7 +37,7 @@ const CircuitSwitch = (props) => {
         r="1.5%"
         stroke="red"
         stroke-width="1"
-        fill="white"
+        fill="transparent"
       />
       <circle
         cx="50%"
@@ -45,7 +45,7 @@ const CircuitSwitch = (props) => {
         r="1.5%"
         stroke="red"
         stroke-width="1"
-        fill="white"
+        fill="transparent"
       />
       <line
         x1="50%"
@@ -68,7 +68,7 @@ const CircuitSwitch = (props) => {
         r="1.5%"
         stroke="red"
         stroke-width="1"
-        fill="white"
+        fill="transparent"
       />
     </svg>
   );

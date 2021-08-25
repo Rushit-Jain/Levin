@@ -92,14 +92,24 @@ class Contact extends Component {
   render() {
     return (
       <React.Fragment>
-
-        <Row className="contactbox_row1" style={{margin:0, padding:"15px", alignItems:"center", marginBottom:"15px"}}>
-          <Col className="outer-box-image" xs={12} md={6}>  
+        <Row
+          className="contactbox_row1"
+          style={{
+            margin: 0,
+            padding: "15px",
+            alignItems: "center",
+            marginBottom: "15px",
+          }}
+        >
+          <Col className="outer-box-image" xs={12} md={6}>
             <Col className="inner-box-image">
-              <img src={contactImg} style={{background:"antiquewhite", width:"80%"}}/>
+              <img
+                src={contactImg}
+                style={{ background: "antiquewhite", width: "80%" }}
+              />
             </Col>
           </Col>
-          <Col style={{alignSelf: "center"}}>
+          <Col style={{ alignSelf: "center" }}>
             <h2 className="about-heading">Contact</h2>
             <h6 className="contact-subheading">
               Any questions or remarks? Write us a message!
@@ -127,7 +137,9 @@ class Contact extends Component {
                             fontFamily: "BeonFont",
                           }}
                         >
-                          <h3 style={{color:"#990011"}}>Contact Information</h3>
+                          <h3 style={{ color: "#990011" }}>
+                            Contact Information
+                          </h3>
                         </Col>
                       </Row>
                       <br />
@@ -244,7 +256,7 @@ class Contact extends Component {
                           <PhoneInput
                             country={"us"}
                             inputClass={
-                              this.state.phoneClassName + " contactPhoneInput " 
+                              this.state.phoneClassName + " contactPhoneInput "
                             }
                             buttonClass={
                               this.state.phoneClassName + " dropdown-bg"
@@ -375,7 +387,6 @@ class Contact extends Component {
             </Row>
           </Row>
         </Container>
-
       </React.Fragment>
     );
   }

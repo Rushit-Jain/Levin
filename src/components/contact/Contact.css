@@ -10,9 +10,10 @@
 
 .contactInfoColumn {
   border-radius: 15px;
-  background-color: #ecececad;
+  /* background-color: #ecececad; */
+  background-color: antiquewhite;
   color: black;
-  padding: 20px ;
+  padding: 20px;
 }
 
 .contactInfoColumnItems {
@@ -54,7 +55,7 @@
 }
 
 .glass {
-  background: rgba(255,255,255, 0.59);
+  background: rgba(255, 255, 255, 0.59);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
@@ -62,10 +63,10 @@
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.bgImage{
+.bgImage {
   /* background-image: url(./../../assets/formbg.svg); */
   background-position: center;
-  background-size:cover;
+  background-size: cover;
   background-repeat: no-repeat;
   margin: 15px !important;
   border-radius: 10px;
@@ -77,33 +78,34 @@
   margin: 0px !important;
 }
 
-.dropdown-bg{
+.dropdown-bg {
   background: transparent !important;
-  border: 1px solid #c4c4c4 ;
+  border: 1px solid #c4c4c4;
 }
 
 .contactPhoneInput {
   height: 56px !important;
   width: inherit !important;
   background-color: transparent !important ;
-  border: 1px solid #c4c4c4 ;
+  border: 1px solid #c4c4c4;
 }
 
-.dropdown-bg:hover, .contactPhoneInput:hover{
+.dropdown-bg:hover,
+.contactPhoneInput:hover {
   border: 1px solid black;
 }
 
-.inner-box-image{
+.inner-box-image {
   padding: 5%;
 }
 
-.social-media-contact:hover{
+.social-media-contact:hover {
   color: #990011 !important ;
 }
 /* #faebd7 skin color */
 /* #990011 maroon color */
 
-.contact-err-msg{
+.contact-err-msg {
   color: #990011;
-  font-weight: 800 ;
+  font-weight: 800;
 }

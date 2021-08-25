@@ -1,31 +1,24 @@
 .contactbox {
-  background-color: rgb(236, 236, 236);
+  /* background-color: #ececec; */
   padding: 15px;
 }
 
 .contactbox_row1 {
   text-align: center;
-}
-
-.contactbox_row2 {
-  border-radius: 10px;
-  background-color: white;
-  padding: 15px;
-  margin: 15px !important;
+  background-color: antiquewhite;
 }
 
 .contactInfoColumn {
   border-radius: 15px;
-  background-color: lightcoral;
-  margin-bottom: 15px;
-  padding: 20px;
+  background-color: #ecececad;
+  color: black;
+  padding: 20px ;
 }
 
 .contactInfoColumnItems {
   margin: 5px;
   margin-bottom: 20px;
 }
-
 .contactInfoColumnIcons {
   margin: 5px;
   margin-bottom: 20px;
@@ -37,31 +30,80 @@
   justify-content: space-around;
 }
 
-.contactFormRow{
+.contactFormRow {
   padding: 5px;
   margin-bottom: 10px !important;
 }
 
-.contactPhoneInput{
-  height: 56px !important; 
-  width:inherit !important;
-}
-
-.formSubmitButton{
+.formSubmitButton {
   display: flex;
-  justify-content:center;
+  justify-content: center;
 }
 
-/* .errColor{
-  border: 1px;
-  border-color: #dc004e;
-  border-radius: 2px;
-  border-style: solid;
+.phoneborder {
+  border: 2px solid #3f51b5 !important;
+  box-shadow: none !important;
 }
 
-.successColor{
-  border: 1px;
-  border-color: #4caf50;
-  border-radius: 2px;
-  border-style: solid;
-} */
+.contact-subheading {
+  font-family: "Raleway";
+  font-size: 25pt;
+  font-weight: 400;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+.glass {
+  background: rgba(255,255,255, 0.59);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.bgImage{
+  /* background-image: url(./../../assets/formbg.svg); */
+  background-position: center;
+  background-size:cover;
+  background-repeat: no-repeat;
+  margin: 15px !important;
+  border-radius: 10px;
+}
+
+.contactbox_row2 {
+  border-radius: 10px;
+  padding: 15px;
+  margin: 0px !important;
+}
+
+.dropdown-bg{
+  background: transparent !important;
+  border: 1px solid #c4c4c4 ;
+}
+
+.contactPhoneInput {
+  height: 56px !important;
+  width: inherit !important;
+  background-color: transparent !important ;
+  border: 1px solid #c4c4c4 ;
+}
+
+.dropdown-bg:hover, .contactPhoneInput:hover{
+  border: 1px solid black;
+}
+
+.inner-box-image{
+  padding: 5%;
+}
+
+.social-media-contact:hover{
+  color: #990011 !important ;
+}
+/* #faebd7 skin color */
+/* #990011 maroon color */
+
+.contact-err-msg{
+  color: #990011;
+  font-weight: 800 ;
+}

@@ -5,7 +5,6 @@ import CallRoundedIcon from "@material-ui/icons/CallRounded";
 import EmailRoundedIcon from "@material-ui/icons/EmailRounded";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
-import TwitterIcon from "@material-ui/icons/Twitter";
 import RoomIcon from "@material-ui/icons/Room";
 import TextField from "@material-ui/core/TextField";
 // import Icon from '@material-ui/core/Icon';
@@ -19,7 +18,59 @@ import "./Contact.css";
 class Contact extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      name:"",
+      emailId:"",
+      subject:"",
+      message:"",
+      phone:"",
+      validName:false,
+      validEmailId: false,
+      validSubject: false,
+    }
   }
+
+  checkName = (e) => {
+    let name = e.target.value;
+    if(name===""){
+      this.setState({name:name, validName:false})
+    }
+    else if(name.match(/^[a-zA-Z\s]+$/)){
+      this.setState({name:name, validName:true})
+    }
+    else{
+      this.setState({validName:false})
+    }
+  }
+
+  checkSubject = (e) => {
+    let subject = e.target.value;
+    if(subject===""){
+      this.setState({subject:subject, validSubject:false})
+    }
+    else if(subject.match(/^[a-zA-Z\s]+$/)){
+      this.setState({subject:subject, validSubject:true})
+    }
+    else{
+      this.setState({validSubject:false})
+    }
+  }
+
+  checkEmail = (e) => {
+    let email = e.target.value;
+    if(email===""){
+      this.setState({emailId:email, validEmailId:false})
+    }
+    else if(email.match(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/)){
+      this.setState({emailId:email, validEmailId:true})
+    }
+    else{
+      this.setState({validEmailId:false})
+    }
+  }
+
+
 
   render() {
     return (
@@ -51,19 +102,21 @@ class Contact extends Component {
             </Row>
 
             <Row className="contactInfoColumnItems">
-              <Col>
+              <Col className="px-0 py-0 ml-3 my-0 mr-2" xs={1}>
                 <CallRoundedIcon style={{ color: "white" }} />
-                &nbsp;&nbsp;
+              </Col>
+              <Col className="pl-0 py-0 pr-1" >
                 <a href="tel:+91 9920338899" style={{ color: "white" }}>
-                  +91 9920338899
+                  +91&nbsp;9920338899
                 </a>
               </Col>
             </Row>
 
             <Row className="contactInfoColumnItems">
-              <Col>
+              <Col className="px-0 py-0 ml-3 my-0 mr-2" xs={1}>
                 <EmailRoundedIcon style={{ color: "white" }} />
-                &nbsp;&nbsp;
+              </Col>
+              <Col className="pl-0 py-0 pr-1" >
                 <a href="mailto:levin@gmail.com" style={{ color: "white" }}>
                   levinswitches@gmail.com
                 </a>
@@ -71,15 +124,18 @@ class Contact extends Component {
             </Row>
 
             <Row className="contactInfoColumnItems">
-              <Col>
+              {/* <Col> */}
+              <Col className="px-0 py-0 ml-3 my-0 mr-2" xs={1}>
                 <RoomIcon style={{ color: "white" }} />
-                &nbsp;&nbsp;
+              </Col>
+              <Col className="pl-0 py-0 pr-1" >
                 <a style={{ color: "white" }}>
                   Ritzy Industries, Gala No. 6&amp;7, Raj Prabha Mohan
                   Industrial Estate, Naikpada, Valiv, Vasai East, Thane,
                   Maharashtra - 401208
                 </a>
               </Col>
+              {/* </Col> */}
             </Row>
             <br />
             <br />
@@ -102,15 +158,16 @@ class Contact extends Component {
           <Col className="contactInputColumn">
             <form noValidate autoComplete="off">
               <Row className="contactFormRow">
-                <Col>
+                <Col xs={12} lg={6} className="mb-sm-3 mb-3 mb-lg-0">
                   <TextField
                     label="Name"
                     variant="outlined"
-                    color="secondary"
+                    color="primary"
+                    onBlur={this.checkName.bind(this)}
                     fullWidth
                   />
                 </Col>
-                <Col>
+                <Col xs={12} lg={6}>
                   <PhoneInput
                     country={"us"}
                     inputClass="contactPhoneInput"
@@ -124,7 +181,8 @@ class Contact extends Component {
                   <TextField
                     label="Email"
                     variant="outlined"
-                    color="secondary"
+                    color="primary"
+                    onBlur={this.checkEmail.bind(this)}
                     fullWidth
                   />
                 </Col>
@@ -134,7 +192,7 @@ class Contact extends Component {
                   <TextField
                     label="Subject of Enquiry"
                     variant="outlined"
-                    color="secondary"
+                    color="primary"
                     fullWidth
                   />
                 </Col>
@@ -147,14 +205,14 @@ class Contact extends Component {
                     multiline
                     rows={4}
                     fullWidth
-                    color="secondary"
+                    color="primary"
                     variant="outlined"
                   />
                 </Col>
               </Row>
 
               <Row className="contactFormRow">
-                <Col>
+                <Col className="formSubmitButton">
                   <Button variant="outline-success">Send</Button>
                 </Col>
               </Row>

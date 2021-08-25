@@ -47,7 +47,21 @@
   width:inherit !important;
 }
 
-/* .form-control{
-  height: 56px !important; 
-  width:inherit !important;
+.formSubmitButton{
+  display: flex;
+  justify-content:center;
+}
+
+/* .errColor{
+  border: 1px;
+  border-color: #dc004e;
+  border-radius: 2px;
+  border-style: solid;
+}
+
+.successColor{
+  border: 1px;
+  border-color: #4caf50;
+  border-radius: 2px;
+  border-style: solid;
 } */

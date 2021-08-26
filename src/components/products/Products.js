@@ -52,7 +52,13 @@ class Products extends Component {
           </Col>
         </Row>
         <Container>
-          <Row style={{ display: "flex", justifyContent: "space-around" }}>
+          <Row
+            style={{
+              display: "flex",
+              justifyContent: "space-around",
+              gap: "20px",
+            }}
+          >
             <img
               onClick={() => this.handleRangeChange("dolby")}
               height="100px"

@@ -93,14 +93,14 @@ class Contact extends Component {
     return (
       <React.Fragment>
         <Row
-          className="contactbox_row1"
-          style={{
-            margin: 0,
-            padding: "15px",
-            alignItems: "center",
-            marginBottom: "15px",
-          }}
-        >
+            className="contactbox_row1"
+            style={{
+              margin: 0,
+              padding: "15px",
+              alignItems: "center",
+              marginBottom: "15px",
+            }}
+          >
           <Col className="outer-box-image" xs={12} md={6}>
             <Col className="inner-box-image">
               <img
@@ -116,7 +116,7 @@ class Contact extends Component {
             </h6>
           </Col>
         </Row>
-
+      <div className="contact-form-bg" >
         <Container className="contactbox">
           {/* Below is the code for the actual form  */}
           <Row>
@@ -153,8 +153,8 @@ class Contact extends Component {
 
                   <Row className="contactInfoColumnItems">
                     <Col className="px-0 py-0 ml-3 my-0 mr-2" xs={1}>
-                      <a href="tel:+91 9920338899" style={{ color: "black" }}>
-                        <CallRoundedIcon style={{ color: "black" }} />
+                      <a href="tel:+91 9920338899" style={{ color: "black" }} >
+                        <CallRoundedIcon style={{ color: "black" }} className="contact-info-icons"/>
                       </a>
                     </Col>
                     <Col className="pl-0 py-0 pr-1">
@@ -166,11 +166,8 @@ class Contact extends Component {
 
                   <Row className="contactInfoColumnItems">
                     <Col className="px-0 py-0 ml-3 my-0 mr-2" xs={1}>
-                      <a
-                        href="mailto:levinswitches@gmail.com"
-                        style={{ color: "black" }}
-                      >
-                        <EmailRoundedIcon style={{ color: "black" }} />
+                      <a href="mailto:levinswitches@gmail.com" style={{ color: "black" }}>
+                        <EmailRoundedIcon style={{ color: "black" }} className="contact-info-icons"/>
                       </a>
                     </Col>
                     <Col className="pl-0 py-0 pr-1">
@@ -185,7 +182,7 @@ class Contact extends Component {
 
                   <Row className="contactInfoColumnItems">
                     <Col className="px-0 py-0 ml-3 my-0 mr-2" xs={1}>
-                      <RoomIcon style={{ color: "black" }} />
+                      <RoomIcon style={{ color: "black" }} className="contact-info-icons"/>
                     </Col>
                     <Col className="pl-0 py-0 pr-1">
                       <a style={{ color: "black" }}>
@@ -201,13 +198,13 @@ class Contact extends Component {
                     <Col className="icons">
                       <a href="https://www.facebook.com/levinswitches">
                         <FacebookIcon
-                          className="social-media-contact"
+                          className="contact-social-media"
                           style={{ color: "black", "font-size": "40pt" }}
                         />
                       </a>
                       <a href="https://www.instagram.com/levinswitches_india/">
                         <InstagramIcon
-                          className="social-media-contact"
+                          className="contact-social-media"
                           style={{ color: "black", "font-size": "40pt" }}
                         />
                       </a>
@@ -261,7 +258,6 @@ class Contact extends Component {
                             buttonClass={
                               this.state.phoneClassName + " dropdown-bg"
                             }
-                            // value={this.state.phone}
                             onChange={(phone) => this.storePhone(phone)}
                             onFocus={this.colorAdd}
                             onBlur={this.colorRemove}
@@ -387,6 +383,7 @@ class Contact extends Component {
             </Row>
           </Row>
         </Container>
+        </div>
       </React.Fragment>
     );
   }

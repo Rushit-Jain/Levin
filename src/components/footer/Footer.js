@@ -9,13 +9,6 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 const Footer = (props) => {
   return (
     <div className="footer">
-      <hr
-        style={{
-          background: "rgb(150, 152, 154)",
-          height: "1px",
-          marginBottom: "30px",
-        }}
-      />
       <div className="row">
         <div className="col-lg-4 col-12">
           <img className="footer-logo mx-auto d-block" src={logo} />
@@ -40,6 +33,7 @@ const Footer = (props) => {
         <div className="col-lg-4 d-flex align-items-center pt-4 pt-lg-0 justify-content-center col-12">
           <a href="https://www.facebook.com/levinswitches" target="_blank">
             <FacebookIcon
+              className="footer-social-media"
               style={{ fontSize: "40pt", color: "rgb(150, 152, 154)" }}
             />
           </a>
@@ -48,6 +42,7 @@ const Footer = (props) => {
             target="_blank"
           >
             <InstagramIcon
+              className="footer-social-media"
               style={{ fontSize: "40pt", color: "rgb(150, 152, 154)" }}
             />
           </a>

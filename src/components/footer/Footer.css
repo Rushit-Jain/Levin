@@ -1,10 +1,13 @@
 .footer {
   padding: 25px;
-  /* background-image: linear-gradient(to right, red, white); */
   background-color: white;
 }
 
 .footer-logo {
   height: 100px;
   width: 102px;
+}
+
+.footer-social-media:hover{
+  color: #ec1f25 !important;
 }

@@ -18,6 +18,12 @@
   margin: 5px;
   margin-bottom: 20px;
 }
+
+.item-row:hover .item path,
+.item-row:hover .item path {
+  color: #990011 !important;
+}
+
 .contactInfoColumnIcons {
   margin: 5px;
   margin-bottom: 20px;
@@ -96,7 +102,8 @@
   padding: 5%;
 }
 
-.contact-social-media:hover, .contact-info-icons:hover {
+.contact-social-media:hover,
+.contact-info-icons:hover {
   color: #990011 !important ;
 }
 /* #faebd7 skin color */
@@ -107,8 +114,8 @@
   font-weight: 800;
 }
 
-.contact-form-bg{
-  background-image:url('./../../assets/contactbg.svg');
+.contact-form-bg {
+  background-image: url("./../../assets/contactbg.svg");
   background-size: cover;
   background-position: center;
   padding: 30px 0px;

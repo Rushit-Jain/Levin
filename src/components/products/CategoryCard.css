@@ -1,3 +1,13 @@
+.products-category-heading {
+  font-weight: 1000;
+  /* font-family: "Raleway"; */
+  font-family: "Megrim", cursive;
+  font-size: 7vw;
+  color: #003049;
+  /* letter-spacing: 0.25cm; */
+  /* word-spacing: 0.25cm; */
+}
+
 .products-category-card {
   margin-right: 10% !important;
   margin-left: 10% !important;
@@ -5,48 +15,49 @@
   background-size: cover;
   background-position: center;
   border-radius: 25px;
-  height: 40vh;
+  height: 50vh;
   justify-content: center;
   text-align: center;
   align-items: center;
+  white-space: pre-wrap;
 }
 
-.products-triangle-1 {
-  background-image: url("../../assets/category_card_bg/T1.svg");
-}
-
-.products-triangle-2 {
-  background-image: url("../../assets/category_card_bg/T2.svg");
-}
-
-.products-triangle-3 {
-  background-image: url("../../assets/category_card_bg/T3.svg");
-}
-
-.products-triangle-4 {
-  background-image: url("../../assets/category_card_bg/T4.svg");
-}
-
-.products-triangle-5 {
-  background-image: url("../../assets/category_card_bg/T5.svg");
-}
-
-.products-wave-1 {
+.products-category-bg-1 {
   background-image: url("../../assets/category_card_bg/W1.svg");
 }
 
-.products-wave-2 {
+.products-category-bg-2 {
+  background-image: url("../../assets/category_card_bg/T1.svg");
+}
+
+.products-category-bg-3 {
   background-image: url("../../assets/category_card_bg/W2.svg");
 }
 
-.products-wave-3 {
+.products-category-bg-4 {
+  background-image: url("../../assets/category_card_bg/T2.svg");
+}
+
+.products-category-bg-5 {
   background-image: url("../../assets/category_card_bg/W3.svg");
 }
 
-.products-wave-4 {
+.products-category-bg-6 {
+  background-image: url("../../assets/category_card_bg/T3.svg");
+}
+
+.products-category-bg-7 {
   background-image: url("../../assets/category_card_bg/W4.svg");
 }
 
-.products-wave-5 {
+.products-category-bg-8 {
+  background-image: url("../../assets/category_card_bg/T4.svg");
+}
+
+.products-category-bg-9 {
   background-image: url("../../assets/category_card_bg/W5.svg");
+}
+
+.products-category-bg-10 {
+  background-image: url("../../assets/category_card_bg/T5.svg");
 }

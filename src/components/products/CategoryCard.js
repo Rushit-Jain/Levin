@@ -6,7 +6,7 @@ const CategoryCard = (props) => {
   return (
     <Row className={"products-category-card " + props.background}>
       <Col>
-        <h1>Switches</h1>
+        <span className="products-category-heading">{props.categoryName}</span>
       </Col>
     </Row>
   );

@@ -107,8 +107,27 @@ class Products extends Component {
             />
           </Row>
         </Container>
-        <CategoryCard background="products-wave-1" />
-        <CategoryCard background="products-triangle-4" />
+        <CategoryCard
+          categoryName="AC &amp; Geyser Box"
+          background="products-category-bg-1"
+        />
+        <CategoryCard
+          categoryName="LED &amp; Hotel Accessories"
+          background="products-category-bg-2"
+        />
+        <CategoryCard
+          categoryName="Motor Starters"
+          // categoryName={[
+          //   "Motor Starters",
+          //   <br />,
+          //   <br />,
+          //   "Tiny MCB",
+          //   <br />,
+          //   <br />,
+          //   "AC & Geyser Box",
+          // ]}
+          background="products-category-bg-3"
+        />
       </>
     );
   }

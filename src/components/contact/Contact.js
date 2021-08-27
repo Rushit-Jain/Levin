@@ -15,7 +15,7 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
 import "./Contact.css";
-import contactImg from "./../../assets/contact.svg";
+import contactImg from "./../../assets/illustrations/contact.svg";
 import { maxWidth, width } from "@material-ui/system";
 
 class Contact extends Component {

@@ -2,17 +2,17 @@ import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./Products.css";
 import CategoryCard from "./CategoryCard";
-import open_doric from "../../assets/open_doric.svg";
-import open_dorun from "../../assets/open_dorun.svg";
-import open_dolby from "../../assets/open_dolby.svg";
-import open_mcb from "../../assets/open_mcb.svg";
-import open_accessories from "../../assets/open_accessories.svg";
-import closed_doric from "../../assets/closed_doric.svg";
-import closed_dorun from "../../assets/closed_dorun.svg";
-import closed_dolby from "../../assets/closed_dolby.svg";
-import closed_mcb from "../../assets/closed_mcb.svg";
-import closed_accessories from "../../assets/closed_accessories.svg";
-import productsJumbotronImage from "../../assets/products.svg";
+import open_doric from "../../assets/product_buttons/open_doric.svg";
+import open_dorun from "../../assets/product_buttons/open_dorun.svg";
+import open_dolby from "../../assets/product_buttons/open_dolby.svg";
+import open_mcb from "../../assets/product_buttons/open_mcb.svg";
+import open_accessories from "../../assets/product_buttons/open_accessories.svg";
+import closed_doric from "../../assets/product_buttons/closed_doric.svg";
+import closed_dorun from "../../assets/product_buttons/closed_dorun.svg";
+import closed_dolby from "../../assets/product_buttons/closed_dolby.svg";
+import closed_mcb from "../../assets/product_buttons/closed_mcb.svg";
+import closed_accessories from "../../assets/product_buttons/closed_accessories.svg";
+import productsJumbotronImage from "../../assets/illustrations/products.svg";
 
 class Products extends Component {
   constructor(props) {
@@ -107,8 +107,8 @@ class Products extends Component {
             />
           </Row>
         </Container>
-        <CategoryCard background="category-card-row-wave" />
-        <CategoryCard background="category-card-row-triangle" />
+        <CategoryCard background="products-wave-1" />
+        <CategoryCard background="products-triangle-4" />
       </>
     );
   }

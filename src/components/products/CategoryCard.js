@@ -4,7 +4,7 @@ import "./CategoryCard.css";
 
 const CategoryCard = (props) => {
   return (
-    <Row className={props.background}>
+    <Row className={"products-category-card " + props.background}>
       <Col>
         <h1>Switches</h1>
       </Col>

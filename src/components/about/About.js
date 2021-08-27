@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import CircuitCell from "./CircuitCell";
 import CircuitSwitch from "./CircuitSwitch";
-import aboutJumbotronImage from "../../assets/about.svg";
+import aboutJumbotronImage from "../../assets/illustrations/about.svg";
 import "./About.css";
 
 const About = (props) => {

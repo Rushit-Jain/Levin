@@ -1,0 +1,26 @@
+.category-card-row-wave {
+  margin-right: 10% !important;
+  margin-left: 10% !important;
+  margin-top: 8vh;
+  background-image: url("../../assets/categorycardbg.svg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 25px;
+  height: 40vh;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.category-card-row-triangle {
+  margin-right: 10% !important;
+  margin-left: 10% !important;
+  margin-top: 8vh;
+  background-image: url("../../assets/categorycardbg3.svg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 25px;
+  height: 40vh;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}

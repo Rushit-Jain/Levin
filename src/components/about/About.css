@@ -1,21 +1,17 @@
 .about-container {
-  background-image: url("./aboutbg.gif");
+  background-image: url("../../assets/page_background/aboutbg.gif");
   background-size: none 100%;
   background-repeat: no-repeat;
 }
 
 .about-heading {
   font-family: "TeslaFont";
-  /* font-family: "NeonFont"; */
   font-size: 75pt;
   color: #990011ff;
-  /* color: purple; */
-  /* color: navy; */
   font-weight: 500;
 }
 
 .about-subheading {
-  /* font-family: "NeonFont"; */
   font-family: "BeonFont";
   font-size: 30pt;
   font-weight: 200;

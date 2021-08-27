@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./Products.css";
+import CategoryCard from "./CategoryCard";
 import open_doric from "../../assets/open_doric.svg";
 import open_dorun from "../../assets/open_dorun.svg";
 import open_dolby from "../../assets/open_dolby.svg";
@@ -106,6 +107,8 @@ class Products extends Component {
             />
           </Row>
         </Container>
+        <CategoryCard background="category-card-row-wave" />
+        <CategoryCard background="category-card-row-triangle" />
       </>
     );
   }

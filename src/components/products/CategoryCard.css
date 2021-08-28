@@ -3,24 +3,23 @@
   /* font-family: "Raleway"; */
   /* font-family: "Rye", cursive; */
   font-family: 'PanamaFont';
-  font-size: 6vw;
+  font-size: 25pt;
   color: #003049;
+  text-align: center;
   /* letter-spacing: 0.25cm; */
   /* word-spacing: 0.25cm; */
 }
 
 .products-category-card {
-  margin-right: 10% !important;
-  margin-left: 10% !important;
-  margin-top: 8vh;
+  display: flex;
+  margin:10px !important;
+  padding: 0 10px;
   background-size: cover;
   background-position: center;
   border-radius: 25px;
-  height: 40vh;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  white-space: pre-wrap;
+  height: 30vh;
+  justify-content: center !important;
+  align-items: center ;
 }
 
 .products-category-bg-1 {

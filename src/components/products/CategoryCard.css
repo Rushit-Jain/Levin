@@ -2,7 +2,7 @@
   font-weight: 1000;
   /* font-family: "Raleway"; */
   /* font-family: "Rye", cursive; */
-  font-family: 'PanamaFont';
+  font-family: "PanamaFont";
   font-size: 25pt;
   color: #003049;
   text-align: center;
@@ -12,46 +12,50 @@
 
 .products-category-card {
   display: flex;
-  margin:10px !important;
+  margin: 10px !important;
   padding: 0 10px;
   background-size: cover;
   background-position: center;
   border-radius: 25px;
   height: 30vh;
   justify-content: center !important;
-  align-items: center ;
+  align-items: center;
 }
 
-.products-category-bg-1 {
-  background-image: url("../../assets/category_card_bg/W1.svg");
-}
-
-.products-category-bg-2 {
+.products-category-bg-0 {
   background-image: url("../../assets/category_card_bg/T1.svg");
 }
 
-.products-category-bg-3 {
-  background-image: url("../../assets/category_card_bg/W2.svg");
-}
-
-.products-category-bg-4 {
+.products-category-bg-1 {
   background-image: url("../../assets/category_card_bg/T2.svg");
 }
 
-.products-category-bg-5 {
-  background-image: url("../../assets/category_card_bg/W3.svg");
-}
-
-.products-category-bg-6 {
+.products-category-bg-2 {
   background-image: url("../../assets/category_card_bg/T3.svg");
 }
 
+.products-category-bg-3 {
+  background-image: url("../../assets/category_card_bg/T4.svg");
+}
+
+.products-category-bg-4 {
+  background-image: url("../../assets/category_card_bg/T5.svg");
+}
+
+.products-category-bg-5 {
+  background-image: url("../../assets/category_card_bg/T6.svg");
+}
+
+.products-category-bg-6 {
+  background-image: url("../../assets/category_card_bg/W2.svg");
+}
+
 .products-category-bg-7 {
-  background-image: url("../../assets/category_card_bg/W4.svg");
+  background-image: url("../../assets/category_card_bg/W3.svg");
 }
 
 .products-category-bg-8 {
-  background-image: url("../../assets/category_card_bg/T4.svg");
+  background-image: url("../../assets/category_card_bg/W4.svg");
 }
 
 .products-category-bg-9 {
@@ -59,5 +63,5 @@
 }
 
 .products-category-bg-10 {
-  background-image: url("../../assets/category_card_bg/T5.svg");
+  background-image: url("../../assets/category_card_bg/W1.svg");
 }

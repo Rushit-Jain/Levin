@@ -32,7 +32,7 @@ class LNavbar extends Component {
             <NavLink className="links" to="/about">
               About Us
             </NavLink>
-            <NavLink className="links" to="/products">
+            <NavLink className="links" to="/products/dolby">
               Our Products
             </NavLink>
             <a className="links" target="_blank" href={catalogue}>

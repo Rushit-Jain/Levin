@@ -4,11 +4,9 @@ import "./CategoryCard.css";
 
 const CategoryCard = (props) => {
   return (
-    // <Row className={"products-category-card " + props.background} >
       <Col className={"products-category-card " + props.background} sm={{span:5}}>
         <p className="products-category-heading">{props.categoryName}</p>
       </Col>
-      // </Row>
   );
 };
 

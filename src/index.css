@@ -29,3 +29,15 @@ code {
   font-family: "BeonFont";
   src: local("BeonFont"), url("./assets/fonts/BeonFont.otf") format("opentype");
 }
+
+@font-face {
+  font-family: "FoxFont";
+  src: local("FoxFont"),
+    url("./assets/fonts/FoxFont.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "PanamaFont";
+  src: local("PanamaFont"),
+    url("./assets/fonts/PanamaFont.otf") format("opentype");
+}

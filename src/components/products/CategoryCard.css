@@ -1,8 +1,9 @@
 .products-category-heading {
   font-weight: 1000;
   /* font-family: "Raleway"; */
-  font-family: "Megrim", cursive;
-  font-size: 7vw;
+  /* font-family: "Rye", cursive; */
+  font-family: 'PanamaFont';
+  font-size: 6vw;
   color: #003049;
   /* letter-spacing: 0.25cm; */
   /* word-spacing: 0.25cm; */
@@ -15,7 +16,7 @@
   background-size: cover;
   background-position: center;
   border-radius: 25px;
-  height: 50vh;
+  height: 40vh;
   justify-content: center;
   text-align: center;
   align-items: center;

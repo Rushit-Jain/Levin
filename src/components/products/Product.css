@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.product-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+}
+
+.product-card {
+  background: #f1777c;
+  min-width: 350px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  position: relative;
+}
+
+.product-card .product-img-div {
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-card .product-img-div .product-img {
+  width: 40px;
+}
+
+.product-card .h1-class {
+  color: #fff;
+  font-size: 20px;
+  margin: 15px 0 6px 0;
+}
+
+.product-card .small-class {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 20px;
+}
+
+.label-class {
+  display: block;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  bottom: -18px;
+}
+
+.label-class .input-class {
+  display: none;
+}
+
+.label-class .span-class {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 10px;
+}
+
+.label-class .span-class i {
+  color: #f1777c;
+  cursor: pointer;
+  transition: all 200ms;
+}
+
+.label-class .socialicon {
+  background: #f1777c;
+  min-width: 350px;
+  height: 100px;
+  position: absolute;
+  bottom: -14px;
+  border-radius: 12px;
+  z-index: -1;
+  /* transition: all 250ms cubic-bezier(0, 1.82, 0.58, 1); */
+  transition: all 2s cubic-bezier(0, 1.82, 0.58, 1);
+}
+
+.label-class .socialicon ul {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+
+.label-class .socialicon ul li {
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  margin: 0 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.label-class .socialicon ul li a {
+  text-decoration: none;
+}
+
+.label-class .socialicon ul li a i {
+  display: block;
+  text-align: center;
+  line-height: 36px;
+  color: #f1777c;
+}
+
+.label-class input:checked ~ span i {
+  transform: rotate(182deg);
+}
+
+.label-class input:checked ~ .socialicon {
+  /* bottom: -110px; */
+  bottom: -130px;
+}

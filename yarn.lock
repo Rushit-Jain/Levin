@@ -1222,7 +1222,6 @@
     "minimatch" "^3.0.4"
     "strip-json-comments" "^3.1.1"
 
-<<<<<<< HEAD
 "@firebase/analytics-compat@0.1.0":
   "integrity" "sha512-oaf1FEF7cKci5tO7f52dH63/ZwkBqbdSLLpgo6kyoYoYDuY+on4yAc1CIHh3sNj/L8T4Ni81IQvVs9lE/9oOpg=="
   "resolved" "https://registry.npmjs.org/@firebase/analytics-compat/-/analytics-compat-0.1.0.tgz"
@@ -1581,6 +1580,11 @@
   "resolved" "https://registry.npmjs.org/@firebase/webchannel-wrapper/-/webchannel-wrapper-0.5.1.tgz"
   "version" "0.5.1"
 
+"@fortawesome/fontawesome-free@^5.15.4":
+  "integrity" "sha512-eYm8vijH/hpzr/6/1CJ/V/Eb1xQFW2nnUKArb3z+yUWv7HTwj6M7SP957oMjfZjAHU6qpoNc2wQvIxBLWYa/Jg=="
+  "resolved" "https://registry.npmjs.org/@fortawesome/fontawesome-free/-/fontawesome-free-5.15.4.tgz"
+  "version" "5.15.4"
+
 "@grpc/grpc-js@^1.3.2":
   "integrity" "sha512-CKQVuwuSPh40tgOkR7c0ZisxYRiN05PcKPW72mQL5y++qd7CwBRoaJZvU5xfXnCJDFBmS3qZGQ71Frx6Ofo2XA=="
   "resolved" "https://registry.npmjs.org/@grpc/grpc-js/-/grpc-js-1.3.7.tgz"
@@ -1598,12 +1602,6 @@
     "long" "^4.0.0"
     "protobufjs" "^6.10.0"
     "yargs" "^16.1.1"
-=======
-"@fortawesome/fontawesome-free@^5.15.4":
-  "integrity" "sha512-eYm8vijH/hpzr/6/1CJ/V/Eb1xQFW2nnUKArb3z+yUWv7HTwj6M7SP957oMjfZjAHU6qpoNc2wQvIxBLWYa/Jg=="
-  "resolved" "https://registry.npmjs.org/@fortawesome/fontawesome-free/-/fontawesome-free-5.15.4.tgz"
-  "version" "5.15.4"
->>>>>>> 3d6f3f69a86db9120b174af733da6c04bd6850a3
 
 "@hapi/address@2.x.x":
   "integrity" "sha512-QD1PhQk+s31P1ixsX0H0Suoupp3VMXzIVMSwobR3F3MSUO2YCV0B7xqLcUw/Bh8yuvd3LhpyqLQWTNcRmp6IdQ=="

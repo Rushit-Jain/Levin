@@ -10,11 +10,8 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "bootstrap": "^4.6.0",
-<<<<<<< HEAD
     "firebase": "^9.0.0",
-=======
     "gooey-react": "^1.1.0",
->>>>>>> 3d6f3f69a86db9120b174af733da6c04bd6850a3
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.2",

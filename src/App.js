@@ -18,7 +18,7 @@ const ProductWithCategory = (props) => {
   );
 };
 
-function App(props) {
+function App() {
   const [selectedCategoryName, changeSelectedCategoryName] = useState(null);
   return (
     <div>
@@ -28,20 +28,19 @@ function App(props) {
         <Route path="/contact" exact component={Contact} />
         <Route
           path="/products/:range/:category"
-          component={() => (
+          render={({ match }) => (
             <ProductWithCategory
+              match={match}
               selectedCategoryName={selectedCategoryName}
-              match={props.match}
             />
           )}
         />
         <Route
-          path="/products/"
+          path="/products/:range"
           component={() => (
             <Products changeSelectedCategoryName={changeSelectedCategoryName} />
           )}
         />
-        {/* <Route path="/home" exact component={LNavbar} /> */}
         <Redirect to="/home" />
       </Switch>
       {/* <Product /> */}
@@ -50,4 +49,4 @@ function App(props) {
   );
 }
 
-export default withRouter(App);
+export default App;

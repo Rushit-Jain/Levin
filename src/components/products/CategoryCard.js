@@ -1,13 +1,21 @@
 import React from "react";
-import { Row, Col } from "react-bootstrap";
+import { withRouter, Link } from "react-router-dom";
+import { Col } from "react-bootstrap";
 import "./CategoryCard.css";
 
 const CategoryCard = (props) => {
   return (
-      <Col className={"products-category-card " + props.background} sm={{span:5}}>
-        <p className="products-category-heading">{props.categoryName}</p>
-      </Col>
+    <Col sm={{ span: 5 }} onClick={() => props.onClick(props.categoryName)}>
+      <Link
+        className={"products-category-card " + props.background}
+        to={`/products/${props.range}/${props.categoryCode}`}
+      >
+        <Col>
+          <p className="products-category-heading">{props.categoryName}</p>
+        </Col>
+      </Link>
+    </Col>
   );
 };
 
-export default CategoryCard;
+export default withRouter(CategoryCard);

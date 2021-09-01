@@ -85,7 +85,12 @@ const categories = {
     "Switch & Socket Combined",
     "5 in 1",
   ],
-  mcb: ["MCB", "Isolator", "Changeover", "RCCB"],
+  mcb: [
+    "Miniature Circuit Breakers", 
+    "Isolator", 
+    "Changeover", 
+    "Residual Current Circuit Breakers"
+  ],
   accessories: [
     "Ceiling Rose",
     "Lamp Holders",
@@ -101,7 +106,7 @@ class Products extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedRange:
+      selectedRange: 
         window.location.pathname.split("/")[
           window.location.pathname.split("/").length - 1
         ] === "dolby"
@@ -173,7 +178,7 @@ class Products extends Component {
             backgroundColor: "antiquewhite",
             textAlign: "center",
           }}
-        >
+          >
           <Col xs={12} md={6}>
             <Col>
               <img
@@ -262,30 +267,7 @@ class Products extends Component {
             />
           </Row>
         </Container>
-<<<<<<< HEAD
-        <>{categoriesLayout}</>
-          {/* <Row className="product-category-row">
-            <CategoryCard
-              categoryName="Motor Starters"
-              // categoryName={[
-              //   "Motor Starters",
-              //   <br />,
-              //   <br />,
-              //   "Tiny MCB",
-              //   <br />,
-              //   <br />,
-              //   "AC & Geyser Box",
-              // ]}
-              background="products-category-bg-3"
-            />
-            <CategoryCard
-              categoryName="LED &amp; Hotel Accessories"
-              background="products-category-bg-2"
-            />
-          </Row> */}
-=======
         {categoriesLayout}
->>>>>>> fb9e317d3a6368426802128af9db02efa3d1d983
       </>
     );
   }

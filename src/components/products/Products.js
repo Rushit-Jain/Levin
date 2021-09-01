@@ -219,17 +219,7 @@ class Products extends Component {
           </Row>
         </Container>
         <>{categoriesLayout}</>
-        {/* <Row className="product-category-row">
-                  <CategoryCard
-                    categoryName="AC &amp; Geyser Box"
-                    background="products-category-bg-1"
-                  />
-                  <CategoryCard
-                    categoryName="LED &amp; Hotel Accessories"
-                    background="products-category-bg-2"
-                  />
-          </Row>
-          <Row className="product-category-row">
+          {/* <Row className="product-category-row">
             <CategoryCard
               categoryName="Motor Starters"
               // categoryName={[

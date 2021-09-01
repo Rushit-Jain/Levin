@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { withRouter } from "react-router-dom";
 import "./Products.css";
 import CategoryCard from "./CategoryCard";
 import open_doric from "../../assets/product_buttons/open_doric.svg";
@@ -14,7 +15,46 @@ import closed_mcb from "../../assets/product_buttons/closed_mcb.svg";
 import closed_accessories from "../../assets/product_buttons/closed_accessories.svg";
 import productsJumbotronImage from "../../assets/illustrations/products.svg";
 
-import { useHistory } from "react-router-dom";
+const categoryCodes = {
+  doric: [
+    "switches",
+    "sockets",
+    "ancilaries",
+    "dimmers-fan-regulators",
+    "bell-led-hotel-series",
+    "motor-starters-tiny-mcb-ac-geyser-box",
+    "switch-plate",
+    "surface-concealed-box",
+  ],
+  dolby: [
+    "switches",
+    "sockets",
+    "dimmers-fan-regulators",
+    "ancillaries",
+    "fuse-tiny-mcb-blank-module",
+    "bell-led-hotel-series",
+    "switch-plates",
+  ],
+  dorun: [
+    "switches",
+    "sockets",
+    "dimmers-fan-regulators",
+    "fuse-mcb",
+    "dp-switch",
+    "ss-combined",
+    "5-in-1",
+  ],
+  accessories: [
+    "ceiling-rose",
+    "lamp-holders",
+    "plug-tops-bed-switch",
+    "conversion-multi-plugs",
+    "door-bells",
+    "ceiling-plates",
+    "power-strip",
+  ],
+  mcb: ["mcb", "isolator", "changeover", "rccb"],
+};
 
 const categories = {
   doric: [
@@ -22,10 +62,8 @@ const categories = {
     "Sockets",
     "Ancillaries",
     "Dimmers & Fan Regulators",
-    "LED Light",
     "Bell, LED & Hotel Series",
-    "Motor Starters & Tiny MCBs",
-    "AC & Geyser Box",
+    "Motor Starters, Tiny MCBs & AC & Geyser Box",
     "Switch Plates",
     "Surface & Concealed Box",
   ],
@@ -47,24 +85,14 @@ const categories = {
     "Switch & Socket Combined",
     "5 in 1",
   ],
-  mcb: [
-    "Single Pole C Type",
-    "Double Pole C Type",
-    "Triple Pole C Type",
-    "Four Pole & Neutral C Type",
-    "Isolator",
-    "Single Pole & Neutral C Type",
-    "Triple Pole & Neutral C Type",
-    "Changeover",
-    "RCCB",
-  ],
+  mcb: ["MCB", "Isolator", "Changeover", "RCCB"],
   accessories: [
     "Ceiling Rose",
     "Lamp Holders",
     "Plug Tops & Bed Switch",
     "Conversion & Multi Plugs",
     "Door Bells",
-    "Surface Box & Ceiling plates",
+    "Ceiling plates",
     "Power Strip",
   ],
 };
@@ -73,7 +101,14 @@ class Products extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedRange: "dolby",
+      selectedRange:
+        window.location.pathname.split("/")[
+          window.location.pathname.split("/").length - 1
+        ] === "dolby"
+          ? "dolby"
+          : window.location.pathname.split("/")[
+              window.location.pathname.split("/").length - 1
+            ],
     };
   }
 
@@ -95,6 +130,9 @@ class Products extends Component {
         categoriesLayout.push(
           <Row className="product-category-row">
             <CategoryCard
+              onClick={this.props.changeSelectedCategoryName}
+              categoryCode={categoryCodes[this.state.selectedRange][i]}
+              range={this.state.selectedRange}
               categoryName={categories[this.state.selectedRange][i]}
               background={"products-category-bg-" + classIndex}
             />
@@ -105,10 +143,16 @@ class Products extends Component {
         categoriesLayout.push(
           <Row className="product-category-row">
             <CategoryCard
+              onClick={this.props.changeSelectedCategoryName}
+              categoryCode={categoryCodes[this.state.selectedRange][i]}
+              range={this.state.selectedRange}
               categoryName={categories[this.state.selectedRange][i]}
               background={"products-category-bg-" + classIndex}
             />
             <CategoryCard
+              onClick={this.props.changeSelectedCategoryName}
+              categoryCode={categoryCodes[this.state.selectedRange][i + 1]}
+              range={this.state.selectedRange}
               categoryName={categories[this.state.selectedRange][i + 1]}
               background={"products-category-bg-" + (classIndex + 1)}
             />
@@ -218,36 +262,7 @@ class Products extends Component {
             />
           </Row>
         </Container>
-        <>{categoriesLayout}</>
-        {/* <Row className="product-category-row">
-                  <CategoryCard
-                    categoryName="AC &amp; Geyser Box"
-                    background="products-category-bg-1"
-                  />
-                  <CategoryCard
-                    categoryName="LED &amp; Hotel Accessories"
-                    background="products-category-bg-2"
-                  />
-          </Row>
-          <Row className="product-category-row">
-            <CategoryCard
-              categoryName="Motor Starters"
-              // categoryName={[
-              //   "Motor Starters",
-              //   <br />,
-              //   <br />,
-              //   "Tiny MCB",
-              //   <br />,
-              //   <br />,
-              //   "AC & Geyser Box",
-              // ]}
-              background="products-category-bg-3"
-            />
-            <CategoryCard
-              categoryName="LED &amp; Hotel Accessories"
-              background="products-category-bg-2"
-            />
-          </Row> */}
+        {categoriesLayout}
       </>
     );
   }
@@ -255,4 +270,4 @@ class Products extends Component {
 
 //  console.log(this.props.history.location.pathname)
 
-export default Products;
+export default withRouter(Products);

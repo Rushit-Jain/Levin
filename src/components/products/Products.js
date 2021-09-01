@@ -85,7 +85,12 @@ const categories = {
     "Switch & Socket Combined",
     "5 in 1",
   ],
-  mcb: ["MCB", "Isolator", "Changeover", "RCCB"],
+  mcb: [
+    "Miniature Circuit Breakers", 
+    "Isolator", 
+    "Changeover", 
+    "Residual Current Circuit Breakers"
+  ],
   accessories: [
     "Ceiling Rose",
     "Lamp Holders",
@@ -101,7 +106,7 @@ class Products extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedRange:
+      selectedRange: 
         window.location.pathname.split("/")[
           window.location.pathname.split("/").length - 1
         ] === "dolby"
@@ -173,7 +178,7 @@ class Products extends Component {
             backgroundColor: "antiquewhite",
             textAlign: "center",
           }}
-        >
+          >
           <Col xs={12} md={6}>
             <Col>
               <img

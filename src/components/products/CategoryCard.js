@@ -6,7 +6,7 @@ import "./CategoryCard.css";
 const CategoryCard = (props) => {
   return (
     <Col sm={{ span: 5 }} onClick={() => props.onClick(props.categoryName)}>
-      <Link
+      <Link sm={{ span: 5 }}
         className={"products-category-card " + props.background}
         to={`/products/${props.range}/${props.categoryCode}`}
       >

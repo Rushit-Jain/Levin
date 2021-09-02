@@ -8,7 +8,7 @@ import { Switch, Redirect, Route, withRouter } from "react-router-dom";
 import ProductCategory from "./components/products/ProductCategory";
 
 const ProductWithCategory = (props) => {
-  console.log(props);
+  // console.log("App.js : ",props);
   return (
     <ProductCategory
       categoryName={props.selectedCategoryName}

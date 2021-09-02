@@ -48,3 +48,10 @@
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
 }
+
+.product-individual-row{
+  margin: 10px;
+  padding: 0px;
+  display: flex;
+  justify-content: space-between;
+}

@@ -21,7 +21,20 @@ function Product() {
             </span>
 
             <div className="product-dets-class">
-              {/* <ul>
+              
+              <div>Color</div>
+              <div>Code</div>
+              <div>Types</div>
+              
+            </div>
+          </label>
+        </div>
+      </Goo>
+    </div>
+  );
+}
+
+{/* <ul>
                 <li>
                   <a href="#">
                     <i className="fab fa-facebook-f"></i>
@@ -40,15 +53,5 @@ function Product() {
                   </a>
                 </li>
               </ul> */}
-              <div>Color</div>
-              <div>Code</div>
-              <div>Types</div>
-            </div>
-          </label>
-        </div>
-      </Goo>
-    </div>
-  );
-}
 
 export default Product;

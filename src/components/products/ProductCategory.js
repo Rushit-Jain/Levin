@@ -86,15 +86,15 @@ class ProductCategory extends Component {
             <h6 className="products-subheading">{this.props.categoryName}</h6>
           </Col>
         </Row>
-        <Container>
-          <Row style={{margin:0,marginBottom: "50px",padding:0}}>
+        <Container style={{marginBottom: "50px"}}>
+          <Row style={{margin:0}}>
               <Row>
                 <Col>
                     SUBCATEGORY
                 </Col>
               </Row>
               <Row className="product-individual-row">
-                <Col st>
+                <Col >
                     <Product/>
                 </Col>
                 <Col >

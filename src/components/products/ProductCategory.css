@@ -1,6 +1,7 @@
-.product-category-heading {
+.product-category-heading,
+.product-category-title {
   text-transform: capitalize;
-  font-family: "TeslaFont";
+  font-family: 'TeslaFont';
   font-size: 75pt;
   color: #990011ff;
   font-weight: 500;
@@ -8,7 +9,7 @@
 
 .product-category-mcb-heading {
   text-transform: uppercase;
-  font-family: "TeslaFont";
+  font-family: 'TeslaFont';
   font-size: 75pt;
   color: #990011ff;
   font-weight: 500;
@@ -24,6 +25,12 @@
   animation-duration: 2s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+}
+
+@media (max-width: 576px) {
+  .product-category-title {
+    font-size: 20vw !important;
+  }
 }
 
 @-webkit-keyframes product-doric-fadeIn {
@@ -49,10 +56,10 @@
   animation-name: fadeIn;
 }
 
-.product-individual-row{
-  margin: 0px;
+.product-individual-row {
+  /* margin: 0px;
   margin-bottom: 40px;
-  padding: 0px;
+  padding: 0px; */
   display: flex;
   justify-content: space-between;
 }

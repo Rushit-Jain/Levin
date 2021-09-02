@@ -13,30 +13,38 @@ import Product from "./Product";
 
 class ProductCategory extends Component {
 
-    constructor(props){
-      super(props);
-      this.state={
-        data: null
-      }
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: null
     }
+  }
 
-    componentDidMount(){
-      if (
-        this.props.range == undefined ||
-        this.props.categoryName == undefined ||
-        this.props.category == undefined
-      )
-  
+  componentDidMount() {
+    if (
+      this.props.range == undefined ||
+      this.props.categoryName == undefined ||
+      this.props.category == undefined
+    )
+
       this.props.history.push("/products/dolby");
-  
-      axios
-        .get("https://levin-e1c22-default-rtdb.firebaseio.com/products/dolby/ancillaries.json")
-        .then((res) => this.setState({data:res.data}));
-    }
-    render(){
-      console.log(this.state.data);
-      return (
-        <>
+
+    axios
+      .get(`https://levin-e1c22-default-rtdb.firebaseio.com/products/${this.props.range}/${this.props.category}.json`)
+      .then((res) => this.setState({ data: res.data }));
+  }
+
+  render() {
+    console.log(this.state.data);
+    // let productsRender = (<>Loading...</>)
+    let productsRender = this.state.data ? Object.keys(this.state.data).map(pr => (
+      <Col style={{ marginBottom: "30vh" }} className="px-0 px-sm-4">
+        <Product data={this.state.data[pr]} />
+      </Col>
+    ))
+      : <>Loading...</>
+    return (
+      <>
         <Row
           style={{
             margin: 0,
@@ -46,7 +54,7 @@ class ProductCategory extends Component {
             backgroundColor: "antiquewhite",
             textAlign: "center",
           }}
-          >
+        >
           <Col xs={12} md={6}>
             <Col>
               <img
@@ -54,13 +62,13 @@ class ProductCategory extends Component {
                   this.props.range === "dolby"
                     ? dolby
                     : this.props.range === "doric"
-                    ? doric
-                    : this.props.range === "dorun"
-                    ? dorun
-                    : this.props.range === "accessories"
-                    ? accessories
-                    : mcb
-                }
+                      ? doric
+                      : this.props.range === "dorun"
+                        ? dorun
+                        : this.props.range === "accessories"
+                          ? accessories
+                          : mcb
+                } alt="product"
                 className={
                   this.props.range === "doric"
                     ? "product-doric-animated product-doric-fadeIn"
@@ -78,7 +86,7 @@ class ProductCategory extends Component {
               className={
                 this.props.range === "mcb"
                   ? "product-category-mcb-heading"
-                  : "product-category-heading"
+                  : "product-category-heading product-category-title"
               }
             >
               {this.props.range}
@@ -86,32 +94,33 @@ class ProductCategory extends Component {
             <h6 className="products-subheading">{this.props.categoryName}</h6>
           </Col>
         </Row>
-        <Container style={{marginBottom: "50px"}}>
-          <Row style={{margin:0}}>
-              <Row>
-                <Col>
-                    SUBCATEGORY
-                </Col>
-              </Row>
-              <Row className="product-individual-row">
-                <Col >
-                    <Product/>
-                </Col>
-                <Col >
-                    <Product/>
-                </Col>
-                <Col >
-                    <Product/>
-                </Col>
-                
-              </Row>
+        <Container style={{ marginBottom: "50px" }}>
+          <Row style={{ margin: 0 }}>
+            <Row>
+              <Col>
+                SUBCATEGORY
+              </Col>
+            </Row>
+
+            <Row className="product-individual-row" style={{ padding: 0 }}>
+              {productsRender}
+              {/* <Col style={{ marginBottom: "30vh" }} className="px-0 px-sm-4">
+                <Product />
+              </Col>
+              <Col style={{ marginBottom: "30vh" }} className="px-0 px-sm-4">
+                <Product />
+              </Col>
+              <Col style={{ marginBottom: "30vh" }} className="px-0 px-sm-4">
+                <Product />
+              </Col> */}
+            </Row>
           </Row>
         </Container>
-        </>
-      );
+      </>
+    );
 
-    }
-    
+  }
+
 };
 
 export default withRouter(ProductCategory);

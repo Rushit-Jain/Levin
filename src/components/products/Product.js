@@ -29,7 +29,7 @@ function Product(props) {
               {props.data.color != null ? (
                 <Row>
                   <Col xs={2}>Color:</Col>
-                  <Col>
+                  <Col xs={{ offset: 1 }}>
                     {props.data.color.map((c, index) => {
                       if (index == 0) {
                         return c;
@@ -49,7 +49,19 @@ function Product(props) {
               {props.data.types != null ? (
                 <Row>
                   <Col xs={2}>Types:</Col>
-                  <Col> 1M, 2M, 3M, 4M, 5M, 6M, 7M, 8M, 9M, 10M</Col>
+                  <Col xs={{ offset: 1 }}>
+                    {props.data.types.map((t, index) => {
+                      if (index == 0) {
+                        return t;
+                      }
+                      // if(props.data.color.length-1==index){
+                      //   return ", "+c
+                      // }
+                      else {
+                        return ", " + t;
+                      }
+                    })}
+                  </Col>
                 </Row>
               ) : (
                 <></>

@@ -27,7 +27,7 @@ const About = (props) => {
           </Col>
         </Col>
         <Col style={{ alignSelf: "center" }}>
-          <h2 className="about-heading">About Us</h2>
+          <h2 className="about-heading product-category-title">About Us</h2>
           <h6 className="about-title-subheading">Know Us Better</h6>
         </Col>
       </Row>

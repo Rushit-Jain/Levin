@@ -86,9 +86,9 @@ const categories = {
     "5 in 1",
   ],
   mcb: [
-    "Miniature Circuit Breakers", 
-    "Isolator", 
-    "Changeover", 
+    "Miniature Circuit Breakers",
+    "Isolator",
+    "Changeover",
     "Residual Current Circuit Breakers"
   ],
   accessories: [
@@ -106,14 +106,14 @@ class Products extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedRange: 
+      selectedRange:
         window.location.pathname.split("/")[
           window.location.pathname.split("/").length - 1
         ] === "dolby"
           ? "dolby"
           : window.location.pathname.split("/")[
-              window.location.pathname.split("/").length - 1
-            ],
+          window.location.pathname.split("/").length - 1
+          ],
     };
   }
 
@@ -178,7 +178,7 @@ class Products extends Component {
             backgroundColor: "antiquewhite",
             textAlign: "center",
           }}
-          >
+        >
           <Col xs={12} md={6}>
             <Col>
               <img
@@ -191,7 +191,7 @@ class Products extends Component {
             </Col>
           </Col>
           <Col style={{ alignSelf: "center" }}>
-            <h2 className="about-heading">Products</h2>
+            <h2 className="about-heading product-category-title">Products</h2>
             <h6 className="products-subheading">
               We assure you safety &amp; quality
             </h6>

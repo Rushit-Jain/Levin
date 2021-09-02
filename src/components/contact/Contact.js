@@ -110,7 +110,7 @@ class Contact extends Component {
             </Col>
           </Col>
           <Col style={{ alignSelf: "center" }}>
-            <h2 className="about-heading">Contact</h2>
+            <h2 className="about-heading product-category-title">Contact</h2>
             <h6 className="contact-subheading">
               Any questions or remarks? Write us a message!
             </h6>
@@ -250,7 +250,7 @@ class Contact extends Component {
                             style={{
                               display:
                                 this.state.validName == -1 ||
-                                this.state.validName == 2
+                                  this.state.validName == 2
                                   ? "none"
                                   : "",
                             }}
@@ -303,7 +303,7 @@ class Contact extends Component {
                             style={{
                               display:
                                 this.state.validEmailId == -1 ||
-                                this.state.validEmailId == 2
+                                  this.state.validEmailId == 2
                                   ? "none"
                                   : "",
                             }}
@@ -338,7 +338,7 @@ class Contact extends Component {
                             style={{
                               display:
                                 this.state.validSubject == -1 ||
-                                this.state.validSubject == 2
+                                  this.state.validSubject == 2
                                   ? "none"
                                   : "",
                             }}
@@ -389,7 +389,7 @@ class Contact extends Component {
                               this.state.validEmailId *
                                 this.state.validName *
                                 this.state.validSubject ==
-                              8
+                                8
                                 ? false
                                 : true
                             }

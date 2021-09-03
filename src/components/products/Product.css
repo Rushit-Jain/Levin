@@ -195,7 +195,7 @@ body {
 }
 
 .container .card:before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -211,7 +211,7 @@ body {
 }
 
 .container .card:after {
-  content: 'LEVIN';
+  content: "LEVIN";
   position: absolute;
   top: 30%;
   left: -20%;
@@ -265,12 +265,12 @@ body {
   letter-spacing: 1px;
   color: antiquewhite;
   margin: 0;
-  font-family: 'El Messiri', sans-serif;
+  font-family: "El Messiri", sans-serif;
 }
 .product-small-className {
   font-weight: 400;
   color: antiquewhite;
-  font-family: 'El Messiri', sans-serif;
+  font-family: "El Messiri", sans-serif;
 }
 
 .container .card .contentBx .size,
@@ -378,7 +378,8 @@ body {
   width: 100%;
   height: 3px;
   z-index: 1000000;
-  background: linear-gradient(to right, transparent, #1779ff);
+  /* background: linear-gradient(to right, transparent, #1779ff); */
+  background: linear-gradient(to right, transparent, #faebd7);
   animation: animate1 2s linear infinity;
   -webkit-animation: 2s linear infinite animate1;
 }
@@ -399,7 +400,8 @@ body {
   width: 3px;
   height: 100%;
   z-index: 1000000;
-  background: linear-gradient(to bottom, transparent, #1779ff);
+  /* background: linear-gradient(to bottom, transparent, #1779ff); */
+  background: linear-gradient(to bottom, transparent, #faebd7);
   animation: animate2 2s linear infinity;
   -webkit-animation: 2s linear infinite animate2;
   animation-delay: 1s;
@@ -422,7 +424,8 @@ body {
   width: 100%;
   height: 3px;
   z-index: 1000000;
-  background: linear-gradient(to left, transparent, #1779ff);
+  /* background: linear-gradient(to left, transparent, #1779ff); */
+  background: linear-gradient(to left, transparent, #faebd7);
   animation: animate3 2s linear infinity;
   -webkit-animation: 2s linear infinite animate3;
 }
@@ -442,7 +445,8 @@ body {
   width: 3px;
   height: 100%;
   z-index: 1000000;
-  background: linear-gradient(to top, transparent, #1779ff);
+  /* background: linear-gradient(to top, transparent, #1779ff); */
+  background: linear-gradient(to top, transparent, #faebd7);
   animation: animate4 2s linear infinity;
   -webkit-animation: 2s linear infinite animate4;
   animation-delay: 1s;

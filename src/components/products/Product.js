@@ -1,10 +1,18 @@
 import React from "react";
 import Goo from "gooey-react";
-import { Row, Col } from "react-bootstrap";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import "./Product.css";
 import pic_svg from "../../assets/pic.svg";
 
 function Product(props) {
+  let color = {
+    "WHITE": "#fff",
+    "METALLIC GREY": "#8E8E8E",
+    "METALLIC BLACK": "#2C2C2B",
+    "METALLIC RED": "#a62c2b",
+    "WOOD COPPER": "#b87333",
+    "WOOD WENGE": "#645452"
+  }
   return (
     // <div className="product-wrapper" style={{ height: "60vh" }}>
     //   <Goo composite intensity="strong">
@@ -53,18 +61,23 @@ function Product(props) {
     //   </Goo>
     // </div>
     <div className="card" tabIndex="0">
+      <span className="border-light"></span>
+      <span className="border-light"></span>
+      <span className="border-light"></span>
+      <span className="border-light"></span>
       <div className="imgBx">
         <img alt="PRODUCT-IMG" src={"data:image/png;base64," + props.data.image} />
       </div>
       <div className="contentBx">
         <h2 className="product-h1-className">{props.data.name}</h2>
         <small className="product-small-className">{props.data.code}</small>
-        <div className="size">
+        {/* <div className="size">
           <h3>Size :</h3>
           <span>7</span>
           <span>8</span>
           <span>9</span>
           <span>10</span>
+        </div> */}
             {/*<div className="product-dets-class">
               {props.data.color != null ? (
                 <Row>
@@ -114,9 +127,18 @@ function Product(props) {
         </div>
         <div className="color">
           <h3>Color :</h3>
-          <span></span>
-          <span></span>
-          <span></span>
+          {props.data.color.map((c, index) => (
+
+            <OverlayTrigger
+              placement="bottom"
+              delay={{ show: 250, hide: 400 }}
+              overlay={<Tooltip id="button-tooltip" {...props}>
+                {c}
+              </Tooltip>}
+            >
+              <span style={{ background: color[c] }}></span>
+            </OverlayTrigger>
+          ))}
         </div>
       </div>
     </div>

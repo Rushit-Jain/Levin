@@ -159,18 +159,12 @@ body {
 
 .product-label-class input:checked ~ .product-dets-class {
   /* bottom: -110px; */
-  bottom: -22vh;
+  bottom: -26vh;
 }
 
-@media (max-height: 653px) and (max-width: 767px) {
+@media (max-height: 653px) {
   .product-label-class input:checked ~ .product-dets-class {
-    bottom: -22vh;
-  }
-}
-
-@media (min-width: 1200px) {
-  .product-wrapper {
-    margin-top: 7vh;
+    bottom: -34vh;
   }
 }
 
@@ -445,7 +439,7 @@ body {
   width: 3px;
   height: 100%;
   z-index: 1000000;
-  /* background: linear-gradient(to top, transparent, #1779ff); */
+  background: linear-gradient(to top, transparent, #1779ff);
   background: linear-gradient(to top, transparent, #faebd7);
   animation: animate4 2s linear infinity;
   -webkit-animation: 2s linear infinite animate4;

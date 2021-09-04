@@ -318,10 +318,6 @@ body {
   cursor: pointer;
 }
 
-.container .card .contentBx .size span:focus {
-  background: #9bdc28;
-}
-
 .container .card .contentBx .color span {
   width: 20px;
   height: 20px;
@@ -455,3 +451,33 @@ body {
     transform: translateY(-100%);
   }
 }
+
+.container .card .contentBx .types h3 {
+  color: #fff;
+  font-weight: 300;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: 10px;
+  display: inline;
+}
+
+.container .card .contentBx .types {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 20px;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.container .card:focus .contentBx .types {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.6s;
+  display: inline;
+}
+

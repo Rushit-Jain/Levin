@@ -63,3 +63,11 @@
   display: flex;
   justify-content: space-between;
 }
+
+.productCategory-subcategory-heading{
+  font-family: "NeonFont";
+  font-size: 36pt;
+  color: rgb(0, 0, 0);
+  font-weight: 800;
+  text-align: center;
+}

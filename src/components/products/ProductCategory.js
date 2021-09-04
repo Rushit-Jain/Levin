@@ -35,13 +35,61 @@ class ProductCategory extends Component {
   }
 
   render() {
-    console.log(this.state.data);
-    // let productsRender = (<>Loading...</>)
-    let productsRender = this.state.data ? Object.keys(this.state.data).map(pr => (
-      <Col style={{ marginBottom: "30vh" }} className="px-0 px-sm-4">
-        <Product data={this.state.data[pr]} />
-      </Col>
-    ))
+    // console.log(this.state.data);
+    let subcategoryExists = false;
+    let organizedData = {};
+
+    // to check if there is subcategory
+    if(this.state.data){
+      this.state.data[Object.keys(this.state.data)[0]].subcategory ? subcategoryExists = true : subcategoryExists = false;
+    } 
+    
+    // if subcategory exists then to organize the data 
+    if(subcategoryExists){
+        Object.keys(this.state.data).map( pr => {
+        
+        if(Object.keys(organizedData).includes(this.state.data[pr].subcategory)){
+          organizedData[this.state.data[pr].subcategory].push(this.state.data[pr])
+        }
+        else{
+          organizedData[this.state.data[pr].subcategory]=[this.state.data[pr]]
+        }
+      })
+    }
+
+    let productsRender = this.state.data ? 
+      (
+        !subcategoryExists ?
+        (
+          Object.keys(this.state.data).map(pr => (
+            <Col style={{ marginBottom: "30vh" }} className="px-0 px-sm-4">
+              <Product data={this.state.data[pr]} range={this.props.range} />
+            </Col>
+            ))
+        ) : 
+        (
+          Object.keys(organizedData).map(subcategoryName => {
+             let productsOfSubcategory = []
+             productsOfSubcategory.push(
+              <Col xs={12} className="productCategory-subcategory-heading">
+                <p>{subcategoryName}</p>
+              </Col>
+            )
+             organizedData[subcategoryName].map(pr => (
+              productsOfSubcategory.push(
+                  <Col style={{ marginBottom: "30vh" }} className="px-0 px-sm-4">
+                    <Product data={pr} range={this.props.range} />
+                  </Col>
+                )
+              )
+            )
+            return (
+              productsOfSubcategory
+            )
+            
+          })
+        )   
+      )   
       : <>Loading...</>
     return (
       <>
@@ -96,11 +144,11 @@ class ProductCategory extends Component {
         </Row>
         <Container style={{ marginBottom: "50px" }}>
           <Row style={{ margin: 0 }}>
-            <Row>
+            {/* <Row>
               <Col>
                 SUBCATEGORY
               </Col>
-            </Row>
+            </Row> */}
 
             <Row className="product-individual-row" style={{ padding: 0 }}>
               {productsRender}

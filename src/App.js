@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import LNavbar from "./components/navbar/LNavbar";
 import Footer from "./components/footer/Footer";
 import About from "./components/about/About";
+import Home from "./components/home/home";
 import Contact from "./components/contact/Contact";
 import Products from "./components/products/Products";
 import { Switch, Redirect, Route, withRouter } from "react-router-dom";
@@ -26,6 +27,7 @@ function App() {
       <Switch>
         <Route path="/about" exact component={About} />
         <Route path="/contact" exact component={Contact} />
+        <Route path="/home" component={Home} />
         <Route
           path="/products/:range/:category"
           render={({ match }) => (

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./LNavbar.css";
 import logo from "../../assets/logo.png";
@@ -15,9 +15,9 @@ class LNavbar extends Component {
   render() {
     return (
       <Navbar className="LNavbar" expand="lg">
-        <Navbar.Brand href="/home" className="logo-box">
+        <Navbar.Brand href="/home" className="logo-box" >
           <img className="logo" src={logo} alt="Levin" />
-        </Navbar.Brand>
+        </Navbar.Brand >
         <Navbar.Toggle
           id="toggle-nav"
           aria-controls="basic-navbar-nav"

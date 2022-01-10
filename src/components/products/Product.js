@@ -83,26 +83,30 @@ function Product(props) {
           <span>9</span>
           <span>10</span>
         </div> */}
-        <div className="color">
-          <h3>Color :</h3>
-          {props.data.color ? (
-            props.data.color.map((c, index) => (
-              <OverlayTrigger
-                placement="bottom"
-                delay={{ show: 250, hide: 400 }}
-                overlay={
-                  <Tooltip id="button-tooltip" {...props}>
-                    {c}
-                  </Tooltip>
-                }
-              >
-                <span style={{ background: color[c] }}></span>
-              </OverlayTrigger>
-            ))
-          ) : (
-            <></>
-          )}
-        </div>
+        {props.data.color ? (
+          <div className="color">
+            <h3>Color :</h3>
+            {props.data.color ? (
+              props.data.color.map((c, index) => (
+                <OverlayTrigger
+                  placement="bottom"
+                  delay={{ show: 250, hide: 400 }}
+                  overlay={
+                    <Tooltip id="button-tooltip" {...props}>
+                      {c}
+                    </Tooltip>
+                  }
+                >
+                  <span style={{ background: color[c] }}></span>
+                </OverlayTrigger>
+              ))
+            ) : (
+              <></>
+            )}
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );

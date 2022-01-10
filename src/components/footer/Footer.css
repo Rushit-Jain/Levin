@@ -8,6 +8,12 @@
   width: 102px;
 }
 
-.footer-social-media:hover{
+.footer-social-media:hover {
   color: #ec1f25 !important;
+}
+
+.footer-iframe {
+  border-radius: 10px;
+  border: 1px solid red;
+  box-shadow: 0 0 10px red;
 }

@@ -171,7 +171,7 @@ class Contact extends Component {
 
                     <Row className="contactInfoColumnItems item-row">
                       <Col className="px-0 py-0 ml-3 my-0 mr-2" xs={1}>
-                        <a href="tel:+91 9920338899" style={{ color: "black" }}>
+                        <a href="tel:+91 9619682066" style={{ color: "black" }}>
                           <CallRoundedIcon
                             style={{ color: "black" }}
                             className="contact-info-icons item"

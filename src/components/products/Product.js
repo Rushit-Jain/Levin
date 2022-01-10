@@ -14,59 +14,12 @@ function Product(props) {
     "WOOD WENGE": "#645452",
   };
   return (
-    // <div className="product-wrapper" style={{ height: "60vh" }}>
-    //   <Goo composite intensity="strong">
-    //     <div className="product-card">
-    //       <div className="product-img-div">
-    //         <img className="product-img" alt="PRODUCT-IMG" src={"data:image/png;base64," + props.data.image} />
-    //       </div>
-    //       <h1 className="product-h1-className">{props.data.name}</h1>
-    //       <small className="product-small-className">{props.data.code}</small>
-
-    //       <label className="product-label-className">
-    //         <input className="product-input-className" type="checkbox" />
-    //         <span className="product-span-className">
-    //           <i className="fas fa-chevron-down"></i>
-    //         </span>
-
-    //         <div className="product-dets-className">
-
-    //           <Row>
-    //             <Col xs={2}>Color:</Col>
-    //             <Col>{props.data.color.map((c, index) => {
-    //               if (index == 0) {
-    //                 return c
-    //               }
-    //               // if(props.data.color.length-1==index){
-    //               //   return ", "+c
-    //               // }
-    //               else {
-    //                 return ", " + c
-    //               }
-    //             })}</Col>
-    //           </Row>
-    //           <Row>
-    //             <Col xs={2}>Code:</Col>
-    //             <Col>DX-00000</Col>
-    //           </Row>
-    //           <Row>
-    //             <Col xs={2}>Types:</Col>
-    //             <Col> 1M, 2M, 3M, 4M, 5M, 6M, 7M, 8M, 9M, 10M</Col>
-    //           </Row>
-    //           {/* <div>Color: Metallic Black, Metallic Grey, White</div>
-    //           <div>Code: DX-00000</div>
-    //           <div>Types: 1M, 2M, 3M, 4M, 5M, 6M, 7M, 8M, 9M, 10M</div> */}
-
-    //         </div>
-    //       </label>
-    //     </div>
-    //   </Goo>
-    // </div>
-    <div className="card" tabIndex="0">
-      <span className="border-light"></span>
-      <span className="border-light"></span>
-      <span className="border-light"></span>
-      <span className="border-light"></span>
+    
+    <div className="card" tabIndex="0" style={props.range==="dolby"?{background: "antiquewhite"}:{}}>
+      <span className="border-light" style={props.range==="dolby"?{background: "linear-gradient(to right, transparent, black)"}:{}}></span>
+      <span className="border-light" style={props.range==="dolby"?{background: "linear-gradient(to bottom, transparent, black)"}:{}}></span>
+      <span className="border-light" style={props.range==="dolby"?{background: "linear-gradient(to left, transparent, black)"}:{}}></span>
+      <span className="border-light" style={props.range==="dolby"?{background: "linear-gradient(to top, transparent, black)"}:{}}></span>
       <div className="imgBx">
         <img
           alt="PRODUCT-IMG"
@@ -74,64 +27,49 @@ function Product(props) {
         />
       </div>
       <div className="contentBx">
-        <h2 className="product-h1-className">{props.data.name}</h2>
-        <small className="product-small-className">{props.data.code}</small>
-        {/* <div className="size">
-          <h3>Size :</h3>
-          <span>7</span>
-          <span>8</span>
-          <span>9</span>
-          <span>10</span>
-        </div> */}
-        {props.data.color ? (
-          <div className="color">
-            <h3>Color :</h3>
-            {props.data.color ? (
-              props.data.color.map((c, index) => (
-                <OverlayTrigger
-                  placement="bottom"
-                  delay={{ show: 250, hide: 400 }}
-                  overlay={
-                    <Tooltip id="button-tooltip" {...props}>
-                      {c}
-                    </Tooltip>
-                  }
-                >
-                  <span style={{ background: color[c] }}></span>
-                </OverlayTrigger>
-              ))
-            ) : (
-              <></>
-            )}
-          </div>
-        ) : (
+        <h2 className="product-h1-className" style={props.range==="dolby"?{color:"black"}:{}}>{props.data.name}</h2>
+        <small className="product-small-className" style={props.range==="dolby"?{color:"black"}:{}}>{props.data.code}</small>
+        
+{props.data.color ? (
+        <div className="color">
+          {props.data.color ? <h3 style={props.range==="dolby"?{color:"black"}:{}}>Color :</h3> : <></> }
+          {props.data.color ? (
+            props.data.color.map((c, index) => (
+              <OverlayTrigger
+                placement="bottom"
+                delay={{ show: 250, hide: 400 }}
+                overlay={
+                  <Tooltip id="button-tooltip" {...props}>
+                    {c}
+                  </Tooltip>
+                }
+              >
+                <span  style={props.range==="dolby"?{border: "black solid 3px", background: color[c]}:{}} ></span>
+              </OverlayTrigger>
+            ))
+          ) : (
+            <></>
+          )}
+        </div>
+) : (
           <></>
         )}
+        <div className="types">
+          {props.data.types ? <h3 style={props.range==="dolby"?{color:"black"}:{}}>Types :</h3> : <></> }
+          {props.data.types ? 
+            props.data.types.map( (c,index) => (
+              <span style={props.range==="dolby"? {color: "black"} : {color:"antiquewhite"}}>
+                {c}{index>=props.data.types.length-2?" ":", "}
+              </span>
+            )) : (
+            <></>
+          )}
+        </div>
       </div>
     </div>
   );
 }
 
-{
-  /* <ul>
-                <li>
-                  <a href="#">
-                    <i className="fab fa-facebook-f"></i>
-                  </a>
-                </li>
 
-                <li>
-                  <a href="#">
-                    <i className="fab fa-twitter"></i>
-                  </a>
-                </li>
-
-                <li>
-                  <a href="#">
-                    <i className="fab fa-instagram"></i>
-                  </a>
-                </li>
-              </ul> */
-}
 
 export default Product;

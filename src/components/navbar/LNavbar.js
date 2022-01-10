@@ -15,9 +15,9 @@ class LNavbar extends Component {
   render() {
     return (
       <Navbar className="LNavbar" expand="lg">
-        <Navbar.Brand href="/home" className="logo-box" >
+        <Navbar.Brand href="/home" className="logo-box">
           <img className="logo" src={logo} alt="Levin" />
-        </Navbar.Brand >
+        </Navbar.Brand>
         <Navbar.Toggle
           id="toggle-nav"
           aria-controls="basic-navbar-nav"
@@ -26,19 +26,35 @@ class LNavbar extends Component {
         />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="navlinks-box">
-            <NavLink className="links" to="/home">
+            <NavLink
+              className="links"
+              to="/home"
+              activeClassName="links-selected"
+            >
               Home
             </NavLink>
-            <NavLink className="links" to="/about">
+            <NavLink
+              className="links"
+              to="/about"
+              activeClassName="links-selected"
+            >
               About Us
             </NavLink>
-            <NavLink className="links" to="/products/dolby">
+            <NavLink
+              className="links"
+              to="/products/dolby"
+              activeClassName="links-selected"
+            >
               Our Products
             </NavLink>
             <a className="links" target="_blank" href={catalogue}>
               View Catalogue
             </a>
-            <NavLink className="links" to="/contact">
+            <NavLink
+              className="links"
+              to="/contact"
+              activeClassName="links-selected"
+            >
               Contact Us
             </NavLink>
           </Nav>

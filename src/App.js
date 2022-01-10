@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import LNavbar from "./components/navbar/LNavbar";
 import Footer from "./components/footer/Footer";
 import About from "./components/about/About";
-import Home from "./components/home/home";
+import Home from "./components/home/Home";
 import Contact from "./components/contact/Contact";
 import Products from "./components/products/Products";
 import { Switch, Redirect, Route, withRouter } from "react-router-dom";

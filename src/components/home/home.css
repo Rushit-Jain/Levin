@@ -1,0 +1,27 @@
+.home-heading {
+  font-size: 3.5vw;
+}
+.home-heading-2 {
+  font-size: 3.5vw;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .home-headings {
+    justify-content: center !important;
+    align-items: center;
+  }
+  .home-heading,
+  .home-heading-2 {
+    font-size: 24pt;
+    text-align: center;
+  }
+}
+
+.home-row {
+  background-color: #eca12a;
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}

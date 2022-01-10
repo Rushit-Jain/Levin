@@ -24,6 +24,7 @@ class LNavbar extends Component {
           className={this.state.navIsExp ? "rotate-nav" : "rotate-nav-opp"}
           onClick={() => this.setState({ navIsExp: !this.state.navIsExp })}
         />
+
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="navlinks-box">
             <NavLink
@@ -59,6 +60,35 @@ class LNavbar extends Component {
             </NavLink>
           </Nav>
         </Navbar.Collapse>
+        {/* <span
+          style={{
+            backgroundColor: "black",
+            height: "5px",
+            width: "50vw",
+            zIndex: "100",
+          }}
+        ></span>
+        <span
+          style={{
+            backgroundColor: "black",
+            height: "5px",
+            transform: "rotate(45deg)",
+            width: "10vw",
+            zIndex: "1",
+          }}
+        ></span> */}
+
+        {/* <span
+          style={{
+            backgroundColor: "black",
+            height: "5px",
+            transform: "rotate(-45deg)",
+            width: "10vw",
+          }}
+        ></span>
+        <span
+          style={{ backgroundColor: "black", height: "5px", width: "40vw" }}
+        ></span> */}
       </Navbar>
     );
   }

@@ -13,17 +13,31 @@
   width: 10%;
 }
 
+@property --offset {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0;
+}
+
 .links {
-  color: rgb(237, 50, 55);
+  /* color: rgb(237, 50, 55); */
+  color: #990011;
   margin: 0px 10px;
   padding: 0px 5px;
   font-size: 20px;
   font-family: "El Messiri", sans-serif;
+  text-underline-offset: var(--offset, 0.2em);
+  /* text-decoration: underline 0.15em; */
+  transition: --offset 400ms, text-decoration-color 400ms;
 }
 
-.links:hover {
-  text-decoration: none;
+.links:hover,
+.links:focus,
+.links-selected {
+  text-decoration: underline;
   color: rgb(150, 152, 154);
+  --offset: 0.4em;
+  text-decoration-color: red;
 }
 
 .navbar-toggler-icon {

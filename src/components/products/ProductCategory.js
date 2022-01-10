@@ -10,14 +10,12 @@ import mcb from "../../assets/illustrations/products_mcb.svg";
 import "./ProductCategory.css";
 import Product from "./Product";
 
-
 class ProductCategory extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
-      data: null
-    }
+      data: null,
+    };
   }
 
   componentDidMount() {
@@ -26,15 +24,17 @@ class ProductCategory extends Component {
       this.props.categoryName == undefined ||
       this.props.category == undefined
     )
-
       this.props.history.push("/products/dolby");
 
     axios
-      .get(`https://levin-e1c22-default-rtdb.firebaseio.com/products/${this.props.range}/${this.props.category}.json`)
+      .get(
+        `https://levin-e1c22-default-rtdb.firebaseio.com/products/${this.props.range}/${this.props.category}.json`
+      )
       .then((res) => this.setState({ data: res.data }));
   }
 
   render() {
+
     // console.log(this.state.data);
     let subcategoryExists = false;
     let organizedData = {};
@@ -91,6 +91,7 @@ class ProductCategory extends Component {
         )   
       )   
       : <>Loading...</>
+
     return (
       <>
         <Row
@@ -110,13 +111,14 @@ class ProductCategory extends Component {
                   this.props.range === "dolby"
                     ? dolby
                     : this.props.range === "doric"
-                      ? doric
-                      : this.props.range === "dorun"
-                        ? dorun
-                        : this.props.range === "accessories"
-                          ? accessories
-                          : mcb
-                } alt="product"
+                    ? doric
+                    : this.props.range === "dorun"
+                    ? dorun
+                    : this.props.range === "accessories"
+                    ? accessories
+                    : mcb
+                }
+                alt="product"
                 className={
                   this.props.range === "doric"
                     ? "product-doric-animated product-doric-fadeIn"
@@ -166,9 +168,7 @@ class ProductCategory extends Component {
         </Container>
       </>
     );
-
   }
-
-};
+}
 
 export default withRouter(ProductCategory);

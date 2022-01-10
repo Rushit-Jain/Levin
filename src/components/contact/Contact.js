@@ -16,6 +16,7 @@ import "react-phone-input-2/lib/style.css";
 
 import "./Contact.css";
 import contactImg from "./../../assets/illustrations/contact.svg";
+import axios from "axios";
 // import { maxWidth, width } from "@material-ui/system";
 
 class Contact extends Component {
@@ -35,6 +36,23 @@ class Contact extends Component {
     };
     // -1 means field is not dirty | 0 means field is dirty but not valid | 2 means field is valid and touched
   }
+
+  handleSubmit = () => {
+    let data = {
+      name: this.state.name,
+      emailId: this.state.emailId,
+      subject: this.state.subject,
+      message: this.state.message,
+      phone: this.state.phone,
+    };
+    axios
+      .post(
+        "https://levin-e1c22-default-rtdb.firebaseio.com/contact.json",
+        JSON.stringify(data)
+      )
+      .then((response) => console.log(response))
+      .catch((err) => console.log(err));
+  };
 
   checkName = (e) => {
     let name = e.target.value;
@@ -161,8 +179,8 @@ class Contact extends Component {
                         </a>
                       </Col>
                       <Col className="pl-0 py-0 pr-1">
-                        <a href="tel:+91 9920338899" style={{ color: "black" }}>
-                          +91&nbsp;9920338899
+                        <a href="tel:+91 9619682066" style={{ color: "black" }}>
+                          +91&nbsp;9619682066
                         </a>
                       </Col>
                     </Row>
@@ -193,7 +211,8 @@ class Contact extends Component {
                       <Col className="px-0 py-0 ml-3 my-0 mr-2" xs={1}>
                         <a
                           style={{ color: "black" }}
-                          href="https://www.google.com/maps/place/1c,+Golani+Naka,+Vasai+East,+Vasai-Virar,+Maharashtra+401208/@19.4153614,72.8701641,150m/data=!3m1!1e3!4m5!3m4!1s0x3be7a8c8da40bf01:0xb1469aacd99d77cc!8m2!3d19.4154048!4d72.8701006"
+                          target="_blank"
+                          href="https://goo.gl/maps/XNie7pVzaGj7hgXbA"
                         >
                           <RoomIcon
                             style={{ color: "black" }}
@@ -204,7 +223,8 @@ class Contact extends Component {
                       <Col className="pl-0 py-0 pr-1 add-hover">
                         <a
                           style={{ color: "black" }}
-                          href="https://www.google.com/maps/place/1c,+Golani+Naka,+Vasai+East,+Vasai-Virar,+Maharashtra+401208/@19.4153614,72.8701641,150m/data=!3m1!1e3!4m5!3m4!1s0x3be7a8c8da40bf01:0xb1469aacd99d77cc!8m2!3d19.4154048!4d72.8701006"
+                          target="_blank"
+                          href="https://goo.gl/maps/XNie7pVzaGj7hgXbA"
                         >
                           Ritzy Industries, Gala No. 6&amp;7, Raj Prabha Mohan
                           Industrial Estate, Naikpada, Valiv, Vasai East, Thane,
@@ -250,7 +270,7 @@ class Contact extends Component {
                             style={{
                               display:
                                 this.state.validName == -1 ||
-                                  this.state.validName == 2
+                                this.state.validName == 2
                                   ? "none"
                                   : "",
                             }}
@@ -303,7 +323,7 @@ class Contact extends Component {
                             style={{
                               display:
                                 this.state.validEmailId == -1 ||
-                                  this.state.validEmailId == 2
+                                this.state.validEmailId == 2
                                   ? "none"
                                   : "",
                             }}
@@ -317,7 +337,7 @@ class Contact extends Component {
                                 padding: "0px 5px",
                               }}
                             >
-                              Please enter a valid email id.
+                              Please enter a valid email ID.
                             </span>
                           </Form.Row>
                         </Col>
@@ -338,7 +358,7 @@ class Contact extends Component {
                             style={{
                               display:
                                 this.state.validSubject == -1 ||
-                                  this.state.validSubject == 2
+                                this.state.validSubject == 2
                                   ? "none"
                                   : "",
                             }}
@@ -378,8 +398,8 @@ class Contact extends Component {
                         <Col className="formSubmitButton">
                           <MaterialBtn
                             variant="contained"
-                            type="submit"
                             color="primary"
+                            type="submit"
                             style={{
                               height: "50px",
                               width: "80px",
@@ -389,10 +409,11 @@ class Contact extends Component {
                               this.state.validEmailId *
                                 this.state.validName *
                                 this.state.validSubject ==
-                                8
+                              8
                                 ? false
                                 : true
                             }
+                            onClick={this.handleSubmit}
                           >
                             Send
                           </MaterialBtn>

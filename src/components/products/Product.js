@@ -30,6 +30,7 @@ function Product(props) {
         <h2 className="product-h1-className" style={props.range==="dolby"?{color:"black"}:{}}>{props.data.name}</h2>
         <small className="product-small-className" style={props.range==="dolby"?{color:"black"}:{}}>{props.data.code}</small>
         
+{props.data.color ? (
         <div className="color">
           {props.data.color ? <h3 style={props.range==="dolby"?{color:"black"}:{}}>Color :</h3> : <></> }
           {props.data.color ? (
@@ -50,6 +51,9 @@ function Product(props) {
             <></>
           )}
         </div>
+) : (
+          <></>
+        )}
         <div className="types">
           {props.data.types ? <h3 style={props.range==="dolby"?{color:"black"}:{}}>Types :</h3> : <></> }
           {props.data.types ? 

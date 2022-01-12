@@ -4,7 +4,7 @@ import tvcabinet from "../../assets/Tv unit Designs.png";
 // import bedroom from "../../assets/bedroom.jpg";
 import bedroom from "../../assets/home.jpg";
 
-import "./home.css";
+import "./Home.css";
 
 class Home extends Component {
   render() {
@@ -30,7 +30,7 @@ class Home extends Component {
             <h2 className="home-heading" style={{ color: "snow" }}>
               REJUVENATE THE INTERIORS
             </h2>
-            <h2 className="home-heading-2">GET THE BEST MATCHES</h2>
+            <h2 className="home-heading-2">SWITCH TO THE BEST</h2>
           </Col>
           <Col className="col">
             <img
@@ -38,6 +38,31 @@ class Home extends Component {
               src={tvcabinet}
               alt="tv-cabinet"
             />
+          </Col>
+        </Row>
+        <h1
+          style={{
+            backgroundColor: "brown",
+            margin: 0,
+            paddingTop: "20px",
+            textAlign: "center",
+            color: "white",
+          }}
+        >
+          Our Reach
+        </h1>
+        <Row
+          style={{ margin: 0 }}
+          className="home-row-2 justify-content-center"
+        >
+          <Col className="align-items-center justify-content-center">
+            <span className="p-0 client-count home-heading-2">
+              + Clients Across{" "}
+            </span>
+            <span className="p-0 state-count home-heading-2">
+              {" "}
+              Indian States Served
+            </span>
           </Col>
         </Row>
       </React.Fragment>

@@ -14,9 +14,15 @@
 }
 
 @property --offset {
-  syntax: "<length>";
+  syntax: '<length>';
   inherits: false;
   initial-value: 0;
+}
+
+.navlinks-box {
+  display: flex;
+  justify-content: space-evenly;
+  width: 70%;
 }
 
 .links {
@@ -25,7 +31,7 @@
   margin: 0px 10px;
   padding: 0px 5px;
   font-size: 20px;
-  font-family: "El Messiri", sans-serif;
+  font-family: 'El Messiri', sans-serif;
   text-underline-offset: var(--offset, 0.2em);
   /* text-decoration: underline 0.15em; */
   transition: --offset 400ms, text-decoration-color 400ms;
@@ -41,7 +47,7 @@
 }
 
 .navbar-toggler-icon {
-  background-image: url("../../assets/nav_toggle.jpg") !important;
+  background-image: url('../../assets/nav_toggle.jpg') !important;
   width: 51px !important;
   height: 50px !important;
 }
@@ -61,6 +67,13 @@
   animation-iteration-count: 1;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
+}
+
+@media (min-width: 992px) {
+  .basicnavbar1 {
+    display: flex;
+    justify-content: end;
+  }
 }
 
 @keyframes rotateToggleBtnAnimation {

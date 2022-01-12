@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav, Row } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./LNavbar.css";
 import logo from "../../assets/logo.png";
@@ -15,7 +15,8 @@ class LNavbar extends Component {
   render() {
     return (
       <Navbar className="LNavbar" expand="lg">
-        <Navbar.Brand href="/home" className="logo-box">
+
+        <Navbar.Brand href="/home" className="logo-box d-lg-none justify-content-center d-sm-inline">
           <img className="logo" src={logo} alt="Levin" />
         </Navbar.Brand>
         <Navbar.Toggle
@@ -24,16 +25,15 @@ class LNavbar extends Component {
           className={this.state.navIsExp ? "rotate-nav" : "rotate-nav-opp"}
           onClick={() => this.setState({ navIsExp: !this.state.navIsExp })}
         />
-
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-nav" className="basicnavbar1">
           <Nav className="navlinks-box">
-            <NavLink
+            {/* <NavLink
               className="links"
               to="/home"
               activeClassName="links-selected"
             >
               Home
-            </NavLink>
+            </NavLink> */}
             <NavLink
               className="links"
               to="/about"
@@ -48,6 +48,13 @@ class LNavbar extends Component {
             >
               Our Products
             </NavLink>
+          </Nav></Navbar.Collapse>
+        <Navbar.Brand href="/home" className="logo-box d-none d-lg-flex justify-content-center">
+          <img className="logo" src={logo} alt="Levin" />
+        </Navbar.Brand>
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="navlinks-box">
+
             <a className="links" target="_blank" href={catalogue}>
               View Catalogue
             </a>
@@ -60,18 +67,21 @@ class LNavbar extends Component {
             </NavLink>
           </Nav>
         </Navbar.Collapse>
-        {/* <span
+
+        {/* <Row><span
           style={{
             backgroundColor: "black",
             height: "5px",
             width: "50vw",
             zIndex: "100",
+
           }}
-        ></span>
-        <span
+        ></span> */}
+        {/* <span
           style={{
             backgroundColor: "black",
             height: "5px",
+            display: "flex",
             transform: "rotate(45deg)",
             width: "10vw",
             zIndex: "1",
@@ -85,10 +95,10 @@ class LNavbar extends Component {
             transform: "rotate(-45deg)",
             width: "10vw",
           }}
-        ></span>
-        <span
-          style={{ backgroundColor: "black", height: "5px", width: "40vw" }}
         ></span> */}
+        {/* <span
+            style={{ backgroundColor: "black", height: "5px", width: "50vw" }}
+          ></span></Row> */}
       </Navbar>
     );
   }

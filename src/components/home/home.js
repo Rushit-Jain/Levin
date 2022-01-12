@@ -4,7 +4,7 @@ import tvcabinet from "../../assets/Tv unit Designs.png";
 // import bedroom from "../../assets/bedroom.jpg";
 import bedroom from "../../assets/home.jpg";
 
-import "./Home.css";
+import "./home.css";
 
 class Home extends Component {
   render() {

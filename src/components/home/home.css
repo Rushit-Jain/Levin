@@ -25,3 +25,68 @@
   padding-left: 2vw;
   padding-right: 2vw;
 }
+
+.home-row-2 {
+  background-color: brown;
+  color: white;
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+
+@property --num {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+.client-count {
+  animation: counter 10s ease-in-out;
+  counter-increment: num var(--num);
+  /* counter-reset: num var(--num); */
+  /* font: 800 40px system-ui; */
+  font-size: 4vw;
+  padding: 2rem;
+  --num: 2000;
+}
+.client-count::before {
+  content: counter(num);
+}
+
+@keyframes counter {
+  from {
+    --num: 0;
+  }
+  to {
+    --num: 2000;
+  }
+}
+
+@property --numb {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+.state-count {
+  animation: countern 5s ease-in-out;
+  counter-increment: numb var(--numb);
+  /* counter-reset: num var(--num); */
+  /* font: 800 40px system-ui; */
+  font-size: 4vw;
+  padding: 2rem;
+  --numb: 16;
+}
+.state-count::before {
+  content: counter(numb);
+}
+
+@keyframes countern {
+  from {
+    --numb: 0;
+  }
+  to {
+    --numb: 16;
+  }
+}

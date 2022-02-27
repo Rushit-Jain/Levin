@@ -1,7 +1,7 @@
 .product-category-heading,
 .product-category-title {
   text-transform: capitalize;
-  font-family: 'TeslaFont';
+  font-family: "TeslaFont";
   font-size: 75pt;
   color: #990011ff;
   font-weight: 500;
@@ -9,7 +9,7 @@
 
 .product-category-mcb-heading {
   text-transform: uppercase;
-  font-family: 'TeslaFont';
+  font-family: "TeslaFont";
   font-size: 75pt;
   color: #990011ff;
   font-weight: 500;
@@ -64,8 +64,9 @@
   justify-content: space-between;
 }
 
-.productCategory-subcategory-heading{
-  font-family: "NeonFont";
+.productCategory-subcategory-heading {
+  /* font-family: "NeonFont"; */
+  font-family: "Allerta Stencil", sans-serif;
   font-size: 36pt;
   color: rgb(0, 0, 0);
   font-weight: 800;

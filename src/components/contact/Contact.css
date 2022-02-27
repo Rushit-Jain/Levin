@@ -17,6 +17,7 @@
 .contactInfoColumnItems {
   margin: 5px;
   margin-bottom: 20px;
+  font-family: "Allerta Stencil", sans-serif;
 }
 
 .item-row:hover .item path,

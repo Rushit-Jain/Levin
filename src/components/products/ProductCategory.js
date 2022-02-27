@@ -1,6 +1,8 @@
 import React, { useEffect, useState, Component } from "react";
 import { withRouter } from "react-router-dom";
 import { Row, Col, Container } from "react-bootstrap";
+import Backspace from "@material-ui/icons/ArrowBack";
+
 import axios from "axios";
 import dolby from "../../assets/illustrations/products_dolby.svg";
 import doric from "../../assets/illustrations/products_doric.svg";
@@ -9,6 +11,7 @@ import accessories from "../../assets/illustrations/products_accessories.svg";
 import mcb from "../../assets/illustrations/products_mcb.svg";
 import "./ProductCategory.css";
 import Product from "./Product";
+import Spinner from "../Spinner/Spinner";
 
 class ProductCategory extends Component {
   constructor(props) {
@@ -61,7 +64,20 @@ class ProductCategory extends Component {
         }
       });
     }
-
+    let backButton = this.state.data ? (
+      <Row
+        style={{ margin: 0, alignItems: "center", fontSize: "x-large" }}
+        onClick={() => this.props.history.goBack()}
+      >
+        <Backspace
+          className="footer-social-media"
+          style={{ fontSize: "40pt", color: "#990011" }}
+        />
+        BACK
+      </Row>
+    ) : (
+      <></>
+    );
     let productsRender = this.state.data ? (
       !subcategoryExists ? (
         Object.keys(this.state.data).map((pr) => (
@@ -88,7 +104,7 @@ class ProductCategory extends Component {
         })
       )
     ) : (
-      <>Loading...</>
+      <Spinner></Spinner>
     );
 
     return (
@@ -143,8 +159,10 @@ class ProductCategory extends Component {
             <h6 className="products-subheading">{this.props.categoryName}</h6>
           </Col>
         </Row>
+
         <Container style={{ marginBottom: "50px" }}>
-          <Row style={{ margin: 0 }}>
+          {backButton}
+          <Row style={{ margin: 0, justifyContent: "center" }}>
             {/* <Row>
               <Col>
                 SUBCATEGORY

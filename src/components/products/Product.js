@@ -72,7 +72,8 @@ function Product(props) {
         >
           {props.data.code}
         </small>
-
+        <br></br>
+        <br></br>
         {props.data.color ? (
           <div className="color">
             {props.data.color ? (
@@ -80,7 +81,7 @@ function Product(props) {
                 Color :
               </h3>
             ) : (
-              <></>
+              <br></br>
             )}
             {props.data.color ? (
               props.data.color.map((c, index) => (
@@ -130,7 +131,7 @@ function Product(props) {
                 }
               >
                 {c}
-                {index >= props.data.types.length - 2 ? " " : ", "}
+                {index >= props.data.types.length - 1 ? " " : ", "}
               </span>
             ))
           ) : (

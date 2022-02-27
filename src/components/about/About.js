@@ -94,10 +94,11 @@ const About = (props) => {
             <p>
               Today, Levin sells its products to almost all the major Indian
               cities. All the products manufactured under Levin are produced at
-              Ritzy Industries, Vasai. All Levin products are ISI-certified.
-              With extremely reasonable product prices and an invaluable
-              customer goodwill, Levin is, today, one of the leading brands in
-              its domain.
+              Ritzy Industries, Vasai. All products that require a Bureau of
+              Indian Standards (BIS) certification are ISI-certified. With
+              extremely reasonable product prices and an invaluable customer
+              goodwill, Levin is, today, one of the leading brands in its
+              domain.
             </p>
             <div style={{ display: "flex", justifyContent: "center" }}>
               <img

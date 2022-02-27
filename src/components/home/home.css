@@ -16,14 +16,14 @@
   font-family: Begumsans-Medium, sans-serif;
   line-height: normal;
   padding: 0% !important;
-  font-size: 2.5vw;
+  font-size: 5rem;
   text-align: center;
 }
 
 .milestones-heading {
   line-height: normal;
   padding: 0% !important;
-  font-size: 2.1vw;
+  font-size: 1rem;
   text-align: center;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .home-row-2 {
-  background-color: brown;
+  background-color: #edc1bb;
   color: white;
   padding-top: 5vw;
   padding-bottom: 5vw;
@@ -57,7 +57,7 @@
 }
 
 @property --num {
-  syntax: '<integer>';
+  syntax: "<integer>";
   initial-value: 0;
   inherits: false;
 }
@@ -67,7 +67,7 @@
   counter-increment: num var(--num);
   /* counter-reset: num var(--num); */
   /* font: 800 40px system-ui; */
-  font-size: 4vw;
+  font-size: 3rem;
   padding: 2rem;
   --num: 2000;
 }
@@ -85,7 +85,7 @@
 }
 
 @property --numb {
-  syntax: '<integer>';
+  syntax: "<integer>";
   initial-value: 0;
   inherits: false;
 }
@@ -95,7 +95,7 @@
   counter-increment: numb var(--numb);
   /* counter-reset: num var(--num); */
   /* font: 800 40px system-ui; */
-  font-size: 4vw;
+  font-size: 3rem;
   padding: 2rem;
   --numb: 16;
 }
@@ -113,7 +113,7 @@
 }
 
 @property --years {
-  syntax: '<integer>';
+  syntax: "<integer>";
   initial-value: 0;
   inherits: false;
 }
@@ -123,9 +123,9 @@
   counter-increment: years var(--years);
   /* counter-reset: num var(--num); */
   /* font: 800 40px system-ui; */
-  font-size: 4vw;
+  font-size: 3rem;
   padding: 2rem;
-  --years: 20;
+  --years: 40;
 }
 .year-count::before {
   content: counter(years);
@@ -136,12 +136,12 @@
     --years: 0;
   }
   to {
-    --years: 20;
+    --years: 40;
   }
 }
 
 @property --product {
-  syntax: '<integer>';
+  syntax: "<integer>";
   initial-value: 0;
   inherits: false;
 }
@@ -151,7 +151,7 @@
   counter-increment: product var(--product);
   /* counter-reset: num var(--num); */
   /* font: 800 40px system-ui; */
-  font-size: 4vw;
+  font-size: 3rem;
   padding: 2rem;
   --product: 60;
 }

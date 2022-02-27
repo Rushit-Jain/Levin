@@ -42,12 +42,12 @@ class Home extends Component {
         </Row>
         <h1
           style={{
-            backgroundColor: "brown",
+            backgroundColor: "#edc1bb",
             margin: 0,
             paddingTop: "20px",
             textAlign: "center",
-            color: "white",
-            fontSize: "3.75vw",
+            color: "#990011",
+            fontSize: "4rem",
           }}
         >
           Milestones
@@ -58,39 +58,49 @@ class Home extends Component {
         >
           <Col className="col-sm-7 col-md-7 col-lg-6 ">
             <img
-              src={milestones} alt="milestone-svg"
-            // style={{ width: "80%" }}
+              src={milestones}
+              alt="milestone-svg"
+              // style={{ width: "80%" }}
             />
           </Col>
-          <Table borderless hover className="col-lg-4 col-md-3 col-sm-8 offset-lg-1 align-self-center" style={{ height: "fit-content" }}>
-
+          <Table
+            borderless
+            // hover
+            className="col-lg-4 col-md-3 col-sm-8 offset-lg-1 align-self-center"
+            style={{ height: "fit-content", color: "#990011" }}
+          >
             <tbody>
               <tr>
-                <td style={{ borderRight: "1px solid", borderBottom: "1px solid" }}>
-                  <div className="client-count milestones-heading-main">
-                    +{" "}
-                  </div><div className="milestones-heading">
-                    Clients Across{" "}
-                  </div></td>
-                <td style={{ borderLeft: "1px solid", borderBottom: "1px solid" }}><div className="state-count milestones-heading-main">
-                  +
-                </div><div className="milestones-heading">
+                <td
+                  style={{
+                    borderRight: "1px solid",
+                    borderBottom: "1px solid",
+                  }}
+                >
+                  <div className="client-count milestones-heading-main">+ </div>
+                  <div className="milestones-heading">Clients Across </div>
+                </td>
+                <td
+                  style={{ borderLeft: "1px solid", borderBottom: "1px solid" }}
+                >
+                  <div className="state-count milestones-heading-main">+</div>
+                  <div className="milestones-heading">
                     {" "}
                     Indian States Served
-                  </div></td>
-
+                  </div>
+                </td>
               </tr>
               <tr>
-                <td style={{ borderRight: "1px solid" }}><div className="state-count milestones-heading-main">
-                  +
-                </div><div className="milestones-heading">
-                    {" "}
-                    Years of Experience
-                  </div></td>
-                <td ><div className="p-0 client-count milestones-heading-main">+{" "}
-                </div><div className="milestones-heading">
-                    Products
-                  </div></td>
+                <td style={{ borderRight: "1px solid" }}>
+                  <div className="year-count milestones-heading-main">+</div>
+                  <div className="milestones-heading"> Years of Experience</div>
+                </td>
+                <td>
+                  <div className="p-0 product-count milestones-heading-main">
+                    +{" "}
+                  </div>
+                  <div className="milestones-heading">Products</div>
+                </td>
               </tr>
             </tbody>
           </Table>
@@ -125,7 +135,6 @@ class Home extends Component {
             </Row>
 
           </Col> */}
-
         </Row>
       </React.Fragment>
     );

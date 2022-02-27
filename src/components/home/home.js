@@ -47,12 +47,13 @@ class Home extends Component {
             paddingTop: "20px",
             textAlign: "center",
             color: "white",
+            fontSize: "3.75vw",
           }}
         >
           Our Reach
         </h1>
         <Row
-          style={{ margin: 0 }}
+          style={{ margin: 0, textAlign: "center" }}
           className="home-row-2 justify-content-center"
         >
           <Col className="align-items-center justify-content-center">

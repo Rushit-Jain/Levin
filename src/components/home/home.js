@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { Container, Row, Col, Form } from "react-bootstrap";
+import { Container, Row, Col, Form, Table } from "react-bootstrap";
 import tvcabinet from "../../assets/Tv unit Designs.png";
-// import bedroom from "../../assets/bedroom.jpg";
+import milestones from "../../assets/illustrations/milestones.svg";
 import bedroom from "../../assets/home.jpg";
 
-import "./Home.css";
+import "./home.css";
 
 class Home extends Component {
   render() {
@@ -50,21 +50,82 @@ class Home extends Component {
             fontSize: "3.75vw",
           }}
         >
-          Our Reach
+          Milestones
         </h1>
         <Row
           style={{ margin: 0, textAlign: "center" }}
           className="home-row-2 justify-content-center"
         >
-          <Col className="align-items-center justify-content-center">
-            <span className="p-0 client-count home-heading-2">
-              + Clients Across{" "}
-            </span>
-            <span className="p-0 state-count home-heading-2">
-              {" "}
-              Indian States Served
-            </span>
+          <Col className="col-sm-7 col-md-7 col-lg-6 ">
+            <img
+              src={milestones} alt="milestone-svg"
+            // style={{ width: "80%" }}
+            />
           </Col>
+          <Table borderless hover className="col-lg-4 col-md-3 col-sm-8 offset-lg-1 align-self-center" style={{ height: "fit-content" }}>
+
+            <tbody>
+              <tr>
+                <td style={{ borderRight: "1px solid", borderBottom: "1px solid" }}>
+                  <div className="client-count milestones-heading-main">
+                    +{" "}
+                  </div><div className="milestones-heading">
+                    Clients Across{" "}
+                  </div></td>
+                <td style={{ borderLeft: "1px solid", borderBottom: "1px solid" }}><div className="state-count milestones-heading-main">
+                  +
+                </div><div className="milestones-heading">
+                    {" "}
+                    Indian States Served
+                  </div></td>
+
+              </tr>
+              <tr>
+                <td style={{ borderRight: "1px solid" }}><div className="state-count milestones-heading-main">
+                  +
+                </div><div className="milestones-heading">
+                    {" "}
+                    Years of Experience
+                  </div></td>
+                <td ><div className="p-0 client-count milestones-heading-main">+{" "}
+                </div><div className="milestones-heading">
+                    Products
+                  </div></td>
+              </tr>
+            </tbody>
+          </Table>
+          {/* <Col className="align-items-center justify-content-center">
+            <Row>
+              <Col><div className="p-0 client-count home-heading-2">+{" "}
+              </div>
+                <div className="p-0 home-heading-2">
+                  Clients Across{" "}
+                </div></Col>
+              <Col><div className="p-0 state-count home-heading-2">
+                +{" "}
+
+              </div><div className="p-0 home-heading-2">
+
+                  Indian States Served
+                </div></Col>
+
+
+            </Row>
+            <Row>
+              <Col><div className="p-0 year-count home-heading-2">+{" "}
+              </div>
+                <div className="p-0 home-heading-2">
+                  Years Of Experience
+                </div></Col>
+              <Col><div className="p-0 product-count home-heading-2">
+                +{" "}
+              </div><div className="p-0 home-heading-2">
+                  Products
+                </div></Col>
+            </Row>
+
+          </Col> */}
+
         </Row>
       </React.Fragment>
     );

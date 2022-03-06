@@ -90,7 +90,7 @@ class ProductCategory extends Component {
           let productsOfSubcategory = [];
           productsOfSubcategory.push(
             <Col xs={12} className="productCategory-subcategory-heading">
-              <p>{subcategoryName}</p>
+              <p>{subcategoryName !== "undefined" ? subcategoryName : ""}</p>
             </Col>
           );
           organizedData[subcategoryName].map((pr) =>

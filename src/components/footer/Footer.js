@@ -1,10 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Footer.css";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.jpg";
 import catalogue from "../../assets/August_2021_Catalogue.pdf";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
+import { Row } from "react-bootstrap";
 
 const Footer = (props) => {
   return (
@@ -101,13 +102,34 @@ const Footer = (props) => {
       </div>
       <div className="row"></div>
       <hr style={{ marginTop: "30px" }} />
-      <div className="col-12 d-flex justify-content-center">
-        <small>
-          Copyright © 2021 Levin Switches. All Rights Reserved.
-          {/* Privacy Policy |
-          Terms Of Use | Legal | Site Map */}
-        </small>
-      </div>
+      <Row className="col-12 d-flex justify-content-center mb-2 mr-0 ml-0">
+        Developed &amp; Maintained by&nbsp;
+        <a
+          className="footer-dev-name-link"
+          href="https://www.linkedin.com/in/bhavesh-bellaney-7b8553186/"
+        >
+          Bhavesh Bellaney
+        </a>
+        ,&nbsp;
+        <a
+          className="footer-dev-name-link"
+          href="https://www.linkedin.com/in/parth-jangid-0762bb18a/"
+        >
+          Parth Jangid
+        </a>
+        &nbsp;&amp;&nbsp;
+        <a
+          className="footer-dev-name-link"
+          href="http://www.linkedin.com/in/rushit-jain-2977661a0"
+        >
+          Rushit Jain
+        </a>
+      </Row>
+      <Row className="col-12 d-flex justify-content-center ml-0 mr-0">
+        <center>
+          <small>Copyright © 2022 Levin Switches. All Rights Reserved.</small>
+        </center>
+      </Row>
     </div>
   );
 };

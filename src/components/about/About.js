@@ -62,15 +62,16 @@ const About = (props) => {
           <Col xs={12} lg={4}>
             <h2 className="about-subheading">OPERATION AT LEVIN</h2>
             <p>
-              Established by Shri Jayantilal Jain in 2001 in Thane's Vasai,
-              Ritzy Industries became the first manufacturing unit for Levin.
-              Today, Ritzy Industries is also the seat of Shri Jayantilal Jain
-              and his son, Anish Jain. It has a capacity of producing 20000
-              pieces of electrical goods in a single day. With just 30 unskilled
-              labourers, the unit has always outdone its expectations. All the
-              products manufactured under the brand undergo rigorous testing
-              before they hit the market. Levin ensures quality without delay or
-              scope for complaints.
+              Established by Shri Jayantilal Jain in 2002 in Mumbai's Ram Mandir
+              area, Ritzy Industries became the first manufacturing unit for
+              Levin products. Following the 2005 Mumbai Floods, the unit was
+              shifted to Thane's Vasai. Today, Ritzy Industries is also the seat
+              of Shri Jayantilal Jain and his son, Anish Jain. It has a capacity
+              of producing 20000 pieces of electrical goods in a single day.
+              With just 30 unskilled labourers, the unit has always outdone its
+              expectations. All the products manufactured under the brand
+              undergo rigorous testing before they hit the market. Levin ensures
+              quality without delay or scope for complaints.
             </p>
             <div style={{ display: "flex", justifyContent: "center" }}>
               <img

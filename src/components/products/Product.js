@@ -15,6 +15,7 @@ function Product(props) {
     ORANGE: "#FFA500",
     SILVER: "#C0C0C0",
   };
+  if (!props.data.image) return <></>;
   return (
     <div
       className="card"

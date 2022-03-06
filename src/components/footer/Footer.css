@@ -17,3 +17,12 @@
   border: 1px solid red;
   box-shadow: 0 0 10px red;
 }
+
+.footer-dev-name-link {
+  color: black;
+  text-decoration: underline;
+}
+
+.footer-dev-name-link:hover {
+  color: red;
+}

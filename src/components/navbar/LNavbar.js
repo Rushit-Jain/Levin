@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Navbar, Nav, Row } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./LNavbar.css";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/logo.jpg";
 import catalogue from "../../assets/August_2021_Catalogue.pdf";
 
 class LNavbar extends Component {
@@ -15,8 +15,10 @@ class LNavbar extends Component {
   render() {
     return (
       <Navbar className="LNavbar" expand="lg">
-
-        <Navbar.Brand href="/home" className="logo-box d-lg-none justify-content-center d-sm-inline">
+        <Navbar.Brand
+          href="/home"
+          className="logo-box d-lg-none justify-content-center d-sm-inline"
+        >
           <img className="logo" src={logo} alt="Levin" />
         </Navbar.Brand>
         <Navbar.Toggle
@@ -48,13 +50,16 @@ class LNavbar extends Component {
             >
               Our Products
             </NavLink>
-          </Nav></Navbar.Collapse>
-        <Navbar.Brand href="/home" className="logo-box d-none d-lg-flex justify-content-center">
+          </Nav>
+        </Navbar.Collapse>
+        <Navbar.Brand
+          href="/home"
+          className="logo-box d-none d-lg-flex justify-content-center"
+        >
           <img className="logo" src={logo} alt="Levin" />
         </Navbar.Brand>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="navlinks-box">
-
             <a className="links" target="_blank" href={catalogue}>
               View Catalogue
             </a>

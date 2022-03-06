@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/Levin/static/css/main.02232ac6.chunk.css",
-    "main.js": "/Levin/static/js/main.0cc6f309.chunk.js",
-    "main.js.map": "/Levin/static/js/main.0cc6f309.chunk.js.map",
+    "main.css": "/Levin/static/css/main.794d73b7.chunk.css",
+    "main.js": "/Levin/static/js/main.80ce730c.chunk.js",
+    "main.js.map": "/Levin/static/js/main.80ce730c.chunk.js.map",
     "runtime-main.js": "/Levin/static/js/runtime-main.02253821.js",
     "runtime-main.js.map": "/Levin/static/js/runtime-main.02253821.js.map",
     "static/css/2.30a67449.chunk.css": "/Levin/static/css/2.30a67449.chunk.css",
-    "static/js/2.29c0361a.chunk.js": "/Levin/static/js/2.29c0361a.chunk.js",
-    "static/js/2.29c0361a.chunk.js.map": "/Levin/static/js/2.29c0361a.chunk.js.map",
+    "static/js/2.3eaaaa54.chunk.js": "/Levin/static/js/2.3eaaaa54.chunk.js",
+    "static/js/2.3eaaaa54.chunk.js.map": "/Levin/static/js/2.3eaaaa54.chunk.js.map",
     "static/js/3.90082852.chunk.js": "/Levin/static/js/3.90082852.chunk.js",
     "static/js/3.90082852.chunk.js.map": "/Levin/static/js/3.90082852.chunk.js.map",
     "index.html": "/Levin/index.html",
     "static/css/2.30a67449.chunk.css.map": "/Levin/static/css/2.30a67449.chunk.css.map",
-    "static/css/main.02232ac6.chunk.css.map": "/Levin/static/css/main.02232ac6.chunk.css.map",
-    "static/js/2.29c0361a.chunk.js.LICENSE.txt": "/Levin/static/js/2.29c0361a.chunk.js.LICENSE.txt",
+    "static/css/main.794d73b7.chunk.css.map": "/Levin/static/css/main.794d73b7.chunk.css.map",
+    "static/js/2.3eaaaa54.chunk.js.LICENSE.txt": "/Levin/static/js/2.3eaaaa54.chunk.js.LICENSE.txt",
     "static/media/August_2021_Catalogue.0461f6b3.pdf": "/Levin/static/media/August_2021_Catalogue.0461f6b3.pdf",
     "static/media/index.css": "/Levin/static/media/TeslaFont.03ef6d73.ttf",
     "static/media/CategoryCard.css": "/Levin/static/media/W5.be7f3c34.svg",
@@ -30,7 +30,7 @@
     "static/media/contact.b7838546.svg": "/Levin/static/media/contact.b7838546.svg",
     "static/media/Contact.css": "/Levin/static/media/contactbg.83874475.svg",
     "static/media/home.633adf17.jpg": "/Levin/static/media/home.633adf17.jpg",
-    "static/media/logo.7f2fa332.png": "/Levin/static/media/logo.7f2fa332.png",
+    "static/media/logo.e86555e9.jpg": "/Levin/static/media/logo.e86555e9.jpg",
     "static/media/milestones.89ba825b.svg": "/Levin/static/media/milestones.89ba825b.svg",
     "static/media/LNavbar.css": "/Levin/static/media/nav_toggle.e4829624.jpg",
     "static/media/open_accessories.c7c6201a.svg": "/Levin/static/media/open_accessories.c7c6201a.svg",
@@ -49,8 +49,8 @@
   "entrypoints": [
     "static/js/runtime-main.02253821.js",
     "static/css/2.30a67449.chunk.css",
-    "static/js/2.29c0361a.chunk.js",
-    "static/css/main.02232ac6.chunk.css",
-    "static/js/main.0cc6f309.chunk.js"
+    "static/js/2.3eaaaa54.chunk.js",
+    "static/css/main.794d73b7.chunk.css",
+    "static/js/main.80ce730c.chunk.js"
   ]
 }

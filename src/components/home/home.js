@@ -78,7 +78,7 @@ class Home extends Component {
                   }}
                 >
                   <div className="client-count milestones-heading-main">+ </div>
-                  <div className="milestones-heading">Clients Across </div>
+                  <div className="milestones-heading">Clients </div>
                 </td>
                 <td
                   style={{ borderLeft: "1px solid", borderBottom: "1px solid" }}

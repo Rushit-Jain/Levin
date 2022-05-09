@@ -55,10 +55,7 @@ function Product(props) {
         }
       ></span>
       <div className="imgBx">
-        <img
-          alt="PRODUCT-IMG"
-          src={"data:image/png;base64," + props.data.image}
-        />
+        <img alt="product" src={"data:image/png;base64," + props.data.image} />
       </div>
       <div className="contentBx">
         <h2

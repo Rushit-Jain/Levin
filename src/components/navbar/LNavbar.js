@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Navbar, Nav, Row } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./LNavbar.css";
-import logo from "../../assets/logo.jpg";
+import logo from "../../assets/logo.webp";
 import catalogue from "../../assets/August_2021_Catalogue.pdf";
 
 class LNavbar extends Component {
@@ -43,6 +43,7 @@ class LNavbar extends Component {
             >
               About Us
             </NavLink>
+            <br></br>
             <NavLink
               className="links"
               to="/products/dolby"
@@ -50,6 +51,7 @@ class LNavbar extends Component {
             >
               Our Products
             </NavLink>
+            <br></br>
           </Nav>
         </Navbar.Collapse>
         <Navbar.Brand
@@ -63,6 +65,7 @@ class LNavbar extends Component {
             <a className="links" target="_blank" href={catalogue}>
               View Catalogue
             </a>
+            <br></br>
             <NavLink
               className="links"
               to="/contact"

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Form, Table } from "react-bootstrap";
-import tvcabinet from "../../assets/Tv unit Designs.png";
+import tvcabinet from "../../assets/Tv unit Designs.webp";
 import milestones from "../../assets/illustrations/milestones.svg";
-import bedroom from "../../assets/home.jpg";
+import bedroom from "../../assets/home.webp";
 
 import "./home.css";
 
@@ -38,6 +38,7 @@ class Home extends Component {
               src={tvcabinet}
               alt="tv-cabinet"
             />
+            <link rel="preload" as="image" href={tvcabinet} />
           </Col>
         </Row>
         <h1

@@ -124,6 +124,7 @@ class Contact extends Component {
               <img
                 src={contactImg}
                 style={{ background: "antiquewhite", width: "80%" }}
+                alt="contact"
               />
             </Col>
           </Col>

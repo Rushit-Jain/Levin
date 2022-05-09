@@ -89,7 +89,7 @@ const categories = {
     "Miniature Circuit Breakers",
     "Isolator",
     "Changeover",
-    "Residual Current Circuit Breakers"
+    "Residual Current Circuit Breakers",
   ],
   accessories: [
     "Ceiling Rose",
@@ -112,8 +112,8 @@ class Products extends Component {
         ] === "dolby"
           ? "dolby"
           : window.location.pathname.split("/")[
-          window.location.pathname.split("/").length - 1
-          ],
+              window.location.pathname.split("/").length - 1
+            ],
     };
   }
 
@@ -183,6 +183,7 @@ class Products extends Component {
             <Col>
               <img
                 src={productsJumbotronImage}
+                alt="product"
                 style={{
                   background: "antiquewhite",
                   width: "80%",

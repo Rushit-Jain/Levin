@@ -63,7 +63,7 @@ class LNavbar extends Component {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="navlinks-box">
             <a className="links" target="_blank" href={catalogue}>
-              View Catalogue
+              View Pricelist
             </a>
             <br></br>
             <NavLink

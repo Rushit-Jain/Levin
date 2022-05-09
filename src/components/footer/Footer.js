@@ -62,7 +62,7 @@ const Footer = (props) => {
             </NavLink>
             <br></br>
             <a className="links" target="_blank" href={catalogue}>
-              View Catalogue
+              View Pricelist
             </a>
             <br></br>
             <NavLink

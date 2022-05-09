@@ -3,7 +3,7 @@ import { Navbar, Nav, Row } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./LNavbar.css";
 import logo from "../../assets/logo.webp";
-import catalogue from "../../assets/August_2021_Catalogue.pdf";
+import catalogue from "../../assets/LEVIN APRIL 2022.pdf";
 
 class LNavbar extends Component {
   constructor(props) {

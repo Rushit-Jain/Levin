@@ -80,7 +80,7 @@ const categories = {
     "Switches",
     "Sockets",
     "Dimmers & Fan Regulators",
-    "Fuse, T.V. Socket & Telephone Jack",
+    "Ancillaries",
     "Double Pole Switches",
     "Switch & Socket Combined",
   ],

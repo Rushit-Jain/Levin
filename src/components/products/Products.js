@@ -42,16 +42,16 @@ const categoryCodes = {
     "fuse-mcb",
     "dp-switch",
     "ss-combined",
-    "5-in-1",
   ],
   accessories: [
     "ceiling-rose",
     "lamp-holders",
-    "plug-tops-bed-switch",
+    // "plug-tops-bed-switch",
     "conversion-multi-plugs",
     "door-bells",
     "ceiling-plates",
-    "power-strip",
+    // "power-strip",
+    "modular-blank-plates"
   ],
   mcb: ["mcb", "isolator", "changeover", "rccb"],
 };
@@ -83,7 +83,6 @@ const categories = {
     "Fuse, T.V. Socket & Telephone Jack",
     "Double Pole Switches",
     "Switch & Socket Combined",
-    "5 in 1",
   ],
   mcb: [
     "Miniature Circuit Breakers",
@@ -94,11 +93,12 @@ const categories = {
   accessories: [
     "Ceiling Rose",
     "Lamp Holders",
-    "Plug Tops & Bed Switch",
+    // "Plug Tops & Bed Switch",
     "Conversion & Multi Plugs",
     "Door Bells",
     "Ceiling plates",
-    "Power Strip",
+    // "Power Strip",
+    "Modular Blank Plates"
   ],
 };
 

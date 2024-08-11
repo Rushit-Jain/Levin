@@ -1,8 +1,6 @@
 import React from "react";
-import Goo from "gooey-react";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import "./Product.css";
-import pic_svg from "../../assets/pic.svg";
 
 function Product(props) {
   let color = {
@@ -55,10 +53,7 @@ function Product(props) {
         }
       ></span>
       <div className="imgBx">
-        <img
-          alt="PRODUCT-IMG"
-          src={"data:image/png;base64," + props.data.image}
-        />
+        <img alt="product" src={"data:image/png;base64," + props.data.image} />
       </div>
       <div className="contentBx">
         <h2

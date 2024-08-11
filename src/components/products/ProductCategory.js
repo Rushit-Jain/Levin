@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Component } from "react";
+import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { Row, Col, Container } from "react-bootstrap";
 import Backspace from "@material-ui/icons/ArrowBack";
@@ -23,9 +23,9 @@ class ProductCategory extends Component {
 
   componentDidMount() {
     if (
-      this.props.range == undefined ||
-      this.props.categoryName == undefined ||
-      this.props.category == undefined
+      this.props.range === undefined ||
+      this.props.categoryName === undefined ||
+      this.props.category === undefined
     )
       this.props.history.push("/products/dolby");
 
@@ -62,6 +62,7 @@ class ProductCategory extends Component {
             this.state.data[pr],
           ];
         }
+        return null;
       });
     }
     let backButton = this.state.data ? (

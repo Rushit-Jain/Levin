@@ -42,16 +42,16 @@ const categoryCodes = {
     "fuse-mcb",
     "dp-switch",
     "ss-combined",
-    "5-in-1",
   ],
   accessories: [
     "ceiling-rose",
     "lamp-holders",
-    "plug-tops-bed-switch",
+    // "plug-tops-bed-switch",
     "conversion-multi-plugs",
     "door-bells",
     "ceiling-plates",
-    "power-strip",
+    // "power-strip",
+    "modular-blank-plates"
   ],
   mcb: ["mcb", "isolator", "changeover", "rccb"],
 };
@@ -83,22 +83,22 @@ const categories = {
     "Fuse, T.V. Socket & Telephone Jack",
     "Double Pole Switches",
     "Switch & Socket Combined",
-    "5 in 1",
   ],
   mcb: [
     "Miniature Circuit Breakers",
     "Isolator",
     "Changeover",
-    "Residual Current Circuit Breakers"
+    "Residual Current Circuit Breakers",
   ],
   accessories: [
     "Ceiling Rose",
     "Lamp Holders",
-    "Plug Tops & Bed Switch",
+    // "Plug Tops & Bed Switch",
     "Conversion & Multi Plugs",
     "Door Bells",
     "Ceiling plates",
-    "Power Strip",
+    // "Power Strip",
+    "Modular Blank Plates"
   ],
 };
 
@@ -112,8 +112,8 @@ class Products extends Component {
         ] === "dolby"
           ? "dolby"
           : window.location.pathname.split("/")[
-          window.location.pathname.split("/").length - 1
-          ],
+              window.location.pathname.split("/").length - 1
+            ],
     };
   }
 
@@ -183,6 +183,7 @@ class Products extends Component {
             <Col>
               <img
                 src={productsJumbotronImage}
+                alt="product"
                 style={{
                   background: "antiquewhite",
                   width: "80%",

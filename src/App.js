@@ -5,7 +5,7 @@ import About from "./components/about/About";
 import Home from "./components/home/home";
 import Contact from "./components/contact/Contact";
 import Products from "./components/products/Products";
-import { Switch, Redirect, Route, withRouter } from "react-router-dom";
+import { Switch, Redirect, Route } from "react-router-dom";
 import ProductCategory from "./components/products/ProductCategory";
 
 const ProductWithCategory = (props) => {

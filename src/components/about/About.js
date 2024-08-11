@@ -3,9 +3,9 @@ import { Container, Row, Col } from "react-bootstrap";
 import CircuitCell from "./CircuitCell";
 import CircuitSwitch from "./CircuitSwitch";
 import aboutJumbotronImage from "../../assets/illustrations/about.svg";
-import aboutOperation from "../../assets/images/about_operation.jpg";
-import aboutQuality from "../../assets/images/about_quality.jpg";
-import aboutHistory from "../../assets/images/about_history.gif";
+import aboutOperation from "../../assets/images/about_operation.webp";
+import aboutQuality from "../../assets/images/about_quality.webp";
+import aboutHistory from "../../assets/images/about_history.webp";
 import "./About.css";
 
 const About = (props) => {
@@ -26,6 +26,7 @@ const About = (props) => {
             <img
               src={aboutJumbotronImage}
               style={{ background: "antiquewhite", width: "80%" }}
+              alt="jumbrotron"
             />
           </Col>
         </Col>
@@ -50,7 +51,12 @@ const About = (props) => {
               Jain.
             </p>
             <div style={{ display: "flex", justifyContent: "center" }}>
-              <img src={aboutHistory} height="400vh" width="400vw"></img>
+              <img
+                src={aboutHistory}
+                alt="product"
+                height="400vh"
+                width="400vw"
+              ></img>
             </div>
           </Col>
           <Col lg={1} className="d-none d-lg-block">
@@ -76,6 +82,7 @@ const About = (props) => {
             <div style={{ display: "flex", justifyContent: "center" }}>
               <img
                 src={aboutOperation}
+                alt="machine"
                 style={{
                   borderRadius: "10px",
                 }}
@@ -104,6 +111,7 @@ const About = (props) => {
             <div style={{ display: "flex", justifyContent: "center" }}>
               <img
                 src={aboutQuality}
+                alt="machine"
                 style={{
                   borderRadius: "10px",
                 }}

@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Footer.css";
-import logo from "../../assets/logo.jpg";
-import catalogue from "../../assets/August_2021_Catalogue.pdf";
+import logo from "../../assets/logo.webp";
+import catalogue from "../../assets/LEVIN JULY 2024.pdf";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import { Row } from "react-bootstrap";
@@ -21,7 +21,11 @@ const Footer = (props) => {
       >
         <div className="col-lg-4 col-12">
           <div className="row">
-            <img className="footer-logo mx-auto d-block" src={logo} />
+            <img
+              className="footer-logo mx-auto d-block"
+              src={logo}
+              alt="levin switches"
+            />
           </div>
           <div
             style={{
@@ -40,6 +44,7 @@ const Footer = (props) => {
             >
               Home
             </NavLink>
+            <br></br>
             <NavLink
               className="links"
               to="/about"
@@ -47,6 +52,7 @@ const Footer = (props) => {
             >
               About Us
             </NavLink>
+            <br></br>
             <NavLink
               className="links"
               to="/products/dolby"
@@ -54,9 +60,11 @@ const Footer = (props) => {
             >
               Our Products
             </NavLink>
-            <a className="links" target="_blank" href={catalogue}>
+            <br></br>
+            <a className="links" rel="noopener noreferrer" target="_blank" href={catalogue}>
               View Catalogue
             </a>
+            <br></br>
             <NavLink
               className="links"
               to="/contact"
@@ -74,6 +82,7 @@ const Footer = (props) => {
           }}
         >
           <iframe
+          title="map"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d874.5872769592792!2d72.86957772918967!3d19.415424499180894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7a9d374d7930b%3A0xae147f1f052fc21d!2sLEVIN%20Switches!5e1!3m2!1sen!2sin!4v1641804300597!5m2!1sen!2sin"
             width="350"
             height="250"
@@ -83,15 +92,16 @@ const Footer = (props) => {
           ></iframe>
         </div>
         <div className="col-lg-4 d-flex align-items-center pt-4 pt-lg-0 justify-content-center col-12">
-          <a href="https://www.facebook.com/levinswitches" target="_blank">
+          <a rel="noopener noreferrer" href="https://www.facebook.com/levinswitches" target="_blank">
             <FacebookIcon
               className="footer-social-media"
               style={{ fontSize: "40pt", color: "rgb(150, 152, 154)" }}
             />
           </a>
           <a
-            href="https://www.instagram.com/levinswitches_india/"
+            href="https://www.instagram.com/levinswitches.in/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <InstagramIcon
               className="footer-social-media"
@@ -104,20 +114,26 @@ const Footer = (props) => {
       <hr style={{ marginTop: "30px" }} />
       <Row className="col-12 d-flex justify-content-center mb-2 mr-0 ml-0">
         Developed &amp; Maintained by&nbsp;
+      </Row>
+      <Row className="col-12 d-flex justify-content-center mb-2 mr-0 ml-0">
         <a
           className="footer-dev-name-link"
           href="https://www.linkedin.com/in/bhavesh-bellaney-7b8553186/"
         >
           Bhavesh Bellaney
         </a>
-        ,&nbsp;
+      </Row>
+      {/* ,&nbsp; */}
+      <Row className="col-12 d-flex justify-content-center mb-2 mr-0 ml-0">
         <a
           className="footer-dev-name-link"
           href="https://www.linkedin.com/in/parth-jangid-0762bb18a/"
         >
           Parth Jangid
         </a>
-        &nbsp;&amp;&nbsp;
+      </Row>
+      {/* &nbsp;&amp;&nbsp; */}
+      <Row className="col-12 d-flex justify-content-center mb-2 mr-0 ml-0">
         <a
           className="footer-dev-name-link"
           href="http://www.linkedin.com/in/rushit-jain-2977661a0"

@@ -3,7 +3,7 @@ import { Navbar, Nav, Row } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./LNavbar.css";
 import logo from "../../assets/logo.webp";
-import catalogue from "../../assets/LEVIN APRIL 2022.pdf";
+import catalogue from "../../assets/LEVIN JULY 2024.pdf";
 
 class LNavbar extends Component {
   constructor(props) {
@@ -63,7 +63,7 @@ class LNavbar extends Component {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="navlinks-box">
             <a className="links" target="_blank" href={catalogue}>
-              View Pricelist
+              View Catalogue
             </a>
             <br></br>
             <NavLink

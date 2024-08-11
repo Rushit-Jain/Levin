@@ -30,9 +30,11 @@ class Contact extends Component {
       subject: null,
       message: null,
       phone: null,
+      location: null,
       validName: -1,
       validEmailId: -1,
       validSubject: -1,
+      validLocation: -1
     };
     // -1 means field is not dirty | 0 means field is dirty but not valid | 2 means field is valid and touched
   }
@@ -44,7 +46,11 @@ class Contact extends Component {
       subject: this.state.subject,
       message: this.state.message,
       phone: this.state.phone,
+      location: this.state.location,
+      enquiryTime: (new Date).toDateString()
     };
+    console.log((new Date).toDateString())
+    console.log(data);
     axios
       .post(
         "https://levin-e1c22-default-rtdb.firebaseio.com/contact.json",
@@ -73,6 +79,17 @@ class Contact extends Component {
       this.setState({ subject: subject, validSubject: 2 });
     } else {
       this.setState({ validSubject: 0 });
+    }
+  };
+
+  checkLocation = (e) => {
+    let location = e.target.value;
+    if (location === "") {
+      this.setState({ location: location, validLocation: 0 });
+    } else if (location != "") {
+      this.setState({ location: location, validLocation: 2 });
+    } else {
+      this.setState({ validLocation: 0 });
     }
   };
 
@@ -106,6 +123,8 @@ class Contact extends Component {
     this.state.validEmailId == -1 ? this.setState({ validEmailId: 0 }) : "";
   dirtySubject = () =>
     this.state.validSubject == -1 ? this.setState({ validSubject: 0 }) : "";
+  dirtyLocation = () =>
+    this.state.validLocation == -1 ? this.setState({ validLocation: 0 }) : "";
 
   render() {
     return (
@@ -172,16 +191,21 @@ class Contact extends Component {
 
                     <Row className="contactInfoColumnItems item-row">
                       <Col className="px-0 py-0 ml-3 my-0 mr-2" xs={1}>
-                        <a href="tel:+91 9619682066" style={{ color: "black" }}>
+                        {/* <a href="tel:+91 9619682066" style={{ color: "black" }}> */}
                           <CallRoundedIcon
                             style={{ color: "black" }}
                             className="contact-info-icons item"
                           />
-                        </a>
+                        {/* </a> */}
                       </Col>
                       <Col className="pl-0 py-0 pr-1">
-                        <a href="tel:+91 9619682066" style={{ color: "black" }}>
-                          +91&nbsp;9619682066
+                        <a href="tel:+91 8104948821" style={{ color: "black" }}>
+                          +91&nbsp;8104948821
+                        </a>
+                      </Col>
+                      <Col className="pl-0 py-0 pr-1 offset-2 offset-lg-0">
+                        <a href="tel:+91 9969994007" style={{ color: "black" }}>
+                          +91&nbsp;9969994007
                         </a>
                       </Col>
                     </Row>
@@ -237,13 +261,13 @@ class Contact extends Component {
                     <br />
                     <Row className="contactInfoColumnIcons">
                       <Col className="icons">
-                        <a href="https://www.facebook.com/levinswitches">
+                        <a target="_blank" href="https://www.facebook.com/levinswitches">
                           <FacebookIcon
                             className="contact-social-media"
                             style={{ color: "black", "font-size": "40pt" }}
                           />
                         </a>
-                        <a href="https://www.instagram.com/levinswitches_india/">
+                        <a target="_blank" href="https://www.instagram.com/levinswitches.in/">
                           <InstagramIcon
                             className="contact-social-media"
                             style={{ color: "black", "font-size": "40pt" }}
@@ -339,6 +363,41 @@ class Contact extends Component {
                               }}
                             >
                               Please enter a valid email ID.
+                            </span>
+                          </Form.Row>
+                        </Col>
+                      </Row>
+                      <Row className="contactFormRow">
+                        <Col>
+                          <Form.Row>
+                            <TextField
+                              label="State, City"
+                              variant="outlined"
+                              color="primary"
+                              onChange={this.checkLocation.bind(this)}
+                              onFocus={this.dirtyLocation}
+                              fullWidth
+                            />
+                          </Form.Row>
+                          <Form.Row
+                            style={{
+                              display:
+                                this.state.validLocation == -1 ||
+                                this.state.validLocation == 2
+                                  ? "none"
+                                  : "",
+                            }}
+                          >
+                            <span
+                              className="contact-err-msg"
+                              style={{
+                                visibility: this.state.validLocation
+                                  ? "hidden"
+                                  : "visible",
+                                padding: "0px 5px",
+                              }}
+                            >
+                              Location must not be empty.
                             </span>
                           </Form.Row>
                         </Col>

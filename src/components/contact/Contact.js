@@ -47,9 +47,8 @@ class Contact extends Component {
       message: this.state.message,
       phone: this.state.phone,
       location: this.state.location,
-      enquiryTime: (new Date).toDateString()
+      enquiryTime: new Date().toDateString()
     };
-    console.log((new Date).toDateString())
     console.log(data);
     axios
       .post(
@@ -75,7 +74,7 @@ class Contact extends Component {
     let subject = e.target.value;
     if (subject === "") {
       this.setState({ subject: subject, validSubject: 0 });
-    } else if (subject != "") {
+    } else if (subject !== "") {
       this.setState({ subject: subject, validSubject: 2 });
     } else {
       this.setState({ validSubject: 0 });
@@ -86,7 +85,7 @@ class Contact extends Component {
     let location = e.target.value;
     if (location === "") {
       this.setState({ location: location, validLocation: 0 });
-    } else if (location != "") {
+    } else if (location !== "") {
       this.setState({ location: location, validLocation: 2 });
     } else {
       this.setState({ validLocation: 0 });
@@ -118,13 +117,13 @@ class Contact extends Component {
   colorRemove = () => this.setState({ phoneClassName: "" });
 
   dirtyName = () =>
-    this.state.validName == -1 ? this.setState({ validName: 0 }) : "";
+    this.state.validName === -1 ? this.setState({ validName: 0 }) : "";
   dirtyEmailId = () =>
-    this.state.validEmailId == -1 ? this.setState({ validEmailId: 0 }) : "";
+    this.state.validEmailId === -1 ? this.setState({ validEmailId: 0 }) : "";
   dirtySubject = () =>
-    this.state.validSubject == -1 ? this.setState({ validSubject: 0 }) : "";
+    this.state.validSubject === -1 ? this.setState({ validSubject: 0 }) : "";
   dirtyLocation = () =>
-    this.state.validLocation == -1 ? this.setState({ validLocation: 0 }) : "";
+    this.state.validLocation === -1 ? this.setState({ validLocation: 0 }) : "";
 
   render() {
     return (
@@ -237,6 +236,7 @@ class Contact extends Component {
                         <a
                           style={{ color: "black" }}
                           target="_blank"
+                          rel="noopener noreferrer"
                           href="https://goo.gl/maps/XNie7pVzaGj7hgXbA"
                         >
                           <RoomIcon
@@ -249,6 +249,7 @@ class Contact extends Component {
                         <a
                           style={{ color: "black" }}
                           target="_blank"
+                          rel="noopener noreferrer"
                           href="https://goo.gl/maps/XNie7pVzaGj7hgXbA"
                         >
                           Ritzy Industries, Gala No. 6&amp;7, Raj Prabha Mohan
@@ -261,13 +262,13 @@ class Contact extends Component {
                     <br />
                     <Row className="contactInfoColumnIcons">
                       <Col className="icons">
-                        <a target="_blank" href="https://www.facebook.com/levinswitches">
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/levinswitches">
                           <FacebookIcon
                             className="contact-social-media"
                             style={{ color: "black", "font-size": "40pt" }}
                           />
                         </a>
-                        <a target="_blank" href="https://www.instagram.com/levinswitches.in/">
+                        <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/levinswitches.in/">
                           <InstagramIcon
                             className="contact-social-media"
                             style={{ color: "black", "font-size": "40pt" }}
@@ -294,8 +295,8 @@ class Contact extends Component {
                           <Form.Row
                             style={{
                               display:
-                                this.state.validName == -1 ||
-                                this.state.validName == 2
+                                this.state.validName === -1 ||
+                                this.state.validName === 2
                                   ? "none"
                                   : "",
                             }}
@@ -347,8 +348,8 @@ class Contact extends Component {
                           <Form.Row
                             style={{
                               display:
-                                this.state.validEmailId == -1 ||
-                                this.state.validEmailId == 2
+                                this.state.validEmailId === -1 ||
+                                this.state.validEmailId === 2
                                   ? "none"
                                   : "",
                             }}
@@ -382,8 +383,8 @@ class Contact extends Component {
                           <Form.Row
                             style={{
                               display:
-                                this.state.validLocation == -1 ||
-                                this.state.validLocation == 2
+                                this.state.validLocation === -1 ||
+                                this.state.validLocation === 2
                                   ? "none"
                                   : "",
                             }}
@@ -417,8 +418,8 @@ class Contact extends Component {
                           <Form.Row
                             style={{
                               display:
-                                this.state.validSubject == -1 ||
-                                this.state.validSubject == 2
+                                this.state.validSubject === -1 ||
+                                this.state.validSubject === 2
                                   ? "none"
                                   : "",
                             }}
@@ -468,7 +469,7 @@ class Contact extends Component {
                             disabled={
                               this.state.validEmailId *
                                 this.state.validName *
-                                this.state.validSubject ==
+                                this.state.validSubject ===
                               8
                                 ? false
                                 : true

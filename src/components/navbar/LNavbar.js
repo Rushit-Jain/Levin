@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Navbar, Nav, Row } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import "./LNavbar.css";
 import logo from "../../assets/logo.webp";
@@ -62,7 +62,7 @@ class LNavbar extends Component {
         </Navbar.Brand>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="navlinks-box">
-            <a className="links" target="_blank" href={catalogue}>
+            <a className="links" target="_blank" href={catalogue} rel="noopener noreferrer">
               View Catalogue
             </a>
             <br></br>

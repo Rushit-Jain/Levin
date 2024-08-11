@@ -1,8 +1,6 @@
 import React from "react";
-import Goo from "gooey-react";
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import "./Product.css";
-import pic_svg from "../../assets/pic.svg";
 
 function Product(props) {
   let color = {

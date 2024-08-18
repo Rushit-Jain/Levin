@@ -53,7 +53,7 @@ const categoryCodes = {
     // "power-strip",
     "modular-blank-plates"
   ],
-  mcb: ["mcb", "isolator", "changeover", "rccb"],
+  mcb: ["mcb", "isolator", "changeover", "rccb", "distribution-box"],
 };
 
 const categories = {
@@ -89,6 +89,7 @@ const categories = {
     "Isolator",
     "Changeover",
     "Residual Current Circuit Breakers",
+    "Distribution Box"
   ],
   accessories: [
     "Ceiling Rose",

@@ -7,11 +7,15 @@ import open_doric from "../../assets/product_buttons/open_doric.svg";
 import open_dorun from "../../assets/product_buttons/open_dorun.svg";
 import open_dolby from "../../assets/product_buttons/open_dolby.svg";
 import open_mcb from "../../assets/product_buttons/open_mcb.svg";
+import open_led from "../../assets/product_buttons/open_led.svg";
+import open_dura from "../../assets/product_buttons/open_dura.svg";
 import open_accessories from "../../assets/product_buttons/open_accessories.svg";
 import closed_doric from "../../assets/product_buttons/closed_doric.svg";
 import closed_dorun from "../../assets/product_buttons/closed_dorun.svg";
 import closed_dolby from "../../assets/product_buttons/closed_dolby.svg";
 import closed_mcb from "../../assets/product_buttons/closed_mcb.svg";
+import closed_led from "../../assets/product_buttons/closed_led.svg";
+import closed_dura from "../../assets/product_buttons/closed_dura.svg";
 import closed_accessories from "../../assets/product_buttons/closed_accessories.svg";
 import productsJumbotronImage from "../../assets/illustrations/products.svg";
 
@@ -53,7 +57,9 @@ const categoryCodes = {
     // "power-strip",
     "modular-blank-plates"
   ],
-  mcb: ["mcb", "isolator", "changeover", "rccb"],
+  mcb: ["mcb", "isolator", "changeover", "rccb", "distribution-box"],
+  led: ["led-panels","flood-light","street-light"],
+  dura: ["modular-type", "screw-type"]
 };
 
 const categories = {
@@ -80,7 +86,7 @@ const categories = {
     "Switches",
     "Sockets",
     "Dimmers & Fan Regulators",
-    "Fuse, T.V. Socket & Telephone Jack",
+    "Ancillaries",
     "Double Pole Switches",
     "Switch & Socket Combined",
   ],
@@ -89,6 +95,7 @@ const categories = {
     "Isolator",
     "Changeover",
     "Residual Current Circuit Breakers",
+    "Distribution Box"
   ],
   accessories: [
     "Ceiling Rose",
@@ -100,6 +107,12 @@ const categories = {
     // "Power Strip",
     "Modular Blank Plates"
   ],
+  led: [
+    "LED Panels",
+    "Flood Light",
+    "Street Light"
+  ],
+  dura: ["Modular Type", "Screw Type"]
 };
 
 class Products extends Component {
@@ -232,6 +245,18 @@ class Products extends Component {
             />
             <img
               onClick={() => {
+                this.handleRangeChange("dura");
+                this.props.history.push("/products/dura");
+              }}
+              height="100px"
+              width="200px"
+              alt="DURA"
+              src={
+                this.state.selectedRange === "dura" ? closed_dura : open_dura
+              }
+            />
+            <img
+              onClick={() => {
                 this.handleRangeChange("dorun");
                 this.props.history.push("/products/dorun");
               }}
@@ -265,6 +290,18 @@ class Products extends Component {
               width="200px"
               alt="MCB"
               src={this.state.selectedRange === "mcb" ? closed_mcb : open_mcb}
+            />
+            <img
+              onClick={() => {
+                this.handleRangeChange("led");
+                this.props.history.push("/products/led");
+              }}
+              height="100px"
+              width="200px"
+              alt="LED"
+              src={
+                this.state.selectedRange === "led" ? closed_led : open_led
+              }
             />
           </Row>
         </Container>

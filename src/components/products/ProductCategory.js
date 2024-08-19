@@ -126,11 +126,11 @@ class ProductCategory extends Component {
                 src={
                   this.props.range === "dolby"
                     ? dolby
-                    : this.props.range === "doric"
+                    : this.props.range === "doric" || this.props.range === "dura"
                     ? doric
                     : this.props.range === "dorun"
                     ? dorun
-                    : this.props.range === "accessories"
+                    : this.props.range === "accessories" || this.props.range === "led"
                     ? accessories
                     : mcb
                 }
@@ -150,7 +150,7 @@ class ProductCategory extends Component {
           <Col style={{ alignSelf: "center" }}>
             <h2
               className={
-                this.props.range === "mcb"
+                this.props.range === "mcb" || this.props.range === "led"
                   ? "product-category-mcb-heading"
                   : "product-category-heading product-category-title"
               }

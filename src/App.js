@@ -7,6 +7,7 @@ import Contact from "./components/contact/Contact";
 import Products from "./components/products/Products";
 import { Switch, Redirect, Route } from "react-router-dom";
 import ProductCategory from "./components/products/ProductCategory";
+import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 
 const ProductWithCategory = (props) => {
   // console.log("App.js : ",props);
@@ -47,6 +48,7 @@ function App() {
       </Switch>
       {/* <Product /> */}
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { Row, Col, Table } from "react-bootstrap";
 import tvcabinet from "../../assets/Tv unit Designs.webp";
 import milestones from "../../assets/illustrations/milestones.svg";
 import bedroom from "../../assets/home.webp";
+import Promotion from "../promotion/Promotion";
 
 import "./home.css";
 
@@ -10,6 +11,7 @@ class Home extends Component {
   render() {
     return (
       <React.Fragment>
+        <Promotion />
         <Row className="home-row" style={{ margin: "auto" }}>
           <Col className="col-md-4 d-none d-md-block">
             <img

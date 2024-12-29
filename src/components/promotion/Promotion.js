@@ -6,9 +6,9 @@ const images = require.context('../../assets/promotions', true);
 const imageList = images.keys().map(image => images(image));
 
 const Promotion = (props) => {
-    let history = useHistory();
+    const history = useHistory();
     let carousel = imageList.map((image,i) => {
-        let index = +((image.split("/")[3]).split('\.')[0])-1;
+        let index = +((image.split("/")[3]).split('.')[0])-1;
         return (
             <Carousel.Item key={i}>
                 <Image

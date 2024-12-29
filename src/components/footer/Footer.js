@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Footer.css";
 import logo from "../../assets/logo.webp";
-import catalogue from "../../assets/LEVIN JULY 2024.pdf";
+import catalogue from "../../assets/LEVIN DEC 2024.pdf";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import { Row } from "react-bootstrap";

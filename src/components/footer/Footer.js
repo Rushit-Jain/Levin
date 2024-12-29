@@ -84,7 +84,7 @@ const Footer = (props) => {
           <iframe
           title="map"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d874.5872769592792!2d72.86957772918967!3d19.415424499180894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7a9d374d7930b%3A0xae147f1f052fc21d!2sLEVIN%20Switches!5e1!3m2!1sen!2sin!4v1641804300597!5m2!1sen!2sin"
-            width="350"
+            width="250"
             height="250"
             style={{ border: 0 }}
             className="footer-iframe"

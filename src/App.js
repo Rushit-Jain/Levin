@@ -8,6 +8,7 @@ import Products from "./components/products/Products";
 import { Switch, Redirect, Route } from "react-router-dom";
 import ProductCategory from "./components/products/ProductCategory";
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
+import ProformaGenerator from "./components/proforma-generator/ProformaGenerator";
 
 const ProductWithCategory = (props) => {
   // console.log("App.js : ",props);
@@ -26,6 +27,7 @@ function App() {
     <div>
       <LNavbar />
       <Switch>
+        <Route path="/proforma" exact component={ProformaGenerator} />
         <Route path="/about" exact component={About} />
         <Route path="/contact" exact component={Contact} />
         <Route path="/home" component={Home} />

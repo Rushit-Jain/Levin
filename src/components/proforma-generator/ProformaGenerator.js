@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import { Row, Col, Container, Button } from "react-bootstrap";
 import {Accordion, Card} from 'react-bootstrap';
+import "./ProformaGenerator.css";
 
 class ProformaGenerator extends Component {
     constructor(props) {
@@ -12,6 +13,7 @@ class ProformaGenerator extends Component {
             quantity: [],
             range: [],
             discount: -1,
+            cashDiscount: 0,
             isGenerated: false,
             total: 0
         };
@@ -31,6 +33,8 @@ class ProformaGenerator extends Component {
             alert("Quantity cannot be less than 0");
         else if(!(classReference.state.discount >= 0))
             alert("Discount cannot be empty or less than 0");
+        else if(!(classReference.state.cashDiscount >= 0))
+            alert("Cash Discount cannot be less than 0");
         else
             this.setState({isGenerated: true});
     }
@@ -39,6 +43,12 @@ class ProformaGenerator extends Component {
             this.setState({discount: -1});
         else
             this.setState({discount: event.target.value});
+    }
+    handleCashDiscountChange (event) {
+        if(event.target.value==="")
+            this.setState({cashDiscount: 0});
+        else
+            this.setState({cashDiscount: event.target.value});
     }
     handleInputChange(product,rangeName,event) {
         if(this.isInputValid(event.target.value) && !this.state.selectedProductData.includes(product)) {
@@ -127,11 +137,17 @@ class ProformaGenerator extends Component {
             </Accordion>
             <Container className="mt-5">
                 <Row>
-                    <Col className="text-center my-auto col-12 col-md-6">
+                    <Col className="text-center my-auto col-12 col-md-6 p-3">
                         <h2>Discount</h2>
                         <input type="number" placeholder="Enter Discount %" onChange={(event) => this.handleDiscountChange(event)}/>
                     </Col>
-                    <Col className="text-center my-auto col-12 col-md-6 p-5">
+                    <Col className="text-center my-auto col-12 col-md-6 p-3">
+                        <h2>Cash Discount</h2>
+                        <input type="number" placeholder="Enter Cash Discount %" onChange={(event) => this.handleCashDiscountChange(event)}/>
+                    </Col>
+                </Row>
+                <Row>
+                <Col className="text-center my-auto pt-5">
                         <Button onClick={(event) => this.handleSubmit(this)}>Generate Proforma</Button>
                     </Col>
                 </Row>

@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Row, Col, Container, Button } from "react-bootstrap";
 import {Accordion, Card, DropdownButton, Dropdown} from 'react-bootstrap';
 import "./ProformaGenerator.css";
+import logo from "../../assets/print_logo.png";
 
 class ProformaGenerator extends Component {
     constructor(props) {
@@ -213,7 +214,8 @@ class ProformaGenerator extends Component {
             grandTotal = Math.round(grandTotal - cd + gst);
         }
         let generatedProforma = (
-            <Container className="text-center" style={{overflow: "auto", width: "1200px", fontFamily: "Arial"}}>
+            <>
+            <Container ref={this.props.printReference} className="text-center" style={{overflow: "auto", width: "1200px", fontFamily: "Arial", background: `linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)), url(${logo})`, backgroundRepeat: "repeat-y", backgroundSize: "contain", backgroundPosition: "center center"}}>
                 <Row>
                     <Col><h3 style={{textDecoration: "underline"}}>Item</h3></Col>
                     <Col><h3 style={{textDecoration: "underline"}}>Quantity</h3></Col>
@@ -242,15 +244,18 @@ class ProformaGenerator extends Component {
                     <Col className="p-2" style={{border: "1px black solid"}}><h4>Grand Total</h4></Col>
                     <Col className="p-2" style={{border: "1px black solid"}}><h4>Rs. {grandTotal}</h4></Col>
                 </Row>
+            </Container>
+            <Container>
                 <Row>
                 <Col className="text-left my-auto pt-5">
                         <Button variant="info" onClick={(event) => this.setState({isGenerated: false})}>Back</Button>
                     </Col>
-                    {/* <Col className="text-right my-auto pt-5">
-                        <Button variant="success" onClick={(event) => this.generatePDF()}>Print</Button>
-                    </Col> */}
+                    <Col className="text-right my-auto pt-5">
+                        <Button variant="success" onClick={this.props.printHandler}>Download PDF</Button>
+                    </Col>
                 </Row>
             </Container>
+            </>
         );
         console.log(this.state.selectedProductData);
         console.log(this.state.quantity);

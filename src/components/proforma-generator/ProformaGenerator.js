@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import { Row, Col, Container } from "react-bootstrap";
+import {Accordion, Card} from 'react-bootstrap';
 
 class ProformaGenerator extends Component {
     constructor(props) {
@@ -47,10 +48,10 @@ class ProformaGenerator extends Component {
     generateListView(rangeName) {
         return (Object.keys(this.state.incomingProductData[rangeName]).map((data) => (
             <Row className="px-0 px-sm-4 mb-5 justify-content-center" key={data}>
-                <Col className="col-md-6 col-12 justify-content-center">
+                <Col className="col-md-6 col-12 text-center">
                     {this.state.incomingProductData[rangeName][data]['name']}
                 </Col>
-                <Col className="justify-content-center">
+                <Col className="text-center">
                     <input type="number" placeholder="Enter Quantity" onChange={(event) => this.handleInputChange(this.state.incomingProductData[rangeName][data],rangeName,event)}/>
                 </Col>
             </Row>
@@ -71,16 +72,40 @@ class ProformaGenerator extends Component {
         console.log(this.state.quantity);
         console.log(this.state.range);
         return (
-        <Container>
-            <h2>Dorun</h2>
-            {dorunRenderedList}
-            <h2>Accessories</h2>
-            {accessoriesRenderedList}
-            <h2>Dura</h2>
-            {duraRenderedList}
-            <h2>LED</h2>
-            {ledRenderedList}
-        </Container>
+        <Accordion defaultActiveKey="0">
+            <Card>
+                <Accordion.Toggle as={Card.Header} eventKey="0">
+                <h2>Dorun</h2>
+                </Accordion.Toggle>
+                <Accordion.Collapse eventKey="0">
+                <Card.Body>{dorunRenderedList}</Card.Body>
+                </Accordion.Collapse>
+            </Card>
+            <Card>
+                <Accordion.Toggle as={Card.Header} eventKey="1">
+                <h2>Accessories</h2>
+                </Accordion.Toggle>
+                <Accordion.Collapse eventKey="1">
+                <Card.Body>{accessoriesRenderedList}</Card.Body>
+                </Accordion.Collapse>
+            </Card>
+            <Card>
+                <Accordion.Toggle as={Card.Header} eventKey="2">
+                <h2>Dura</h2>
+                </Accordion.Toggle>
+                <Accordion.Collapse eventKey="2">
+                <Card.Body>{duraRenderedList}</Card.Body>
+                </Accordion.Collapse>
+            </Card>
+            <Card>
+                <Accordion.Toggle as={Card.Header} eventKey="2">
+                <h2>LED</h2>
+                </Accordion.Toggle>
+                <Accordion.Collapse eventKey="2">
+                <Card.Body>{ledRenderedList}</Card.Body>
+                </Accordion.Collapse>
+            </Card>
+        </Accordion>
     );
     }
 }

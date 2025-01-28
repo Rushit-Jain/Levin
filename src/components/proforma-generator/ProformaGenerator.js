@@ -87,7 +87,7 @@ class ProformaGenerator extends Component {
                     {this.state.incomingProductData[rangeName][data]['name']}
                 </Col>
                 <Col className="text-center">
-                    <input type="number" placeholder="Enter Quantity" onChange={(event) => this.handleInputChange(this.state.incomingProductData[rangeName][data],rangeName,event)}/>
+                    <input type="number" value={this.state.selectedProductData.indexOf(this.state.incomingProductData[rangeName][data]) === -1 ? "" : this.state.quantity[this.state.selectedProductData.indexOf(this.state.incomingProductData[rangeName][data])]} placeholder="Enter Quantity" onChange={(event) => this.handleInputChange(this.state.incomingProductData[rangeName][data],rangeName,event)}/>
                 </Col>
             </Row>
           )));
@@ -149,7 +149,7 @@ class ProformaGenerator extends Component {
                 <Row>
                     <Col className="text-center my-auto col-12 col-md-6 p-3">
                         <h2>Discount</h2>
-                        <input type="number" placeholder="Enter Discount %" onChange={(event) => this.handleDiscountChange(event)}/>
+                        <input type="number" value={this.state.discount !== -1 ? this.state.discount : ""} placeholder="Enter Discount %" onChange={(event) => this.handleDiscountChange(event)}/>
                     </Col>
                     <Col className="text-center my-auto col-12 col-md-6 p-3">
                         <h2>Cash Discount</h2>
@@ -158,7 +158,7 @@ class ProformaGenerator extends Component {
                             <Dropdown.Item as="button" onClick={(event) => this.handleCashDiscountLocation("After GST")}>After GST</Dropdown.Item>
                             <Dropdown.Item as="button" onClick={(event) => this.handleCashDiscountLocation("Not Applicable")}>Not Applicable</Dropdown.Item>
                         </DropdownButton>
-                        <input type="number" placeholder="Enter Cash Discount %" onChange={(event) => this.handleCashDiscountChange(event)}/>
+                        <input type="number" value={this.state.cashDiscount !== 0 ? this.state.cashDiscount : ""} placeholder="Enter Cash Discount %" onChange={(event) => this.handleCashDiscountChange(event)}/>
                     </Col>
                 </Row>
                 <Row>
@@ -242,6 +242,11 @@ class ProformaGenerator extends Component {
                     <Col><h4>Grand Total</h4></Col>
                     <Col></Col>
                     <Col><h4>Rs. {grandTotal}</h4></Col>
+                </Row>
+                <Row>
+                <Col className="text-left my-auto pt-5">
+                        <Button variant="info" onClick={(event) => this.setState({isGenerated: false})}>Back</Button>
+                    </Col>
                 </Row>
             </Container>
         );

@@ -215,7 +215,17 @@ class ProformaGenerator extends Component {
         }
         let generatedProforma = (
             <>
-            <Container ref={this.props.printReference} className="text-center" style={{overflow: "auto", width: "1200px", fontFamily: "Arial", background: `linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)), url(${logo})`, backgroundRepeat: "repeat-y", backgroundSize: "contain", backgroundPosition: "center center"}}>
+            <Container ref={this.props.printReference} className="text-center mt-5 mb-5" style={{overflow: "auto", width: "1200px", fontFamily: "Arial", background: `linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)), url(${logo})`, backgroundRepeat: "repeat-y", backgroundSize: "contain", backgroundPosition: "center center"}}>
+                <Row>
+                    <Col className="text-center">
+                        <h1 style={{fontWeight: "bold", fontFamily: "BonaNovaSCFont", textDecoration: "underline", color: "red"}}>LEVIN SWITCHES</h1>
+                    </Col>
+                </Row>
+                <Row className="mb-5">
+                    <Col className="text-center">
+                        <h1 style={{fontWeight: "bold", fontFamily: "BonaNovaSCFont", textDecoration: "underline"}}>Proforma</h1>
+                    </Col>
+                </Row>
                 <Row>
                     <Col><h3 style={{textDecoration: "underline"}}>Item</h3></Col>
                     <Col><h3 style={{textDecoration: "underline"}}>Quantity</h3></Col>

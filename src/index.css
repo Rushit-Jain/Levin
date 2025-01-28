@@ -21,6 +21,12 @@ code {
 }
 
 @font-face {
+  font-family: "BonaNovaSCFont";
+  src: local("BonaNovaSCFont"),
+    url("./assets/fonts/BonaNovaSC.ttf") format("truetype");
+}
+
+@font-face {
   font-family: "NeonFont";
   src: local("NeonFont"), url("./assets/fonts/NeonFont.ttf") format("truetype");
 }

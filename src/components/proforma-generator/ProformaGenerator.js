@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import { Row, Col, Container } from "react-bootstrap";
+import { Row, Col, Container, Button } from "react-bootstrap";
 import {Accordion, Card} from 'react-bootstrap';
 
 class ProformaGenerator extends Component {
@@ -10,7 +10,8 @@ class ProformaGenerator extends Component {
             incomingProductData: null,
             selectedProductData: [],
             quantity: [],
-            range: []
+            range: [],
+            discount: -1
         };
     }
     componentDidMount() {
@@ -21,6 +22,24 @@ class ProformaGenerator extends Component {
           .then((res) => this.setState({ incomingProductData: res.data }));
     }
     isInputValid = (value) => (!isNaN(value.trim()) && value.trim()>0);
+    handleSubmit(classReference) {
+        if(classReference.state.quantity.length === 0)
+            alert("No products selected");
+        else if(!(classReference.state.quantity.filter(qty => qty < 0).length === 0) && (classReference.state.discount >= 0))
+            alert("Quantity cannot be less than 0");
+        else if((classReference.state.quantity.filter(qty => qty < 0).length === 0) && !(classReference.state.discount >= 0))
+            alert("Discount cannot be empty or less than 0");
+        else if(!(classReference.state.quantity.filter(qty => qty < 0).length === 0) && !(classReference.state.discount >= 0))
+            alert("Quantity and discount cannot be less than 0");
+        else
+            alert("CORRECT");
+    }
+    handleDiscountChange (event) {
+        if(event.target.value==="")
+            this.setState({discount: -1});
+        else
+            this.setState({discount: event.target.value});
+    }
     handleInputChange(product,rangeName,event) {
         if(this.isInputValid(event.target.value) && !this.state.selectedProductData.includes(product)) {
             let newSelectedProductData = [...this.state.selectedProductData,product];
@@ -70,12 +89,13 @@ class ProformaGenerator extends Component {
         }
         console.log(this.state.selectedProductData);
         console.log(this.state.quantity);
-        console.log(this.state.range);
+        console.log(this.state.discount);
         return (
+            <>
         <Accordion defaultActiveKey="0">
             <Card>
                 <Accordion.Toggle as={Card.Header} eventKey="0">
-                <h2>Dorun</h2>
+                <h2 className="text-center">Dorun</h2>
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey="0">
                 <Card.Body>{dorunRenderedList}</Card.Body>
@@ -83,7 +103,7 @@ class ProformaGenerator extends Component {
             </Card>
             <Card>
                 <Accordion.Toggle as={Card.Header} eventKey="1">
-                <h2>Accessories</h2>
+                <h2 className="text-center">Accessories</h2>
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey="1">
                 <Card.Body>{accessoriesRenderedList}</Card.Body>
@@ -91,21 +111,33 @@ class ProformaGenerator extends Component {
             </Card>
             <Card>
                 <Accordion.Toggle as={Card.Header} eventKey="2">
-                <h2>Dura</h2>
+                <h2 className="text-center">Dura</h2>
                 </Accordion.Toggle>
                 <Accordion.Collapse eventKey="2">
                 <Card.Body>{duraRenderedList}</Card.Body>
                 </Accordion.Collapse>
             </Card>
             <Card>
-                <Accordion.Toggle as={Card.Header} eventKey="2">
-                <h2>LED</h2>
+                <Accordion.Toggle as={Card.Header} eventKey="3">
+                <h2 className="text-center">LED</h2>
                 </Accordion.Toggle>
-                <Accordion.Collapse eventKey="2">
+                <Accordion.Collapse eventKey="3">
                 <Card.Body>{ledRenderedList}</Card.Body>
                 </Accordion.Collapse>
             </Card>
         </Accordion>
+        <Container className="mt-5">
+            <Row>
+                <Col className="text-center my-auto col-12 col-md-6">
+                    <h2>Discount</h2>
+                    <input type="number" placeholder="Enter Discount %" onChange={(event) => this.handleDiscountChange(event)}/>
+                </Col>
+                <Col className="text-center my-auto col-12 col-md-6 p-5">
+                    <Button onClick={(event) => this.handleSubmit(this)}>Generate Proforma</Button>
+                </Col>
+            </Row>
+        </Container>
+        </>
     );
     }
 }

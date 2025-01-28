@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import { Row, Col, Container, Button } from "react-bootstrap";
-import {Accordion, Card} from 'react-bootstrap';
+import {Accordion, Card, DropdownButton, Dropdown} from 'react-bootstrap';
 import "./ProformaGenerator.css";
 
 class ProformaGenerator extends Component {
@@ -14,6 +14,7 @@ class ProformaGenerator extends Component {
             range: [],
             discount: -1,
             cashDiscount: 0,
+            cashDiscountLocation: "Cash Discount",
             isGenerated: false,
             total: 0
         };
@@ -33,6 +34,10 @@ class ProformaGenerator extends Component {
             alert("Quantity cannot be less than 0");
         else if(!(classReference.state.discount >= 0))
             alert("Discount cannot be empty or less than 0");
+        else if(classReference.state.cashDiscountLocation == "Cash Discount")
+            alert("Please select when to reduce cash discount from dropdown menu");
+        else if(!(classReference.state.cashDiscountLocation == "Cash Discount" || classReference.state.cashDiscountLocation == "Not Applicable") && !(classReference.state.cashDiscount > 0))
+            alert("Please enter valid cash discount value");
         else if(!(classReference.state.cashDiscount >= 0))
             alert("Cash Discount cannot be less than 0");
         else
@@ -50,6 +55,7 @@ class ProformaGenerator extends Component {
         else
             this.setState({cashDiscount: event.target.value});
     }
+    handleCashDiscountLocation = (location) => this.setState({cashDiscountLocation: location});
     handleInputChange(product,rangeName,event) {
         if(this.isInputValid(event.target.value) && !this.state.selectedProductData.includes(product)) {
             let newSelectedProductData = [...this.state.selectedProductData,product];
@@ -92,8 +98,12 @@ class ProformaGenerator extends Component {
         let duraRenderedList = <></>;
         let ledRenderedList = <></>;
         let generatedList = <></>;
+        let beforeGST = <></>;
+        let afterGST = <></>;
+        let basicTotal = 0;
         let grandTotal = 0;
         let gst = 0;
+        let cd = 0;
         if(this.state.incomingProductData!=undefined) {
             dorunRenderedList = this.generateListView('dorun');
             accessoriesRenderedList = this.generateListView('accessories');
@@ -143,6 +153,11 @@ class ProformaGenerator extends Component {
                     </Col>
                     <Col className="text-center my-auto col-12 col-md-6 p-3">
                         <h2>Cash Discount</h2>
+                        <DropdownButton className="p-2" id="dropdown-item-button" title={this.state.cashDiscountLocation} variant="secondary">
+                            <Dropdown.Item as="button" onClick={(event) => this.handleCashDiscountLocation("Before GST")}>Before GST</Dropdown.Item>
+                            <Dropdown.Item as="button" onClick={(event) => this.handleCashDiscountLocation("After GST")}>After GST</Dropdown.Item>
+                            <Dropdown.Item as="button" onClick={(event) => this.handleCashDiscountLocation("Not Applicable")}>Not Applicable</Dropdown.Item>
+                        </DropdownButton>
                         <input type="number" placeholder="Enter Cash Discount %" onChange={(event) => this.handleCashDiscountChange(event)}/>
                     </Col>
                 </Row>
@@ -167,7 +182,35 @@ class ProformaGenerator extends Component {
                     </Row>
                 );
             });
-            gst = grandTotal * 18 / 100;
+            basicTotal = +(grandTotal).toFixed(2);
+            if(this.state.cashDiscountLocation == "Before GST") {
+                cd = +(grandTotal * this.state.cashDiscount / 100).toFixed(2);
+                gst = +((grandTotal - cd) * 18 / 100).toFixed(2);
+                beforeGST = (
+                    <Row>
+                        <Col></Col>
+                        <Col><h4 style={{color: "green"}}>Cash Discount</h4></Col>
+                        <Col><h4 style={{color: "green"}}>{this.state.cashDiscount}%</h4></Col>
+                        <Col><h4 style={{color: "green"}}>-Rs. {cd}</h4></Col>
+                    </Row>
+                );
+            }
+            else if(this.state.cashDiscountLocation == "After GST") {
+                gst = +(grandTotal * 18 / 100).toFixed(2);
+                cd = +((grandTotal + gst) * this.state.cashDiscount / 100).toFixed(2);
+                afterGST = (
+                    <Row>
+                        <Col></Col>
+                        <Col><h4 style={{color: "green"}}>Cash Discount</h4></Col>
+                        <Col><h4 style={{color: "green"}}>{this.state.cashDiscount}%</h4></Col>
+                        <Col><h4 style={{color: "green"}}>-Rs. {cd}</h4></Col>
+                    </Row>
+                );
+            }
+            else {
+                gst = +(grandTotal * 18 / 100).toFixed(2);
+            }
+            grandTotal = Math.round(grandTotal - cd + gst);
         }
         let generatedProforma = (
             <Container className="text-center" style={{overflow: "auto", width: "1200px"}}>
@@ -181,9 +224,24 @@ class ProformaGenerator extends Component {
                 <br />
                 <Row>
                     <Col></Col>
+                    <Col><h4>Basic Total</h4></Col>
+                    <Col></Col>
+                    <Col><h4>Rs. {basicTotal}</h4></Col>
+                </Row>
+                {beforeGST}
+                <Row>
+                    <Col></Col>
                     <Col><h4 style={{color: "red"}}>GST</h4></Col>
                     <Col><h4 style={{color: "red"}}>18%</h4></Col>
                     <Col><h4 style={{color: "red"}}>Rs. {gst}</h4></Col>
+                </Row>
+                {afterGST}
+                <br /><br />
+                <Row>
+                    <Col></Col>
+                    <Col><h4>Grand Total</h4></Col>
+                    <Col></Col>
+                    <Col><h4>Rs. {grandTotal}</h4></Col>
                 </Row>
             </Container>
         );

@@ -175,10 +175,10 @@ class ProformaGenerator extends Component {
                 grandTotal += +total;
                 return(
                     <Row>
-                        <Col>{this.state.range[index].toUpperCase() + " " + product.name}</Col>
-                        <Col>{this.state.quantity[index]} pcs</Col>
-                        <Col>Rs. {rate}</Col>
-                        <Col>Rs. {total}</Col>
+                        <Col className="p-2 py-auto text-center" style={{border: "1px black solid"}}>{this.state.range[index].toUpperCase() + " " + product.name}</Col>
+                        <Col className="p-2 py-auto text-center" style={{border: "1px black solid"}}>{this.state.quantity[index]} pcs</Col>
+                        <Col className="p-2 py-auto text-center" style={{border: "1px black solid"}}>Rs. {rate}</Col>
+                        <Col className="p-2 py-auto text-center" style={{border: "1px black solid"}}>Rs. {total}</Col>
                     </Row>
                 );
             });
@@ -189,9 +189,9 @@ class ProformaGenerator extends Component {
                 beforeGST = (
                     <Row>
                         <Col></Col>
-                        <Col><h4 style={{color: "green"}}>Cash Discount</h4></Col>
-                        <Col><h4 style={{color: "green"}}>{this.state.cashDiscount}%</h4></Col>
-                        <Col><h4 style={{color: "green"}}>-Rs. {cd}</h4></Col>
+                        <Col></Col>
+                        <Col className="p-2" style={{border: "1px black solid"}}><h4 style={{color: "green"}}>Cash Discount @ {this.state.cashDiscount}%</h4></Col>
+                        <Col className="p-2" style={{border: "1px black solid"}}><h4 style={{color: "green"}}>-Rs. {cd}</h4></Col>
                     </Row>
                 );
             }
@@ -201,9 +201,9 @@ class ProformaGenerator extends Component {
                 afterGST = (
                     <Row>
                         <Col></Col>
-                        <Col><h4 style={{color: "green"}}>Cash Discount</h4></Col>
-                        <Col><h4 style={{color: "green"}}>{this.state.cashDiscount}%</h4></Col>
-                        <Col><h4 style={{color: "green"}}>-Rs. {cd}</h4></Col>
+                        <Col></Col>
+                        <Col className="p-2" style={{border: "1px black solid"}}><h4 style={{color: "green"}}>Cash Discount @ {this.state.cashDiscount}%</h4></Col>
+                        <Col className="p-2" style={{border: "1px black solid"}}><h4 style={{color: "green"}}>-Rs. {cd}</h4></Col>
                     </Row>
                 );
             }
@@ -213,7 +213,7 @@ class ProformaGenerator extends Component {
             grandTotal = Math.round(grandTotal - cd + gst);
         }
         let generatedProforma = (
-            <Container className="text-center" style={{overflow: "auto", width: "1200px"}}>
+            <Container className="text-center" style={{overflow: "auto", width: "1200px", fontFamily: "Arial"}}>
                 <Row>
                     <Col><h3 style={{textDecoration: "underline"}}>Item</h3></Col>
                     <Col><h3 style={{textDecoration: "underline"}}>Quantity</h3></Col>
@@ -224,29 +224,31 @@ class ProformaGenerator extends Component {
                 <br />
                 <Row>
                     <Col></Col>
-                    <Col><h4>Basic Total</h4></Col>
                     <Col></Col>
-                    <Col><h4>Rs. {basicTotal}</h4></Col>
+                    <Col className="p-2" style={{border: "1px black solid"}}><h4>Basic Total</h4></Col>
+                    <Col className="p-2" style={{border: "1px black solid"}}><h4>Rs. {basicTotal}</h4></Col>
                 </Row>
                 {beforeGST}
                 <Row>
                     <Col></Col>
-                    <Col><h4 style={{color: "red"}}>GST</h4></Col>
-                    <Col><h4 style={{color: "red"}}>18%</h4></Col>
-                    <Col><h4 style={{color: "red"}}>Rs. {gst}</h4></Col>
+                    <Col></Col>
+                    <Col className="p-2" style={{border: "1px black solid"}}><h4 style={{color: "red"}}>GST @ 18%</h4></Col>
+                    <Col className="p-2" style={{border: "1px black solid"}}><h4 style={{color: "red"}}>Rs. {gst}</h4></Col>
                 </Row>
                 {afterGST}
-                <br /><br />
                 <Row>
                     <Col></Col>
-                    <Col><h4>Grand Total</h4></Col>
                     <Col></Col>
-                    <Col><h4>Rs. {grandTotal}</h4></Col>
+                    <Col className="p-2" style={{border: "1px black solid"}}><h4>Grand Total</h4></Col>
+                    <Col className="p-2" style={{border: "1px black solid"}}><h4>Rs. {grandTotal}</h4></Col>
                 </Row>
                 <Row>
                 <Col className="text-left my-auto pt-5">
                         <Button variant="info" onClick={(event) => this.setState({isGenerated: false})}>Back</Button>
                     </Col>
+                    {/* <Col className="text-right my-auto pt-5">
+                        <Button variant="success" onClick={(event) => this.generatePDF()}>Print</Button>
+                    </Col> */}
                 </Row>
             </Container>
         );

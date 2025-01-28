@@ -11,7 +11,9 @@ class ProformaGenerator extends Component {
             selectedProductData: [],
             quantity: [],
             range: [],
-            discount: -1
+            discount: -1,
+            isGenerated: false,
+            total: 0
         };
     }
     componentDidMount() {
@@ -25,14 +27,12 @@ class ProformaGenerator extends Component {
     handleSubmit(classReference) {
         if(classReference.state.quantity.length === 0)
             alert("No products selected");
-        else if(!(classReference.state.quantity.filter(qty => qty < 0).length === 0) && (classReference.state.discount >= 0))
+        else if(!(classReference.state.quantity.filter(qty => qty < 0).length === 0))
             alert("Quantity cannot be less than 0");
-        else if((classReference.state.quantity.filter(qty => qty < 0).length === 0) && !(classReference.state.discount >= 0))
+        else if(!(classReference.state.discount >= 0))
             alert("Discount cannot be empty or less than 0");
-        else if(!(classReference.state.quantity.filter(qty => qty < 0).length === 0) && !(classReference.state.discount >= 0))
-            alert("Quantity and discount cannot be less than 0");
         else
-            alert("CORRECT");
+            this.setState({isGenerated: true});
     }
     handleDiscountChange (event) {
         if(event.target.value==="")
@@ -81,63 +81,102 @@ class ProformaGenerator extends Component {
         let accessoriesRenderedList = <></>;
         let duraRenderedList = <></>;
         let ledRenderedList = <></>;
+        let generatedList = <></>;
+        let grandTotal = 0;
+        let gst = 0;
         if(this.state.incomingProductData!=undefined) {
             dorunRenderedList = this.generateListView('dorun');
             accessoriesRenderedList = this.generateListView('accessories');
             duraRenderedList = this.generateListView('dura');
             ledRenderedList = this.generateListView('led');
         }
+        let inputDetails = (<>
+            <Accordion defaultActiveKey="0">
+                <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="0">
+                    <h2 className="text-center">Dorun</h2>
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="0">
+                    <Card.Body>{dorunRenderedList}</Card.Body>
+                    </Accordion.Collapse>
+                </Card>
+                <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="1">
+                    <h2 className="text-center">Accessories</h2>
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="1">
+                    <Card.Body>{accessoriesRenderedList}</Card.Body>
+                    </Accordion.Collapse>
+                </Card>
+                <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="2">
+                    <h2 className="text-center">Dura</h2>
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="2">
+                    <Card.Body>{duraRenderedList}</Card.Body>
+                    </Accordion.Collapse>
+                </Card>
+                <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="3">
+                    <h2 className="text-center">LED</h2>
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="3">
+                    <Card.Body>{ledRenderedList}</Card.Body>
+                    </Accordion.Collapse>
+                </Card>
+            </Accordion>
+            <Container className="mt-5">
+                <Row>
+                    <Col className="text-center my-auto col-12 col-md-6">
+                        <h2>Discount</h2>
+                        <input type="number" placeholder="Enter Discount %" onChange={(event) => this.handleDiscountChange(event)}/>
+                    </Col>
+                    <Col className="text-center my-auto col-12 col-md-6 p-5">
+                        <Button onClick={(event) => this.handleSubmit(this)}>Generate Proforma</Button>
+                    </Col>
+                </Row>
+            </Container>
+            </>);
+        if(this.state.isGenerated) {
+            generatedList = this.state.selectedProductData.map((product,index) => {
+                let rate = (product.list * (1 - (this.state.discount/100)) / 1.18).toFixed(2);
+                let total = (rate * this.state.quantity[index]).toFixed(2);
+                grandTotal += +total;
+                return(
+                    <Row>
+                        <Col>{this.state.range[index].toUpperCase() + " " + product.name}</Col>
+                        <Col>{this.state.quantity[index]} pcs</Col>
+                        <Col>Rs. {rate}</Col>
+                        <Col>Rs. {total}</Col>
+                    </Row>
+                );
+            });
+            gst = grandTotal * 18 / 100;
+        }
+        let generatedProforma = (
+            <Container className="text-center" style={{overflow: "auto", width: "1200px"}}>
+                <Row>
+                    <Col><h3 style={{textDecoration: "underline"}}>Item</h3></Col>
+                    <Col><h3 style={{textDecoration: "underline"}}>Quantity</h3></Col>
+                    <Col><h3 style={{textDecoration: "underline"}}>Rate</h3></Col>
+                    <Col><h3 style={{textDecoration: "underline"}}>Total</h3></Col>
+                </Row>
+                {generatedList}
+                <br />
+                <Row>
+                    <Col></Col>
+                    <Col><h4 style={{color: "red"}}>GST</h4></Col>
+                    <Col><h4 style={{color: "red"}}>18%</h4></Col>
+                    <Col><h4 style={{color: "red"}}>Rs. {gst}</h4></Col>
+                </Row>
+            </Container>
+        );
         console.log(this.state.selectedProductData);
         console.log(this.state.quantity);
         console.log(this.state.discount);
+        console.log(grandTotal)
         return (
-            <>
-        <Accordion defaultActiveKey="0">
-            <Card>
-                <Accordion.Toggle as={Card.Header} eventKey="0">
-                <h2 className="text-center">Dorun</h2>
-                </Accordion.Toggle>
-                <Accordion.Collapse eventKey="0">
-                <Card.Body>{dorunRenderedList}</Card.Body>
-                </Accordion.Collapse>
-            </Card>
-            <Card>
-                <Accordion.Toggle as={Card.Header} eventKey="1">
-                <h2 className="text-center">Accessories</h2>
-                </Accordion.Toggle>
-                <Accordion.Collapse eventKey="1">
-                <Card.Body>{accessoriesRenderedList}</Card.Body>
-                </Accordion.Collapse>
-            </Card>
-            <Card>
-                <Accordion.Toggle as={Card.Header} eventKey="2">
-                <h2 className="text-center">Dura</h2>
-                </Accordion.Toggle>
-                <Accordion.Collapse eventKey="2">
-                <Card.Body>{duraRenderedList}</Card.Body>
-                </Accordion.Collapse>
-            </Card>
-            <Card>
-                <Accordion.Toggle as={Card.Header} eventKey="3">
-                <h2 className="text-center">LED</h2>
-                </Accordion.Toggle>
-                <Accordion.Collapse eventKey="3">
-                <Card.Body>{ledRenderedList}</Card.Body>
-                </Accordion.Collapse>
-            </Card>
-        </Accordion>
-        <Container className="mt-5">
-            <Row>
-                <Col className="text-center my-auto col-12 col-md-6">
-                    <h2>Discount</h2>
-                    <input type="number" placeholder="Enter Discount %" onChange={(event) => this.handleDiscountChange(event)}/>
-                </Col>
-                <Col className="text-center my-auto col-12 col-md-6 p-5">
-                    <Button onClick={(event) => this.handleSubmit(this)}>Generate Proforma</Button>
-                </Col>
-            </Row>
-        </Container>
-        </>
+            this.state.isGenerated ? generatedProforma : inputDetails
     );
     }
 }

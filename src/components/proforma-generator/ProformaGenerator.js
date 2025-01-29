@@ -96,6 +96,9 @@ class ProformaGenerator extends Component {
     render() {
         let dorunRenderedList = <></>;
         let accessoriesRenderedList = <></>;
+        let doricRenderedList = <></>;
+        let doricGreyRenderedList = <></>;
+        let doricBlackRenderedList = <></>;
         let duraRenderedList = <></>;
         let ledRenderedList = <></>;
         let generatedList = <></>;
@@ -108,6 +111,9 @@ class ProformaGenerator extends Component {
         if(this.state.incomingProductData!=undefined) {
             dorunRenderedList = this.generateListView('dorun');
             accessoriesRenderedList = this.generateListView('accessories');
+            doricRenderedList = this.generateListView('doric');
+            doricGreyRenderedList = this.generateListView('doric grey');
+            doricBlackRenderedList = this.generateListView('doric black');
             duraRenderedList = this.generateListView('dura');
             ledRenderedList = this.generateListView('led');
         }
@@ -115,33 +121,57 @@ class ProformaGenerator extends Component {
             <Accordion defaultActiveKey="0">
                 <Card>
                     <Accordion.Toggle as={Card.Header} eventKey="0">
-                    <h2 className="text-center">Dorun</h2>
+                    <h2 className="text-center">Doric</h2>
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="0">
-                    <Card.Body>{dorunRenderedList}</Card.Body>
+                    <Card.Body>{doricRenderedList}</Card.Body>
                     </Accordion.Collapse>
                 </Card>
                 <Card>
                     <Accordion.Toggle as={Card.Header} eventKey="1">
-                    <h2 className="text-center">Accessories</h2>
+                    <h2 className="text-center">Doric Black</h2>
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="1">
-                    <Card.Body>{accessoriesRenderedList}</Card.Body>
+                    <Card.Body>{doricBlackRenderedList}</Card.Body>
                     </Accordion.Collapse>
                 </Card>
                 <Card>
                     <Accordion.Toggle as={Card.Header} eventKey="2">
-                    <h2 className="text-center">Dura</h2>
+                    <h2 className="text-center">Doric Grey</h2>
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="2">
+                    <Card.Body>{doricGreyRenderedList}</Card.Body>
+                    </Accordion.Collapse>
+                </Card>
+                <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="6">
+                    <h2 className="text-center">Dorun</h2>
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="6">
+                    <Card.Body>{dorunRenderedList}</Card.Body>
+                    </Accordion.Collapse>
+                </Card>
+                <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="7">
+                    <h2 className="text-center">Accessories</h2>
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="7">
+                    <Card.Body>{accessoriesRenderedList}</Card.Body>
+                    </Accordion.Collapse>
+                </Card>
+                <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="8">
+                    <h2 className="text-center">Dura</h2>
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="8">
                     <Card.Body>{duraRenderedList}</Card.Body>
                     </Accordion.Collapse>
                 </Card>
                 <Card>
-                    <Accordion.Toggle as={Card.Header} eventKey="3">
+                    <Accordion.Toggle as={Card.Header} eventKey="10">
                     <h2 className="text-center">LED</h2>
                     </Accordion.Toggle>
-                    <Accordion.Collapse eventKey="3">
+                    <Accordion.Collapse eventKey="10">
                     <Card.Body>{ledRenderedList}</Card.Body>
                     </Accordion.Collapse>
                 </Card>

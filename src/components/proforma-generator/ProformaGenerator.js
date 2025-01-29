@@ -93,6 +93,20 @@ class ProformaGenerator extends Component {
             </Row>
           )));
     }
+    getCurrentDate() {
+        const today = new Date();
+
+        let day = today.getDate();
+        let month = today.getMonth() + 1;
+        let year = today.getFullYear();
+
+        day = day < 10 ? '0' + day : day;
+        month = month < 10 ? '0' + month : month;
+
+        const formattedDate = `${day}/${month}/${year}`;
+
+        return formattedDate;
+    }
     render() {
         let dorunRenderedList = <></>;
         let accessoriesRenderedList = <></>;
@@ -236,20 +250,20 @@ class ProformaGenerator extends Component {
                 grandTotal += +total;
                 return(
                     <Row>
-                        <Col className="p-2 py-auto text-center" style={{border: "1px black solid"}}>{this.state.range[index].toUpperCase() + " " + product.name}</Col>
+                        <Col className="p-2 py-auto text-center col-4" style={{border: "1px black solid"}}>{this.state.range[index].toUpperCase() + " " + product.name}</Col>
                         <Col className="p-2 py-auto text-center" style={{border: "1px black solid"}}>{this.state.quantity[index]} pcs</Col>
                         <Col className="p-2 py-auto text-center" style={{border: "1px black solid"}}>Rs. {rate}</Col>
                         <Col className="p-2 py-auto text-center" style={{border: "1px black solid"}}>Rs. {total}</Col>
                     </Row>
                 );
             });
-            basicTotal = +(grandTotal).toFixed(2);
+            basicTotal = grandTotal.toFixed(2);
             if(this.state.cashDiscountLocation == "Before GST") {
-                cd = +(grandTotal * this.state.cashDiscount / 100).toFixed(2);
-                gst = +((grandTotal - cd) * 18 / 100).toFixed(2);
+                cd = (grandTotal * this.state.cashDiscount / 100).toFixed(2);
+                gst = ((grandTotal - (+cd)) * 18 / 100).toFixed(2);
                 beforeGST = (
                     <Row>
-                        <Col></Col>
+                        <Col className="col-4"></Col>
                         <Col></Col>
                         <Col className="p-2" style={{border: "1px black solid"}}><h4 style={{color: "green"}}>Cash Discount @ {this.state.cashDiscount}%</h4></Col>
                         <Col className="p-2" style={{border: "1px black solid"}}><h4 style={{color: "green"}}>-Rs. {cd}</h4></Col>
@@ -257,11 +271,11 @@ class ProformaGenerator extends Component {
                 );
             }
             else if(this.state.cashDiscountLocation == "After GST") {
-                gst = +(grandTotal * 18 / 100).toFixed(2);
-                cd = +((grandTotal + gst) * this.state.cashDiscount / 100).toFixed(2);
+                gst = (grandTotal * 18 / 100).toFixed(2);
+                cd = ((grandTotal + (+gst)) * this.state.cashDiscount / 100).toFixed(2);
                 afterGST = (
                     <Row>
-                        <Col></Col>
+                        <Col className="col-4"></Col>
                         <Col></Col>
                         <Col className="p-2" style={{border: "1px black solid"}}><h4 style={{color: "green"}}>Cash Discount @ {this.state.cashDiscount}%</h4></Col>
                         <Col className="p-2" style={{border: "1px black solid"}}><h4 style={{color: "green"}}>-Rs. {cd}</h4></Col>
@@ -269,25 +283,30 @@ class ProformaGenerator extends Component {
                 );
             }
             else {
-                gst = +(grandTotal * 18 / 100).toFixed(2);
+                gst = (grandTotal * 18 / 100).toFixed(2);
             }
-            grandTotal = Math.round(grandTotal - cd + gst);
+            grandTotal = Math.round(grandTotal - (+cd) + (+gst));
         }
         let generatedProforma = (
             <>
-            <Container ref={this.props.printReference} className="text-center mt-5 mb-5" style={{overflow: "auto", width: "1200px", fontFamily: "Arial", background: `linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,.8)), url(${logo})`, backgroundRepeat: "repeat-y", backgroundSize: "contain", backgroundPosition: "center center"}}>
+            <Container ref={this.props.printReference} className="text-center mt-5 mb-5" style={{overflow: "auto", width: "1200px", fontFamily: "Arial", background: `linear-gradient(rgba(255,255,255,.90), rgba(255,255,255,.90)), url(${logo})`, backgroundRepeat: "repeat-y", backgroundSize: "contain", backgroundPosition: "center center"}}>
                 <Row>
                     <Col className="text-center">
-                        <h1 style={{fontWeight: "bold", fontFamily: "BonaNovaSCFont", textDecoration: "underline", color: "red"}}>LEVIN SWITCHES</h1>
+                        <h1 style={{fontWeight: "bold", fontFamily: "BonaNovaSCFont", textDecoration: "underline", color: "red"}}>RITZY INDUSTRIES</h1>
                     </Col>
                 </Row>
-                <Row className="mb-5">
+                <Row>
                     <Col className="text-center">
                         <h1 style={{fontWeight: "bold", fontFamily: "BonaNovaSCFont", textDecoration: "underline"}}>Proforma</h1>
                     </Col>
                 </Row>
+                <Row className="mb-5">
+                    <Col className="text-center">
+                        <h3 className="text-left" style={{fontWeight: "bold", fontFamily: "BonaNovaSCFont", textDecoration: "underline"}}>Date: {this.getCurrentDate()}</h3>
+                    </Col>
+                </Row>
                 <Row>
-                    <Col><h3 style={{textDecoration: "underline"}}>Item</h3></Col>
+                    <Col className="col-4"><h3 style={{textDecoration: "underline"}}>Item</h3></Col>
                     <Col><h3 style={{textDecoration: "underline"}}>Quantity</h3></Col>
                     <Col><h3 style={{textDecoration: "underline"}}>Rate</h3></Col>
                     <Col><h3 style={{textDecoration: "underline"}}>Total</h3></Col>
@@ -295,21 +314,21 @@ class ProformaGenerator extends Component {
                 {generatedList}
                 <br />
                 <Row>
-                    <Col></Col>
+                    <Col className="col-4"></Col>
                     <Col></Col>
                     <Col className="p-2" style={{border: "1px black solid"}}><h4>Basic Total</h4></Col>
                     <Col className="p-2" style={{border: "1px black solid"}}><h4>Rs. {basicTotal}</h4></Col>
                 </Row>
                 {beforeGST}
                 <Row>
-                    <Col></Col>
+                    <Col className="col-4"></Col>
                     <Col></Col>
                     <Col className="p-2" style={{border: "1px black solid"}}><h4 style={{color: "red"}}>GST @ 18%</h4></Col>
                     <Col className="p-2" style={{border: "1px black solid"}}><h4 style={{color: "red"}}>Rs. {gst}</h4></Col>
                 </Row>
                 {afterGST}
                 <Row>
-                    <Col></Col>
+                    <Col className="col-4"></Col>
                     <Col></Col>
                     <Col className="p-2" style={{border: "1px black solid"}}><h4>Grand Total</h4></Col>
                     <Col className="p-2" style={{border: "1px black solid"}}><h4>Rs. {grandTotal}</h4></Col>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import LNavbar from "./components/navbar/LNavbar";
 import Footer from "./components/footer/Footer";
 import About from "./components/about/About";
@@ -8,6 +8,8 @@ import Products from "./components/products/Products";
 import { Switch, Redirect, Route } from "react-router-dom";
 import ProductCategory from "./components/products/ProductCategory";
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
+import ProformaGenerator from "./components/proforma-generator/ProformaGenerator";
+import { useReactToPrint } from "react-to-print";
 
 const ProductWithCategory = (props) => {
   // console.log("App.js : ",props);
@@ -22,10 +24,13 @@ const ProductWithCategory = (props) => {
 
 function App() {
   const [selectedCategoryName, changeSelectedCategoryName] = useState(null);
+  const contentRef = useRef(null);
+  const handlePrint = useReactToPrint({ contentRef });
   return (
     <div>
       <LNavbar />
       <Switch>
+        <Route path="/proforma" exact render={(props) => <ProformaGenerator {...props} printReference={contentRef} printHandler={handlePrint} />} />
         <Route path="/about" exact component={About} />
         <Route path="/contact" exact component={Contact} />
         <Route path="/home" component={Home} />

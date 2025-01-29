@@ -9873,6 +9873,11 @@ react-scripts@^3.0.1:
   optionalDependencies:
     fsevents "2.0.6"
 
+react-to-print@^3.0.5:
+  version "3.0.5"
+  resolved "https://registry.npmjs.org/react-to-print/-/react-to-print-3.0.5.tgz"
+  integrity sha512-Z15MwMOzYCHWi26CZeFNwflAg7Nr8uWD6FTj+EkfIOjYyjr0MXGbI0c7rF4Fgrbj3XG9hFndb1ourxpPz2RAiA==
+
 react-transition-group@^4.4.0, react-transition-group@^4.4.1:
   version "4.4.5"
   resolved "https://registry.npmjs.org/react-transition-group/-/react-transition-group-4.4.5.tgz"
@@ -9883,7 +9888,7 @@ react-transition-group@^4.4.0, react-transition-group@^4.4.1:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
-react@*, "react@^16.12.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0 || ^21.0.0", "react@^16.8 || ^17", "react@^16.8.0 || ^17.0.0", react@^17.0.2, react@>=0.14.0, react@>=15, react@>=15.0.0, react@>=16.3.0, react@>=16.3.2, react@>=16.6.0, react@>=16.8.0, react@17.0.2:
+react@*, "react@^16.12.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^20.0.0 || ^21.0.0", "react@^16.8 || ^17", "react@^16.8.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0 || ~19", react@^17.0.2, react@>=0.14.0, react@>=15, react@>=15.0.0, react@>=16.3.0, react@>=16.3.2, react@>=16.6.0, react@>=16.8.0, react@17.0.2:
   version "17.0.2"
   resolved "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==

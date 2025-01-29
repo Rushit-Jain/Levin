@@ -324,17 +324,17 @@ class ProformaGenerator extends Component {
             <Container ref={this.props.printReference} className="text-center mt-5 mb-5" style={{overflow: "auto", width: "1200px", fontFamily: "Arial", background: `linear-gradient(rgba(255,255,255,.90), rgba(255,255,255,.90)), url(${logo})`, backgroundRepeat: "repeat-y", backgroundSize: "contain", backgroundPosition: "center center"}}>
                 <Row>
                     <Col className="text-center">
-                        <h1 style={{fontWeight: "bold", fontFamily: "BonaNovaSCFont", textDecoration: "underline", color: "red"}}>RITZY INDUSTRIES</h1>
+                        <h1 style={{fontWeight: "bold", fontFamily: "BonaNovaSCFont", textDecoration: "underline", color: "red"}}>Ritzy Industries</h1>
                     </Col>
                 </Row>
                 <Row>
                     <Col className="text-center">
-                        <h1 style={{fontWeight: "bold", fontFamily: "BonaNovaSCFont", textDecoration: "underline"}}>Proforma</h1>
+                        <h1 style={{fontWeight: "bold", fontFamily: "Century", textDecoration: "underline"}}>Proforma</h1>
                     </Col>
                 </Row>
                 <Row className="mb-5">
                     <Col className="text-center">
-                        <h3 className="text-left" style={{fontWeight: "bold", fontFamily: "BonaNovaSCFont", textDecoration: "underline"}}>Date: {this.getCurrentDate()}</h3>
+                        <h3 className="text-left" style={{fontWeight: "bold", fontFamily: "Century", textDecoration: "underline"}}>Date - {this.getCurrentDate()}</h3>
                     </Col>
                 </Row>
                 <Row>
@@ -359,15 +359,15 @@ class ProformaGenerator extends Component {
                     <Col className="col-4"></Col>
                     <Col></Col>
                     <Col className="p-2" style={{border: "1px black solid"}}><h4 style={{color: "red"}}>GST @ 18%</h4></Col>
-                    <Col className="p-2" style={{border: "1px black solid"}}><h4 style={{color: "red"}}>Rs. {gst}</h4></Col>
+                    <Col className="p-2" style={{border: "1px black solid"}}><h4 style={{color: "red"}}>+Rs. {gst}</h4></Col>
                 </Row>
                 )}
                 {afterGST}
                 <Row>
                     <Col className="col-4"></Col>
                     <Col></Col>
-                    <Col className="p-2" style={{border: "1px black solid", textDecoration: "bold"}}><h4>Grand Total</h4></Col>
-                    <Col className="p-2" style={{border: "1px black solid", textDecoration: "bold"}}><h4>{this.state.calculationType == "Basic" ? `Rs. ${grandTotal} + GST` : `Rs. ${grandTotal}`}</h4></Col>
+                    <Col className="p-2" style={{border: "1px black solid"}}><h4 style={{fontWeight: "bold"}}>GRAND TOTAL</h4></Col>
+                    <Col className="p-2" style={{border: "1px black solid"}}><h4 style={{fontWeight: "bold"}}>{this.state.calculationType == "Basic" ? `Rs. ${grandTotal} + GST` : `Rs. ${grandTotal}`}</h4></Col>
                 </Row>
             </Container>
             <Container>

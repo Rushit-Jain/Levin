@@ -122,6 +122,7 @@ class ProformaGenerator extends Component {
         let dolbyBlackRenderedList = <></>;
         let duraRenderedList = <></>;
         let ledRenderedList = <></>;
+        let mcbRenderedList = <></>;
         let generatedList = <></>;
         let beforeGST = <></>;
         let afterGST = <></>;
@@ -140,6 +141,7 @@ class ProformaGenerator extends Component {
             dolbyGreyRenderedList = this.generateListView('dolby grey');
             dolbyBlackRenderedList = this.generateListView('dolby black');
             duraRenderedList = this.generateListView('dura');
+            mcbRenderedList = this.generateListView('mcb');
             ledRenderedList = this.generateListView('led');
         }
         let inputDetails = (<>
@@ -214,6 +216,14 @@ class ProformaGenerator extends Component {
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="8">
                     <Card.Body>{duraRenderedList}</Card.Body>
+                    </Accordion.Collapse>
+                </Card>
+                <Card>
+                    <Accordion.Toggle as={Card.Header} eventKey="9">
+                    <h2 className="text-center">MCB</h2>
+                    </Accordion.Toggle>
+                    <Accordion.Collapse eventKey="9">
+                    <Card.Body>{mcbRenderedList}</Card.Body>
                     </Accordion.Collapse>
                 </Card>
                 <Card>

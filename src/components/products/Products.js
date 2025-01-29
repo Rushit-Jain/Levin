@@ -311,6 +311,4 @@ class Products extends Component {
   }
 }
 
-//  console.log(this.props.history.location.pathname)
-
 export default withRouter(Products);

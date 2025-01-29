@@ -392,10 +392,6 @@ class ProformaGenerator extends Component {
             </Container>
             </>
         );
-        console.log(this.state.selectedProductData);
-        console.log(this.state.quantity);
-        console.log(this.state.discount);
-        console.log(grandTotal)
         return (
             this.state.isGenerated ? generatedProforma : inputDetails
     );

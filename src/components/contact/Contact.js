@@ -49,13 +49,12 @@ class Contact extends Component {
       location: this.state.location,
       enquiryTime: new Date().toDateString()
     };
-    console.log(data);
     axios
       .post(
         "https://levin-e1c22-default-rtdb.firebaseio.com/contact.json",
         JSON.stringify(data)
       )
-      .then((response) => console.log(response))
+      .then((response) => response)
       .catch((err) => console.log(err));
   };
 

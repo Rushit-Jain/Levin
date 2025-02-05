@@ -37,7 +37,6 @@ class ProductCategory extends Component {
   }
 
   render() {
-    // console.log(this.state.data);
     let subcategoryExists = false;
     let organizedData = {};
 

@@ -2,11 +2,15 @@
   "rules": {
     "products":{
       ".read": "true",
-    	".write": "false",
+    	".write": "false"
     },
     "contact":{
       ".read": "false",
-      ".write": "true",
+      ".write": "true"
+    },
+    "proforma-db":{
+      ".read": "true",
+      ".write": "false"
     }
   }
 }

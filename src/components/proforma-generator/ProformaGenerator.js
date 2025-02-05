@@ -18,7 +18,8 @@ class ProformaGenerator extends Component {
             cashDiscountLocation: "Cash Discount",
             isGenerated: false,
             calculationType: "Calculation Type",
-            total: 0
+            total: 0,
+            clientName: ""
         };
     }
     componentDidMount() {
@@ -44,6 +45,8 @@ class ProformaGenerator extends Component {
             alert("Cash Discount cannot be less than 0");
         else if(classReference.state.calculationType == "Calculation Type")
             alert("Please select a calculation type");
+        else if(classReference.state.clientName == "")
+            alert("Please enter the name of the client");
         else
             this.setState({isGenerated: true});
     }
@@ -111,6 +114,7 @@ class ProformaGenerator extends Component {
         return formattedDate;
     }
     handleCalculationType = (type) => this.setState({calculationType: type});
+    handleClientNameChange = (event) => this.setState({clientName: event.target.value});
     render() {
         let dorunRenderedList = <></>;
         let accessoriesRenderedList = <></>;
@@ -237,11 +241,11 @@ class ProformaGenerator extends Component {
             </Accordion>
             <Container className="mt-5">
                 <Row>
-                    <Col className="text-center my-auto col-12 col-md-4 p-3">
+                    <Col className="text-center my-auto col-12 col-md-3 p-3">
                         <h2>Discount</h2>
                         <input type="number" value={this.state.discount !== -1 ? this.state.discount : ""} placeholder="Enter Discount %" onChange={(event) => this.handleDiscountChange(event)}/>
                     </Col>
-                    <Col className="text-center my-auto col-12 col-md-4 p-3">
+                    <Col className="text-center my-auto col-12 col-md-3 p-3">
                         <h2>Cash Discount</h2>
                         <DropdownButton className="p-2" id="dropdown-item-button" title={this.state.cashDiscountLocation} variant="secondary">
                             <Dropdown.Item as="button" onClick={(event) => this.handleCashDiscountLocation("Before GST")}>Before GST</Dropdown.Item>
@@ -250,12 +254,16 @@ class ProformaGenerator extends Component {
                         </DropdownButton>
                         <input type="number" disabled={this.state.cashDiscountLocation == "Not Applicable"} value={this.state.cashDiscount !== 0 ? this.state.cashDiscount : ""} placeholder="Enter Cash Discount %" onChange={(event) => this.handleCashDiscountChange(event)}/>
                     </Col>
-                    <Col className="text-center my-auto col-12 col-md-4 p-3">
+                    <Col className="text-center my-auto col-12 col-md-3 p-3">
                         <h2>Calculation</h2>
                         <DropdownButton className="p-2" id="dropdown-item-button-2" title={this.state.calculationType} variant="secondary">
                             <Dropdown.Item as="button" onClick={(event) => this.handleCalculationType("Basic")}>Basic</Dropdown.Item>
                             <Dropdown.Item as="button" onClick={(event) => this.handleCalculationType("GST")}>GST</Dropdown.Item>
                         </DropdownButton>
+                    </Col>
+                    <Col className="text-center my-auto col-12 col-md-3 p-3">
+                        <h2>Client's Name</h2>
+                        <input type="text" value={this.state.clientName} placeholder="Enter Client's Name" onChange={(event) => this.handleClientNameChange(event)}/>
                     </Col>
                 </Row>
                 <Row>
@@ -347,6 +355,11 @@ class ProformaGenerator extends Component {
                         <h3 className="text-left" style={{fontWeight: "bold", fontFamily: "Century", textDecoration: "underline"}}>Date - {this.getCurrentDate()}</h3>
                     </Col>
                 </Row>
+                <Row className="mb-5">
+                    <Col className="text-center">
+                        <h5 className="text-left" style={{fontWeight: "bold", fontFamily: "Century", textDecoration: "underline"}}>Client Name - {this.state.clientName}</h5>
+                    </Col>
+                </Row>
                 <Row>
                     <Col className="col-4"><h3 style={{textDecoration: "underline"}}>Item</h3></Col>
                     <Col><h3 style={{textDecoration: "underline"}}>Quantity</h3></Col>
@@ -379,6 +392,9 @@ class ProformaGenerator extends Component {
                     <Col className="p-2" style={{border: "1px black solid"}}><h4 style={{fontWeight: "bold"}}>GRAND TOTAL</h4></Col>
                     <Col className="p-2" style={{border: "1px black solid"}}><h4 style={{fontWeight: "bold"}}>{this.state.calculationType == "Basic" ? `Rs. ${grandTotal} + GST` : `Rs. ${grandTotal}`}</h4></Col>
                 </Row>
+                <Row>
+                    Note: This is only an estimate and not an invoice
+                </Row>
             </Container>
             <Container>
                 <Row>
@@ -392,10 +408,6 @@ class ProformaGenerator extends Component {
             </Container>
             </>
         );
-        console.log(this.state.selectedProductData);
-        console.log(this.state.quantity);
-        console.log(this.state.discount);
-        console.log(grandTotal)
         return (
             this.state.isGenerated ? generatedProforma : inputDetails
     );

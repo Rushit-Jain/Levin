@@ -12,7 +12,6 @@ import ProformaGenerator from "./components/proforma-generator/ProformaGenerator
 import { useReactToPrint } from "react-to-print";
 
 const ProductWithCategory = (props) => {
-  // console.log("App.js : ",props);
   return (
     <ProductCategory
       categoryName={props.selectedCategoryName}

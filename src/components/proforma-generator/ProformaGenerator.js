@@ -390,7 +390,7 @@ class ProformaGenerator extends Component {
                     <Col className="col-4"></Col>
                     <Col></Col>
                     <Col className="p-2" style={{border: "1px black solid"}}><h4 style={{fontWeight: "bold"}}>GRAND TOTAL</h4></Col>
-                    <Col className="p-2" style={{border: "1px black solid"}}><h4 style={{fontWeight: "bold"}}>{this.state.calculationType == "Basic" ? `Rs. ${grandTotal} + GST` : `Rs. ${grandTotal}`}</h4></Col>
+                    <Col className="p-2" style={{border: "1px black solid"}}><h4 style={{fontWeight: "bold"}}>{this.state.calculationType == "Basic" ? `Rs. ${grandTotal.toFixed(2)} + GST` : `Rs. ${grandTotal.toFixed(2)}`}</h4></Col>
                 </Row>
                 <Row>
                     Note: This is only an estimate and not an invoice
